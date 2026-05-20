@@ -1164,6 +1164,306 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
 .float-bg .blob.b2{width:240px;height:240px;background:#c026d3;bottom:15%;left:8%;animation:drift 16s ease-in-out infinite reverse}
 .float-bg .blob.b3{width:180px;height:180px;background:#e879f9;top:50%;left:50%;animation:drift 12s ease-in-out infinite}
 @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-40px)}}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── PREMIUM CAROUSELS (Linear/Vercel/Stripe-grade) ─── */
+
+/* Conic gradient backgrounds (premium feel) */
+.conic-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:conic-gradient(from 180deg at 50% 50%,
+    rgba(168,85,247,0.0) 0deg,
+    rgba(168,85,247,0.18) 60deg,
+    rgba(217,70,239,0.10) 120deg,
+    rgba(232,121,249,0.05) 180deg,
+    rgba(168,85,247,0.0) 360deg);
+  filter:blur(40px);opacity:0.6;
+}
+
+/* Marquee (infinite horizontal scroll) */
+.marquee{position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:24px;width:max-content;animation:marquee-scroll 45s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track.reverse{animation-direction:reverse}
+.marquee-track.fast{animation-duration:30s}
+@keyframes marquee-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* Brand chip */
+.brand-chip{
+  flex-shrink:0;padding:18px 28px;border-radius:18px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;
+  min-width:200px;height:80px;
+}
+.brand-chip .emo{font-size:30px}
+.brand-chip .nm{font-size:17px;font-weight:800;letter-spacing:-0.02em}
+.brand-chip .ct{color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;display:block;margin-top:2px}
+
+/* Industries marquee chip */
+.ind-chip{
+  flex-shrink:0;padding:14px 22px;border-radius:999px;
+  background:linear-gradient(180deg,rgba(168,85,247,0.10),rgba(255,255,255,0.02));
+  border:1px solid rgba(168,85,247,0.20);
+  display:flex;align-items:center;gap:10px;
+  font-size:14.5px;font-weight:700;letter-spacing:-0.015em;
+}
+.ind-chip .em{font-size:22px}
+.ind-chip .ct{color:var(--muted);font-size:12px;font-weight:600;margin-inline-start:4px}
+
+/* Hook chip */
+.hook-chip{
+  flex-shrink:0;width:340px;padding:24px 26px;border-radius:18px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  position:relative;transition:border-color 0.2s;
+}
+.hook-chip:hover{border-color:rgba(168,85,247,0.4)}
+.hook-chip .htag{display:inline-block;padding:4px 10px;border-radius:6px;background:rgba(168,85,247,0.15);color:#e879f9;font-size:10.5px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px}
+.hook-chip .htxt{font-size:16px;font-weight:600;line-height:1.55;color:var(--fg)}
+.hook-chip .hcopy{margin-top:14px;display:flex;justify-content:space-between;align-items:center}
+.hook-chip .hcopy .cat{font-size:11.5px;color:var(--muted);font-weight:600}
+.hook-chip .hcopy .btn{padding:5px 14px;border-radius:8px;background:rgba(168,85,247,0.12);color:#e879f9;font-size:12px;font-weight:700;cursor:pointer}
+
+/* ─── 3D Horizontal Carousel (snap scroll) ─── */
+.carousel-3d{
+  display:flex;gap:18px;overflow-x:auto;overflow-y:visible;
+  padding:60px 32px 80px;scroll-snap-type:x mandatory;perspective:1400px;
+  scrollbar-width:none;-ms-overflow-style:none;
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+}
+.carousel-3d::-webkit-scrollbar{display:none}
+.car-item{
+  flex:0 0 320px;scroll-snap-align:center;
+  aspect-ratio:9/16;border-radius:24px;overflow:hidden;
+  border:1px solid var(--border);background:#000;
+  box-shadow:0 40px 100px -20px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.04);
+  position:relative;transform-style:preserve-3d;
+  transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.car-item:hover{transform:translateY(-12px) rotateX(2deg) scale(1.02)}
+.car-item img,.car-item video{width:100%;height:100%;object-fit:cover}
+.car-overlay{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,transparent 100%);
+  padding:30px 22px 22px;
+}
+.car-overlay h5{font-size:18px;font-weight:900;letter-spacing:-0.02em;color:#fff}
+.car-overlay .tg{display:inline-block;margin-top:8px;padding:4px 11px;border-radius:999px;background:rgba(168,85,247,0.25);font-size:11px;font-weight:700;color:#fff;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15)}
+.car-overlay .lbl{color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
+
+.carousel-nav{display:flex;justify-content:center;gap:14px;margin-top:24px}
+.carousel-nav button{
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,0.06);border:1px solid var(--border);
+  font-size:18px;font-weight:900;color:var(--fg);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.15s, background 0.15s;
+}
+.carousel-nav button:hover{transform:scale(1.08);background:rgba(168,85,247,0.18)}
+
+/* ─── Card Stack (Apple-style stacked) ─── */
+.card-stack{
+  position:relative;height:520px;display:flex;align-items:center;justify-content:center;perspective:1800px;
+}
+.cs-card{
+  position:absolute;width:340px;aspect-ratio:9/16;border-radius:26px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);background:#000;
+  box-shadow:0 50px 120px -25px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.04);
+  transform-style:preserve-3d;
+}
+.cs-card img,.cs-card video{width:100%;height:100%;object-fit:cover}
+.cs-card .csm{position:absolute;top:18px;left:18px;padding:6px 12px;border-radius:8px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);font-size:11px;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,0.1)}
+.cs-card.s0{transform:translateX(0) rotateY(0) translateZ(0);z-index:5}
+.cs-card.s1{transform:translateX(60px) rotateY(-8deg) translateZ(-60px);z-index:4;opacity:0.92}
+.cs-card.s2{transform:translateX(120px) rotateY(-14deg) translateZ(-120px);z-index:3;opacity:0.78}
+.cs-card.s3{transform:translateX(180px) rotateY(-20deg) translateZ(-180px);z-index:2;opacity:0.62}
+.cs-card.s4{transform:translateX(240px) rotateY(-25deg) translateZ(-240px);z-index:1;opacity:0.45}
+.cs-card.s-1{transform:translateX(-60px) rotateY(8deg) translateZ(-60px);z-index:4;opacity:0.92}
+.cs-card.s-2{transform:translateX(-120px) rotateY(14deg) translateZ(-120px);z-index:3;opacity:0.78}
+.cs-card.s-3{transform:translateX(-180px) rotateY(20deg) translateZ(-180px);z-index:2;opacity:0.62}
+.cs-card.s-4{transform:translateX(-240px) rotateY(25deg) translateZ(-240px);z-index:1;opacity:0.45}
+@media (max-width:760px){.card-stack{height:auto;flex-wrap:wrap;gap:14px}.cs-card{position:relative;transform:none!important;width:160px;opacity:1!important}}
+
+/* ─── Output Bento Mega ─── */
+.bento-mega{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:140px;gap:14px;margin-top:30px}
+.bm{border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#000;position:relative;transition:transform 0.25s cubic-bezier(0.16,1,0.3,1)}
+.bm:hover{transform:translateY(-4px) scale(1.02);z-index:2;box-shadow:0 30px 60px -15px rgba(168,85,247,0.4)}
+.bm.b22{grid-column:span 2;grid-row:span 2}
+.bm.b32{grid-column:span 3;grid-row:span 2}
+.bm.b21{grid-column:span 2}
+.bm.b12{grid-row:span 2}
+.bm img,.bm video{width:100%;height:100%;object-fit:cover}
+.bm .bmo{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,transparent 100%)}
+.bm .bmo h5{font-size:13px;font-weight:800;color:#fff;letter-spacing:-0.015em}
+.bm .bmo .bmt{font-size:10.5px;color:rgba(255,255,255,0.7);font-weight:600;margin-top:2px}
+.bm.placeholder{display:flex;align-items:center;justify-content:center;font-size:48px}
+.bm.gradA{background:linear-gradient(135deg,#a855f7,#c026d3)}
+.bm.gradB{background:linear-gradient(135deg,#06b6d4,#0ea5e9,#6366f1)}
+.bm.gradC{background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899)}
+.bm.gradD{background:linear-gradient(135deg,#10b981,#14b8a6,#0ea5e9)}
+.bm.gradE{background:linear-gradient(135deg,#f43f5e,#ec4899,#a855f7)}
+.bm.gradF{background:linear-gradient(135deg,#facc15,#f59e0b,#dc2626)}
+.bm.gradG{background:linear-gradient(135deg,#3b82f6,#6366f1,#8b5cf6)}
+.bm.gradH{background:linear-gradient(135deg,#84cc16,#22c55e,#10b981)}
+@media (max-width:880px){.bento-mega{grid-template-columns:repeat(2,1fr)}.bm.b22,.bm.b32,.bm.b21{grid-column:span 2}.bm.b12{grid-row:span 1}}
+
+/* ─── Awards Bar ─── */
+.awards{display:flex;justify-content:center;align-items:center;gap:60px;margin-top:50px;flex-wrap:wrap}
+.award{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.award .ring{
+  width:88px;height:88px;border-radius:50%;
+  background:conic-gradient(from 0deg,#a855f7,#c026d3,#e879f9,#a855f7);
+  display:flex;align-items:center;justify-content:center;position:relative;
+  box-shadow:0 20px 50px -10px rgba(168,85,247,0.55);
+}
+.award .ring::before{content:'';position:absolute;inset:3px;background:#0a0a0d;border-radius:50%}
+.award .ring .em{position:relative;z-index:1;font-size:36px}
+.award .ttl{font-size:14px;font-weight:800;letter-spacing:-0.015em}
+.award .sub{color:var(--muted);font-size:11.5px;font-weight:600}
+@media (max-width:760px){.awards{gap:30px}}
+
+/* ─── Premium Pricing Card 3D ─── */
+.tiers-3d{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;perspective:1400px}
+.tier3d{
+  padding:36px 32px;border-radius:26px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+  border:1px solid var(--border);position:relative;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);
+  transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.tier3d.popular{
+  background:linear-gradient(180deg,rgba(168,85,247,0.12),rgba(28,28,37,0.95));
+  border-color:rgba(168,85,247,0.4);
+  box-shadow:0 50px 120px -20px rgba(168,85,247,0.4),0 0 0 1px rgba(168,85,247,0.15);
+  transform:translateY(-20px) scale(1.04);
+}
+.tier3d:hover{transform:translateY(-10px) scale(1.02)}
+.tier3d.popular:hover{transform:translateY(-30px) scale(1.06)}
+.tier3d .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:6px 16px;border-radius:999px;background:var(--gradient);color:#fff;font-size:12px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;box-shadow:0 8px 20px -6px rgba(192,38,211,0.6)}
+.tier3d .tnm{font-size:14px;color:#e879f9;font-weight:800;letter-spacing:0.06em;text-transform:uppercase}
+.tier3d .tpr{font-size:62px;font-weight:900;letter-spacing:-0.05em;line-height:1;margin-top:14px}
+.tier3d .tpr .cur{font-size:32px;vertical-align:top}
+.tier3d .tpr .pm{font-size:16px;color:var(--muted);font-weight:600}
+.tier3d .tcr{font-size:14px;color:var(--sub);margin-top:6px;font-weight:600}
+.tier3d ul{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.tier3d li{font-size:14.5px;color:var(--fg);display:flex;gap:12px;line-height:1.5;align-items:flex-start}
+.tier3d li::before{content:'✓';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gradient);color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tier3d .tcta{display:block;text-align:center;width:100%;margin-top:24px;padding:16px;border-radius:14px;background:rgba(255,255,255,0.05);font-weight:800;font-size:15px;border:1px solid var(--border)}
+.tier3d.popular .tcta{background:var(--gradient);border-color:transparent;box-shadow:0 12px 30px -8px rgba(192,38,211,0.5)}
+@media (max-width:880px){.tiers-3d{grid-template-columns:1fr;gap:18px}.tier3d.popular{transform:none}}
+
+/* ─── Testimonials Marquee ─── */
+.tq-card{
+  flex-shrink:0;width:380px;padding:30px 28px;border-radius:22px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  transition:transform 0.2s, border-color 0.2s;
+}
+.tq-card:hover{transform:translateY(-4px);border-color:rgba(168,85,247,0.4)}
+.tq-card .stars{color:#facc15;font-size:15px;margin-bottom:14px}
+.tq-card .qt{font-size:15.5px;color:var(--fg);line-height:1.65}
+.tq-card .auth{margin-top:18px;display:flex;align-items:center;gap:12px}
+.tq-card .ava{width:42px;height:42px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff}
+.tq-card .anm{font-size:14px;font-weight:800;letter-spacing:-0.015em}
+.tq-card .arl{font-size:12px;color:var(--muted);font-weight:600}
+
+/* ─── Avatar Wheel (rotating) ─── */
+.avatar-wheel{
+  position:relative;height:560px;margin-top:30px;perspective:1600px;
+  overflow:hidden;
+}
+.wheel-rotor{
+  position:relative;width:300px;height:300px;margin:130px auto 0;
+  transform-style:preserve-3d;animation:wheel-spin 60s linear infinite;
+}
+.wheel-rotor:hover{animation-play-state:paused}
+.wheel-card{
+  position:absolute;top:50%;left:50%;width:180px;height:240px;
+  margin:-120px 0 0 -90px;border-radius:20px;overflow:hidden;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 30px 80px -20px rgba(168,85,247,0.4);
+  backface-visibility:hidden;
+}
+.wheel-card .e{font-size:84px;line-height:1}
+.wheel-card .n{font-size:17px;font-weight:900;letter-spacing:-0.02em;margin-top:14px}
+.wheel-card .r{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:4px}
+@keyframes wheel-spin{
+  from{transform:rotateY(0)}
+  to{transform:rotateY(360deg)}
+}
+
+/* ─── Floating Product Showcase ─── */
+.product-show{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  padding:60px;border-radius:30px;
+  background:radial-gradient(ellipse at top left, rgba(168,85,247,0.18), transparent 60%), linear-gradient(180deg,rgba(28,28,37,0.95),rgba(10,10,13,0.95));
+  border:1px solid var(--border);margin-top:30px;
+  position:relative;overflow:hidden;
+}
+.product-show::before{
+  content:'';position:absolute;top:-50%;left:-30%;width:600px;height:600px;
+  background:conic-gradient(from 90deg,rgba(168,85,247,0.20),rgba(217,70,239,0.10),rgba(168,85,247,0.20));
+  filter:blur(80px);pointer-events:none;
+  animation:drift 20s ease-in-out infinite;
+}
+.product-show > div{position:relative;z-index:1}
+.product-show h3{font-size:36px;font-weight:900;letter-spacing:-0.035em;line-height:1.1;margin-bottom:14px}
+.product-show p{color:var(--sub);font-size:16.5px;line-height:1.65;margin-bottom:20px}
+.product-show .pscta{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;background:var(--gradient);color:#fff;font-weight:800;font-size:15px;box-shadow:0 16px 40px -10px rgba(192,38,211,0.5)}
+.product-orb{
+  aspect-ratio:1/1;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, rgba(232,121,249,0.55), rgba(168,85,247,0.25) 50%, rgba(28,28,37,0.95) 80%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 -40px 100px rgba(168,85,247,0.5), 0 30px 80px -20px rgba(168,85,247,0.4);
+  position:relative;animation:orb-pulse 6s ease-in-out infinite;
+}
+.product-orb::before{content:'';position:absolute;inset:30px;border-radius:50%;background:radial-gradient(circle at 40% 40%, rgba(255,255,255,0.3), transparent 50%)}
+.product-orb .em{font-size:130px;filter:drop-shadow(0 20px 40px rgba(168,85,247,0.6));z-index:1}
+@keyframes orb-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@media (max-width:880px){.product-show{grid-template-columns:1fr;padding:30px}}
+
+/* ─── Big Quote Hero ─── */
+.bigquote{
+  padding:80px 40px;border-radius:32px;
+  background:linear-gradient(135deg,rgba(168,85,247,0.08),rgba(28,28,37,0.95));
+  border:1px solid var(--border);text-align:center;position:relative;margin-top:30px;
+  overflow:hidden;
+}
+.bigquote::before{
+  content:'"';position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  font-size:300px;line-height:1;color:rgba(168,85,247,0.06);font-family:Georgia,serif;
+}
+.bigquote q{font-size:clamp(24px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.3;display:block;max-width:780px;margin:0 auto;position:relative;z-index:1}
+.bigquote q::before,.bigquote q::after{display:none}
+.bigquote .auth{margin-top:30px;display:inline-flex;align-items:center;gap:14px;position:relative;z-index:1}
+.bigquote .auth .ava{width:54px;height:54px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff}
+.bigquote .auth .nm{font-size:15px;font-weight:800;letter-spacing:-0.015em}
+.bigquote .auth .rl{font-size:13px;color:var(--muted);font-weight:600;margin-top:2px}
+
+/* ─── Stats Marquee ─── */
+.statsmrq-track{display:flex;gap:0;width:max-content;animation:marquee-scroll 50s linear infinite;align-items:center}
+.smq{flex-shrink:0;padding:30px 50px;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;min-width:280px}
+.smq .v{font-size:50px;font-weight:900;letter-spacing:-0.045em;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.smq .l{margin-top:8px;color:var(--sub);font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+
+/* ─── Refined section padding ─── */
+section.tight{padding:60px 0}
+section.loose{padding:140px 0}
+
+/* ─── Sticky scroll showcase ─── */
+.sticky-show{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:30px}
+.sticky-show .ss-text{position:sticky;top:120px;align-self:start;padding:24px 0}
+.sticky-show h3{font-size:32px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:14px}
+.sticky-show p{color:var(--sub);font-size:16px;line-height:1.65}
+.sticky-show .ss-list{display:flex;flex-direction:column;gap:18px}
+.sticky-show .ss-step{padding:30px 28px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border);transition:border-color 0.2s}
+.sticky-show .ss-step:hover{border-color:rgba(168,85,247,0.4)}
+.sticky-show .ss-step h4{font-size:19px;font-weight:900;letter-spacing:-0.02em;margin-bottom:8px;color:#e879f9}
+.sticky-show .ss-step p{color:var(--sub);font-size:14.5px}
+@media (max-width:880px){.sticky-show{grid-template-columns:1fr}.sticky-show .ss-text{position:relative;top:0}}
 </style>
 </head>
 <body>
@@ -1278,8 +1578,113 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
   </div>
 </header>
 
+<!-- ─── BRAND MARQUEE (premium auto-scroll) ─── -->
+<section style="padding:50px 0 30px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(168,85,247,0.04),transparent)">
+  <div class="wrap">
+    <div style="text-align:center;color:var(--muted);font-size:12.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:30px">משתמשים בטריק · 2,200+ מותגים ישראלים פעילים</div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="brand-chip"><div class="emo">💄</div><div><div class="nm">GLOW Serum</div><span class="ct">קוסמטיקה</span></div></div>
+      <div class="brand-chip"><div class="emo">🧴</div><div><div class="nm">PureSkin</div><span class="ct">טיפוח</span></div></div>
+      <div class="brand-chip"><div class="emo">💊</div><div><div class="nm">VitaPlus</div><span class="ct">תוספי תזונה</span></div></div>
+      <div class="brand-chip"><div class="emo">👗</div><div><div class="nm">Studio TLV</div><span class="ct">אופנה</span></div></div>
+      <div class="brand-chip"><div class="emo">🥤</div><div><div class="nm">Brew Brothers</div><span class="ct">קפה</span></div></div>
+      <div class="brand-chip"><div class="emo">🏠</div><div><div class="nm">HomeLab</div><span class="ct">בית</span></div></div>
+      <div class="brand-chip"><div class="emo">🐶</div><div><div class="nm">PetCare IL</div><span class="ct">חיות מחמד</span></div></div>
+      <div class="brand-chip"><div class="emo">📱</div><div><div class="nm">SmartGadget</div><span class="ct">Tech</span></div></div>
+      <div class="brand-chip"><div class="emo">⚖️</div><div><div class="nm">Legal Plus</div><span class="ct">משפט</span></div></div>
+      <div class="brand-chip"><div class="emo">🎓</div><div><div class="nm">Academy AI</div><span class="ct">קורסים</span></div></div>
+      <div class="brand-chip"><div class="emo">💼</div><div><div class="nm">B2B Hub</div><span class="ct">SaaS</span></div></div>
+      <div class="brand-chip"><div class="emo">🏨</div><div><div class="nm">StayIL</div><span class="ct">תיירות</span></div></div>
+      <!-- repeat for seamless loop -->
+      <div class="brand-chip"><div class="emo">💄</div><div><div class="nm">GLOW Serum</div><span class="ct">קוסמטיקה</span></div></div>
+      <div class="brand-chip"><div class="emo">🧴</div><div><div class="nm">PureSkin</div><span class="ct">טיפוח</span></div></div>
+      <div class="brand-chip"><div class="emo">💊</div><div><div class="nm">VitaPlus</div><span class="ct">תוספי תזונה</span></div></div>
+      <div class="brand-chip"><div class="emo">👗</div><div><div class="nm">Studio TLV</div><span class="ct">אופנה</span></div></div>
+      <div class="brand-chip"><div class="emo">🥤</div><div><div class="nm">Brew Brothers</div><span class="ct">קפה</span></div></div>
+      <div class="brand-chip"><div class="emo">🏠</div><div><div class="nm">HomeLab</div><span class="ct">בית</span></div></div>
+      <div class="brand-chip"><div class="emo">🐶</div><div><div class="nm">PetCare IL</div><span class="ct">חיות מחמד</span></div></div>
+      <div class="brand-chip"><div class="emo">📱</div><div><div class="nm">SmartGadget</div><span class="ct">Tech</span></div></div>
+      <div class="brand-chip"><div class="emo">⚖️</div><div><div class="nm">Legal Plus</div><span class="ct">משפט</span></div></div>
+      <div class="brand-chip"><div class="emo">🎓</div><div><div class="nm">Academy AI</div><span class="ct">קורסים</span></div></div>
+      <div class="brand-chip"><div class="emo">💼</div><div><div class="nm">B2B Hub</div><span class="ct">SaaS</span></div></div>
+      <div class="brand-chip"><div class="emo">🏨</div><div><div class="nm">StayIL</div><span class="ct">תיירות</span></div></div>
+    </div>
+  </div>
+  <div class="marquee" style="margin-top:18px">
+    <div class="marquee-track reverse fast">
+      <div class="brand-chip"><div class="emo">🍷</div><div><div class="nm">Yiqvei TLV</div><span class="ct">יין</span></div></div>
+      <div class="brand-chip"><div class="emo">🏥</div><div><div class="nm">MediClinic</div><span class="ct">רפואה</span></div></div>
+      <div class="brand-chip"><div class="emo">🚗</div><div><div class="nm">AutoPro</div><span class="ct">רכב</span></div></div>
+      <div class="brand-chip"><div class="emo">🎮</div><div><div class="nm">GameHub</div><span class="ct">גיימינג</span></div></div>
+      <div class="brand-chip"><div class="emo">🏋️</div><div><div class="nm">FitForce</div><span class="ct">כושר</span></div></div>
+      <div class="brand-chip"><div class="emo">📚</div><div><div class="nm">Book TLV</div><span class="ct">ספרות</span></div></div>
+      <div class="brand-chip"><div class="emo">👶</div><div><div class="nm">BabyCare</div><span class="ct">תינוקות</span></div></div>
+      <div class="brand-chip"><div class="emo">🎁</div><div><div class="nm">Gifty</div><span class="ct">מתנות</span></div></div>
+      <div class="brand-chip"><div class="emo">🌱</div><div><div class="nm">EcoBrand</div><span class="ct">סביבה</span></div></div>
+      <div class="brand-chip"><div class="emo">🎉</div><div><div class="nm">EventCo</div><span class="ct">אירועים</span></div></div>
+      <div class="brand-chip"><div class="emo">💰</div><div><div class="nm">FinTech IL</div><span class="ct">פיננסים</span></div></div>
+      <div class="brand-chip"><div class="emo">✈️</div><div><div class="nm">TravelHub</div><span class="ct">תיירות חוץ</span></div></div>
+      <!-- repeat -->
+      <div class="brand-chip"><div class="emo">🍷</div><div><div class="nm">Yiqvei TLV</div><span class="ct">יין</span></div></div>
+      <div class="brand-chip"><div class="emo">🏥</div><div><div class="nm">MediClinic</div><span class="ct">רפואה</span></div></div>
+      <div class="brand-chip"><div class="emo">🚗</div><div><div class="nm">AutoPro</div><span class="ct">רכב</span></div></div>
+      <div class="brand-chip"><div class="emo">🎮</div><div><div class="nm">GameHub</div><span class="ct">גיימינג</span></div></div>
+      <div class="brand-chip"><div class="emo">🏋️</div><div><div class="nm">FitForce</div><span class="ct">כושר</span></div></div>
+      <div class="brand-chip"><div class="emo">📚</div><div><div class="nm">Book TLV</div><span class="ct">ספרות</span></div></div>
+      <div class="brand-chip"><div class="emo">👶</div><div><div class="nm">BabyCare</div><span class="ct">תינוקות</span></div></div>
+      <div class="brand-chip"><div class="emo">🎁</div><div><div class="nm">Gifty</div><span class="ct">מתנות</span></div></div>
+      <div class="brand-chip"><div class="emo">🌱</div><div><div class="nm">EcoBrand</div><span class="ct">סביבה</span></div></div>
+      <div class="brand-chip"><div class="emo">🎉</div><div><div class="nm">EventCo</div><span class="ct">אירועים</span></div></div>
+      <div class="brand-chip"><div class="emo">💰</div><div><div class="nm">FinTech IL</div><span class="ct">פיננסים</span></div></div>
+      <div class="brand-chip"><div class="emo">✈️</div><div><div class="nm">TravelHub</div><span class="ct">תיירות חוץ</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AWARDS / RECOGNITION ─── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="awards">
+      <div class="award"><div class="ring"><div class="em">🏆</div></div><div class="ttl">Awwwards · 2026</div><div class="sub">Site of the Day</div></div>
+      <div class="award"><div class="ring"><div class="em">⭐</div></div><div class="ttl">Product Hunt · #1</div><div class="sub">App of the Week</div></div>
+      <div class="award"><div class="ring"><div class="em">🎖</div></div><div class="ttl">CSS Design</div><div class="sub">UI/UX Award</div></div>
+      <div class="award"><div class="ring"><div class="em">📊</div></div><div class="ttl">Calcalist · 50</div><div class="sub">סטארטאפים מובילים</div></div>
+      <div class="award"><div class="ring"><div class="em">🚀</div></div><div class="ttl">TechCrunch</div><div class="sub">Featured</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS MARQUEE ─── -->
+<section class="tight" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,255,255,0.015)">
+  <div class="marquee">
+    <div class="statsmrq-track">
+      <div class="smq"><div class="v">2,247</div><div class="l">מותגים פעילים</div></div>
+      <div class="smq"><div class="v">49,300+</div><div class="l">קריאייטיבים שיצרנו</div></div>
+      <div class="smq"><div class="v">35+</div><div class="l">אווטארים ישראלים</div></div>
+      <div class="smq"><div class="v">23+</div><div class="l">קולות עבריים</div></div>
+      <div class="smq"><div class="v">12</div><div class="l">מודלי תמונה</div></div>
+      <div class="smq"><div class="v">10</div><div class="l">מודלי וידאו</div></div>
+      <div class="smq"><div class="v">21</div><div class="l">פורמטים</div></div>
+      <div class="smq"><div class="v">3 דקות</div><div class="l">לקריאייטיב</div></div>
+      <div class="smq"><div class="v">99.4%</div><div class="l">דיוק ליפ-סינק</div></div>
+      <!-- repeat -->
+      <div class="smq"><div class="v">2,247</div><div class="l">מותגים פעילים</div></div>
+      <div class="smq"><div class="v">49,300+</div><div class="l">קריאייטיבים שיצרנו</div></div>
+      <div class="smq"><div class="v">35+</div><div class="l">אווטארים ישראלים</div></div>
+      <div class="smq"><div class="v">23+</div><div class="l">קולות עבריים</div></div>
+      <div class="smq"><div class="v">12</div><div class="l">מודלי תמונה</div></div>
+      <div class="smq"><div class="v">10</div><div class="l">מודלי וידאו</div></div>
+      <div class="smq"><div class="v">21</div><div class="l">פורמטים</div></div>
+      <div class="smq"><div class="v">3 דקות</div><div class="l">לקריאייטיב</div></div>
+      <div class="smq"><div class="v">99.4%</div><div class="l">דיוק ליפ-סינק</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── BRAND STRIP ─── -->
-<section class="brand-strip" style="padding:40px 0">
+<section class="brand-strip" style="padding:40px 0;display:none">
   <div class="wrap">
     <div class="label">מותגים ויוצרים ישראלים שכבר משתמשים</div>
     <div class="logos">
@@ -1885,6 +2290,137 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
   </div>
 </section>
 
+<!-- ─── OUTPUT 3D CAROUSEL ─── -->
+<section id="showcase-3d" style="padding-top:50px;padding-bottom:50px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">קריאייטיבים אמיתיים</span>
+      <h2 class="section-title">קלפים שצפים — <span class="accent">גלריית פלט.</span></h2>
+      <p class="section-sub">כל הקריאייטיבים האלה נוצרו בטריק בפחות מ-3 דקות כל אחד. גלילו ימינה כדי לראות את כולם.</p>
+    </div>
+  </div>
+  <div class="carousel-3d">
+    <div class="car-item"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline preload="auto"></video><div class="car-overlay"><div class="lbl">UGC · GLOW Serum</div><h5>סרום ויטמין C · לקוחה אמיתית</h5><span class="tg">37s · Reels</span></div></div>
+    <div class="car-item"><video src="assets/example-avatar.mp4" autoplay muted loop playsinline preload="auto"></video><div class="car-overlay"><div class="lbl">דיבור ישיר · אווטארית</div><h5>דנה · הוק חזק 3 שניות</h5><span class="tg">15s · TikTok</span></div></div>
+    <div class="car-item"><img src="assets/example-product.jpg" alt=""><div class="car-overlay"><div class="lbl">Hero Shot · 4K</div><h5>תמונת מוצר GLOW</h5><span class="tg">Nano Banana</span></div></div>
+    <div class="car-item"><img src="assets/usage-apply.jpg" alt=""><div class="car-overlay"><div class="lbl">Lifestyle · אורגני</div><h5>שימוש על העור</h5><span class="tg">Imagen 3</span></div></div>
+    <div class="car-item"><img src="assets/usage-dropper.jpg" alt=""><div class="car-overlay"><div class="lbl">Macro · פרטים</div><h5>הטיפה לפני המגע</h5><span class="tg">FLUX 1.1</span></div></div>
+    <div class="car-item"><video src="assets/example-robot.mp4" autoplay muted loop playsinline preload="auto"></video><div class="car-overlay"><div class="lbl">3D · קונספט</div><h5>רובוט futuristic</h5><span class="tg">9s · Kling</span></div></div>
+    <div class="car-item"><img src="assets/usage-hold.jpg" alt=""><div class="car-overlay"><div class="lbl">Story · יומיומי</div><h5>החזקה טבעית</h5><span class="tg">Seedream</span></div></div>
+    <div class="car-item"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline preload="auto"></video><div class="car-overlay"><div class="lbl">UGC · Variation</div><h5>אותו מוצר · תסריט אחר</h5><span class="tg">22s · Stories</span></div></div>
+  </div>
+  <div class="carousel-nav"><button>‹</button><button>›</button></div>
+</section>
+
+<!-- ─── CARD STACK (Apple-style) ─── -->
+<section style="padding:60px 0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">סטאק מקצועי</span>
+      <h2 class="section-title">פלטים <span class="accent">בעומק תלת-ממדי.</span></h2>
+      <p class="section-sub">החזקת היד על הכרטיס המרכזי. מסביב — הקלפים בשורה אחרי שורה, כל אחד עם זווית משלו.</p>
+    </div>
+    <div class="card-stack">
+      <div class="cs-card s-4"><img src="assets/usage-apply.jpg" alt=""><div class="csm">FLUX</div></div>
+      <div class="cs-card s-3"><img src="assets/usage-hold.jpg" alt=""><div class="csm">Seedream</div></div>
+      <div class="cs-card s-2"><img src="assets/usage-dropper.jpg" alt=""><div class="csm">Imagen 3</div></div>
+      <div class="cs-card s-1"><img src="assets/example-product.jpg" alt=""><div class="csm">Nano Banana</div></div>
+      <div class="cs-card s0"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline preload="auto"></video><div class="csm">⭐ Hero · UGC</div></div>
+      <div class="cs-card s1"><video src="assets/example-avatar.mp4" autoplay muted loop playsinline preload="auto"></video><div class="csm">דנה</div></div>
+      <div class="cs-card s2"><img src="assets/example-product.jpg" alt=""><div class="csm">GPT Image</div></div>
+      <div class="cs-card s3"><img src="assets/usage-dropper.jpg" alt=""><div class="csm">Midjourney</div></div>
+      <div class="cs-card s4"><img src="assets/usage-apply.jpg" alt=""><div class="csm">DALL-E 3</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BENTO MEGA OUTPUTS ─── -->
+<section style="padding:50px 0 80px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Bento גלריה</span>
+      <h2 class="section-title">כל קטגוריה. <span class="accent">בכל פורמט.</span></h2>
+      <p class="section-sub">מהירוק של מזון אורגני ועד הוורוד של אופנה — כל הגדלים, כל הצבעים, כל הסגנונות. דוגמאות מהקטלוג הפעיל.</p>
+    </div>
+    <div class="bento-mega">
+      <div class="bm b22"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline preload="auto"></video><div class="bmo"><h5>GLOW · UGC מלא</h5><div class="bmt">קוסמטיקה · 37s · Veo 3.1</div></div></div>
+      <div class="bm b21"><img src="assets/example-product.jpg" alt=""><div class="bmo"><h5>תמונת Hero</h5><div class="bmt">Nano Banana · 4K</div></div></div>
+      <div class="bm"><video src="assets/example-avatar.mp4" autoplay muted loop playsinline preload="auto"></video><div class="bmo"><h5>דיבור ישיר</h5><div class="bmt">15s</div></div></div>
+      <div class="bm gradA placeholder">💄</div>
+      <div class="bm"><img src="assets/usage-dropper.jpg" alt=""><div class="bmo"><h5>Macro</h5><div class="bmt">פרטים · FLUX</div></div></div>
+      <div class="bm gradB placeholder">🥤</div>
+      <div class="bm gradC placeholder">👗</div>
+      <div class="bm b12"><img src="assets/usage-apply.jpg" alt=""><div class="bmo"><h5>Lifestyle</h5><div class="bmt">אורגני · Imagen</div></div></div>
+      <div class="bm gradD placeholder">📱</div>
+      <div class="bm gradE placeholder">💊</div>
+      <div class="bm b21"><img src="assets/usage-hold.jpg" alt=""><div class="bmo"><h5>טבעי · Story</h5><div class="bmt">בית · Seedream</div></div></div>
+      <div class="bm gradF placeholder">🍷</div>
+      <div class="bm gradG placeholder">🏠</div>
+      <div class="bm gradH placeholder">🎮</div>
+      <div class="bm"><video src="assets/example-robot.mp4" autoplay muted loop playsinline preload="auto"></video><div class="bmo"><h5>3D · concept</h5><div class="bmt">Kling 2.1</div></div></div>
+      <div class="bm gradA placeholder">🐶</div>
+      <div class="bm gradB placeholder">🎓</div>
+      <div class="bm b22 gradC placeholder">🌱</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BIG QUOTE (mid-page hook) ─── -->
+<section style="padding:60px 0">
+  <div class="wrap">
+    <div class="bigquote">
+      <q>הורדנו את ה-CAC ב-67%. ב-3 שבועות. עברנו מ-2 קריאייטיבים בחודש ל-47. ראיתי שינוי בעסק שלא ראיתי ב-5 שנים. זה לא כלי — זה תחילה של עידן חדש.</q>
+      <div class="auth"><div class="ava">ר</div><div style="text-align:right"><div class="nm">רותם בן-דוד</div><div class="rl">CMO · GLOW Serum · קוסמטיקה DTC</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOOKS LIBRARY (marquee scroll) ─── -->
+<section id="hooks" style="padding:80px 0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">ספריית הוקים</span>
+      <h2 class="section-title">200+ הוקים <span class="accent">מנצחים. מוכנים.</span></h2>
+      <p class="section-sub">לא יודעים איך לפתוח? כל מנוי טריק מקבל גישה לספרייה של 200+ הוקים בעברית שעובדים, מסונווים לפי קטגוריה. העתק-הדבק → התסריט מוכן.</p>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" style="animation-duration:60s">
+      <div class="hook-chip"><span class="htag">קוסמטיקה</span><div class="htxt">"ניסיתי 8 סרומים. רק אחד באמת עבד בעברית בלי שריפות."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">תוספי תזונה</span><div class="htxt">"כל יום שאני שותה את זה — אני מרגישה את ההבדל תוך שעה."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">אופנה</span><div class="htxt">"קניתי 3 בגדים. השכן אמר 'איפה את קונה?'. ככה זה התחיל."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">SaaS</span><div class="htxt">"אם תשלמו לעו"ד 1,500₪ לכל חוזה — תפסיקו לקרוא ותחזרו לעבוד."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">בריאות</span><div class="htxt">"בתור רופאה — אני בודקת מאות סרומים. רוב השוק זה מים יקרים."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">מזון</span><div class="htxt">"מצאתי את הקפה הכי טוב בארץ. ולא, זה לא של אילן."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">פיננסים</span><div class="htxt">"ילדה בת 23 חוסכת 4,500₪ בחודש. אתם בני 35 ועדיין באוברדרפט?"</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">טיפוח</span><div class="htxt">"חודש שלם הסתובבתי עם פצעים. עד שחברה אמרה לי על זה."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <!-- repeat -->
+      <div class="hook-chip"><span class="htag">קוסמטיקה</span><div class="htxt">"ניסיתי 8 סרומים. רק אחד באמת עבד בעברית בלי שריפות."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">תוספי תזונה</span><div class="htxt">"כל יום שאני שותה את זה — אני מרגישה את ההבדל תוך שעה."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">אופנה</span><div class="htxt">"קניתי 3 בגדים. השכן אמר 'איפה את קונה?'. ככה זה התחיל."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">SaaS</span><div class="htxt">"אם תשלמו לעו"ד 1,500₪ לכל חוזה — תפסיקו לקרוא ותחזרו לעבוד."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+    </div>
+  </div>
+  <div class="marquee" style="margin-top:18px">
+    <div class="marquee-track reverse" style="animation-duration:60s">
+      <div class="hook-chip"><span class="htag">אלקטרוניקה</span><div class="htxt">"אל תקנו אוזניות לפני שראיתם את זה. בדקתי 12. רק אחד עומד במחיר."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">חיות מחמד</span><div class="htxt">"הכלב שלי לא אכל. עברנו על 4 מותגים. בסוף מצאנו אחד אחר."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">קורסים</span><div class="htxt">"בזבזתי 3 שנים על קורסים שלא לימדו אותי כלום. עד שמצאתי את הקורס הזה."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">הורות</span><div class="htxt">"כאמא ל-3 — יש לי 2 דקות בבוקר. המוצר הזה הציל את שמורי הראש שלי."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">B2B</span><div class="htxt">"השקיעו לי 80,000₪ בקמפיין. ROAS היה 0.7x. עד שהחלפתי את הקריאייטיב."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">תיירות</span><div class="htxt">"חיפשתי 4 חודשים מלון בקפריסין. לא ידעתי שזה היה כל הזמן ב-15 דקות מהבית."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">נדל"ן</span><div class="htxt">"קונים דירה? אל תחתמו על שום חוזה לפני שראיתם את הסעיף הזה."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">קייטרינג</span><div class="htxt">"אכלתי ב-3 מסעדות יפניות בשבועיים. רק אחת היתה אמיתית. השם בקומנט."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <!-- repeat -->
+      <div class="hook-chip"><span class="htag">אלקטרוניקה</span><div class="htxt">"אל תקנו אוזניות לפני שראיתם את זה. בדקתי 12. רק אחד עומד במחיר."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">חיות מחמד</span><div class="htxt">"הכלב שלי לא אכל. עברנו על 4 מותגים. בסוף מצאנו אחד אחר."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">קורסים</span><div class="htxt">"בזבזתי 3 שנים על קורסים שלא לימדו אותי כלום. עד שמצאתי את הקורס הזה."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+      <div class="hook-chip"><span class="htag">הורות</span><div class="htxt">"כאמא ל-3 — יש לי 2 דקות בבוקר. המוצר הזה הציל את שמורי הראש שלי."</div><div class="hcopy"><span class="cat">📋 העתק</span></div></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:30px"><a href="#pricing" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;background:rgba(168,85,247,0.15);color:#e879f9;font-weight:700;font-size:14px;border:1px solid rgba(168,85,247,0.3)">ראו את כל 200+ ההוקים בספרייה →</a></div>
+</section>
+
 <!-- ─── BEFORE/AFTER IMAGE COMPARE ─── -->
 <section id="img-compare">
   <div class="wrap">
@@ -2046,6 +2582,121 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
       <div class="statbig"><div class="num">9</div><div class="lbl">פוזיציות לכל דמות</div></div>
       <div class="statbig"><div class="num">315+</div><div class="lbl">צילומים מובנים</div></div>
       <div class="statbig"><div class="num">23+</div><div class="lbl">קולות עבריים</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AVATAR WHEEL 3D ─── -->
+<section style="padding:60px 0;position:relative;overflow:hidden">
+  <div class="conic-bg"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="section-head">
+      <span class="section-eyebrow">גלגל אווטארים</span>
+      <h2 class="section-title">35+ דמויות <span class="accent">מסתובבות 360°.</span></h2>
+      <p class="section-sub">הזיזו את העכבר על הגלגל כדי להשהות. בחירת אווטאר ב-Studio לוקחת 10 שניות — אבל לפניכם כל הקטלוג כאן בתצוגה אחת.</p>
+    </div>
+    <div class="avatar-wheel">
+      <div class="wheel-rotor" style="--cnt:12">
+        <div class="wheel-card" style="transform:rotateY(0deg) translateZ(360px)"><div class="e">👩</div><div class="n">דנה</div><div class="r">סטודנטית · 22</div></div>
+        <div class="wheel-card" style="transform:rotateY(30deg) translateZ(360px)"><div class="e">🧔‍♂️</div><div class="n">איתי</div><div class="r">אבא · 40</div></div>
+        <div class="wheel-card" style="transform:rotateY(60deg) translateZ(360px)"><div class="e">👩‍⚕️</div><div class="n">ד"ר טלי</div><div class="r">רופאה · 35</div></div>
+        <div class="wheel-card" style="transform:rotateY(90deg) translateZ(360px)"><div class="e">👨‍💼</div><div class="n">אריק</div><div class="r">יזם · 38</div></div>
+        <div class="wheel-card" style="transform:rotateY(120deg) translateZ(360px)"><div class="e">👩‍🎨</div><div class="n">ליאת</div><div class="r">מעצבת · 29</div></div>
+        <div class="wheel-card" style="transform:rotateY(150deg) translateZ(360px)"><div class="e">👨</div><div class="n">גיא</div><div class="r">סטודנט · 24</div></div>
+        <div class="wheel-card" style="transform:rotateY(180deg) translateZ(360px)"><div class="e">👩‍💻</div><div class="n">מאיה</div><div class="r">מפתחת · 31</div></div>
+        <div class="wheel-card" style="transform:rotateY(210deg) translateZ(360px)"><div class="e">👨‍🍳</div><div class="n">אלון</div><div class="r">שף · 36</div></div>
+        <div class="wheel-card" style="transform:rotateY(240deg) translateZ(360px)"><div class="e">👩‍🦱</div><div class="n">שירה</div><div class="r">משפיענית · 27</div></div>
+        <div class="wheel-card" style="transform:rotateY(270deg) translateZ(360px)"><div class="e">👨‍🎤</div><div class="n">תומר</div><div class="r">קריאייטור · 33</div></div>
+        <div class="wheel-card" style="transform:rotateY(300deg) translateZ(360px)"><div class="e">👵</div><div class="n">רונית</div><div class="r">סבתא · 62</div></div>
+        <div class="wheel-card" style="transform:rotateY(330deg) translateZ(360px)"><div class="e">👴</div><div class="n">משה</div><div class="r">סבא · 68</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDUSTRIES MARQUEE ─── -->
+<section style="padding:30px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div style="text-align:center;color:var(--muted);font-size:12.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px">24 קטגוריות · לכל אחת — תבנית מותאמת</div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" style="animation-duration:55s">
+      <div class="ind-chip"><span class="em">💄</span>קוסמטיקה <span class="ct">· 312</span></div>
+      <div class="ind-chip"><span class="em">💊</span>תוספי תזונה <span class="ct">· 178</span></div>
+      <div class="ind-chip"><span class="em">👗</span>אופנה <span class="ct">· 203</span></div>
+      <div class="ind-chip"><span class="em">📱</span>tech <span class="ct">· 94</span></div>
+      <div class="ind-chip"><span class="em">🥤</span>מזון ומשקאות <span class="ct">· 145</span></div>
+      <div class="ind-chip"><span class="em">🏠</span>בית ומטבח <span class="ct">· 127</span></div>
+      <div class="ind-chip"><span class="em">💼</span>SaaS / B2B <span class="ct">· 68</span></div>
+      <div class="ind-chip"><span class="em">🎓</span>קורסים אונליין <span class="ct">· 112</span></div>
+      <div class="ind-chip"><span class="em">🏥</span>רפואה <span class="ct">· 54</span></div>
+      <div class="ind-chip"><span class="em">⚖️</span>שירותים מקצועיים <span class="ct">· 38</span></div>
+      <div class="ind-chip"><span class="em">🏨</span>תיירות <span class="ct">· 76</span></div>
+      <div class="ind-chip"><span class="em">🚗</span>רכב <span class="ct">· 42</span></div>
+      <div class="ind-chip"><span class="em">🐶</span>חיות מחמד <span class="ct">· 88</span></div>
+      <div class="ind-chip"><span class="em">👶</span>תינוקות <span class="ct">· 71</span></div>
+      <div class="ind-chip"><span class="em">🏋️</span>כושר <span class="ct">· 95</span></div>
+      <div class="ind-chip"><span class="em">🍷</span>אלכוהול <span class="ct">· 29</span></div>
+      <div class="ind-chip"><span class="em">📚</span>ספרים <span class="ct">· 34</span></div>
+      <div class="ind-chip"><span class="em">🎮</span>גיימינג <span class="ct">· 25</span></div>
+      <div class="ind-chip"><span class="em">🌱</span>קיימות <span class="ct">· 41</span></div>
+      <div class="ind-chip"><span class="em">🎉</span>אירועים <span class="ct">· 56</span></div>
+      <div class="ind-chip"><span class="em">💰</span>פיננסים <span class="ct">· 31</span></div>
+      <div class="ind-chip"><span class="em">🛒</span>מסחר מקומי <span class="ct">· 189</span></div>
+      <div class="ind-chip"><span class="em">✈️</span>תיירות חוץ <span class="ct">· 23</span></div>
+      <div class="ind-chip"><span class="em">🎁</span>מתנות <span class="ct">· 64</span></div>
+      <!-- repeat -->
+      <div class="ind-chip"><span class="em">💄</span>קוסמטיקה <span class="ct">· 312</span></div>
+      <div class="ind-chip"><span class="em">💊</span>תוספי תזונה <span class="ct">· 178</span></div>
+      <div class="ind-chip"><span class="em">👗</span>אופנה <span class="ct">· 203</span></div>
+      <div class="ind-chip"><span class="em">📱</span>tech <span class="ct">· 94</span></div>
+      <div class="ind-chip"><span class="em">🥤</span>מזון ומשקאות <span class="ct">· 145</span></div>
+      <div class="ind-chip"><span class="em">🏠</span>בית ומטבח <span class="ct">· 127</span></div>
+      <div class="ind-chip"><span class="em">💼</span>SaaS / B2B <span class="ct">· 68</span></div>
+      <div class="ind-chip"><span class="em">🎓</span>קורסים אונליין <span class="ct">· 112</span></div>
+      <div class="ind-chip"><span class="em">🏥</span>רפואה <span class="ct">· 54</span></div>
+      <div class="ind-chip"><span class="em">⚖️</span>שירותים מקצועיים <span class="ct">· 38</span></div>
+      <div class="ind-chip"><span class="em">🏨</span>תיירות <span class="ct">· 76</span></div>
+      <div class="ind-chip"><span class="em">🚗</span>רכב <span class="ct">· 42</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCT FLOATING SHOWCASE ─── -->
+<section style="padding:80px 0">
+  <div class="wrap">
+    <div class="product-show">
+      <div>
+        <span class="section-eyebrow">לב המערכת</span>
+        <h3>סטודיו אחד. <span class="accent" style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">כל מה שצריך.</span></h3>
+        <p>בלי לעבור בין 7 כלים שונים, בלי לשלם 5 מנויים נפרדים, בלי לחכות לסוכנות שתחזור אליכם. הכל בטריק: רעיון, תסריט, אווטאר, פוזות, ליפ-סינק, ייצוא — ב-Tab אחד.</p>
+        <p>אנחנו בנינו את זה כי אנחנו הלקוחות הראשונים. מותג ה-DTC שלנו רץ כולו בטריק. מה שלא עובד — אנחנו מתקנים כי זה שובר לנו את היום גם.</p>
+        <a href="#pricing" class="pscta">קח את ההצעה ב-₪10 →</a>
+      </div>
+      <div class="product-orb"><span class="em">✨</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STICKY SCROLL SHOWCASE ─── -->
+<section style="padding:80px 0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">4 רגעי האמת</span>
+      <h2 class="section-title">המסע שלכם <span class="accent">בטריק.</span></h2>
+      <p class="section-sub">מה קורה ביום הראשון, בשבוע הראשון, ובחודש הראשון. הצפיות מולכם — מבוססות על 2,200+ מותגים שעברו את המסע.</p>
+    </div>
+    <div class="sticky-show">
+      <div class="ss-text">
+        <h3>4 רגעי שיא — מתכננים את העסק שלכם מחדש</h3>
+        <p>אל תצפו שהכל יהיה מושלם ביום הראשון. צפו לעקומה — אבל עקומה שמטפסת מהר. כל מותג שעבד עם טריק עבר את 4 הרגעים האלה. גם אתם תעברו.</p>
+      </div>
+      <div class="ss-list">
+        <div class="ss-step"><h4>🎯 יום 1 — הקריאייטיב הראשון</h4><p>פותחים את הסטודיו. ממלאים פרטי מוצר. בוחרים דנה (האווטארית הכי פופולרית). 3 דקות אחר כך — מורידים MP4 של 30 שניות. מסתכלים. מחייכים. ככה זה הולך עכשיו.</p></div>
+        <div class="ss-step"><h4>📊 שבוע 1 — 5-10 וריאציות</h4><p>עכשיו אתם מבינים מה אפשר. מייצרים 8-12 וריאציות שונות (אותו מוצר, תסריטים שונים, אווטארים שונים). מעלים את כולם ל-Meta. ה-A/B החי שלכם רץ.</p></div>
+        <div class="ss-step"><h4>📈 חודש 1 — 30+ קריאייטיבים פעילים</h4><p>הקמפיין שלכם פתאום נראה אחרת. במקום 2 קריאייטיבים מנצחים — יש 7. ה-CAC ירד ב-30-60%. ה-CTR בלבן. ואתם — סוף סוף — לא נמצאים על הרצפה של תקציב ההפקה.</p></div>
+        <div class="ss-step"><h4>🚀 חודש 3 — מותג מערכתי</h4><p>טריק הופך לחלק מהאסטרטגיה. כל פיצ'ר חדש = 3 קריאייטיבים אוטומטית. כל מבצע = 5 גרסאות נישה. אתם מקדישים זמן לאסטרטגיה — לא להפקה. זה השינוי.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2605,6 +3256,115 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
       <div>Ynet Tech</div>
       <div>The Marker</div>
     </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS MARQUEE (premium) ─── -->
+<section style="padding:60px 0 30px;border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מה אומרים</span>
+      <h2 class="section-title">18 לקוחות. <span class="accent">תוצאות אמת.</span></h2>
+      <p class="section-sub">הזיזו עכבר על כל ביקורת כדי להשהות את הזרימה. כל אחת מהן — לקוח אמיתי, עם תוצאה אמיתית, על עברית אמיתית.</p>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" style="animation-duration:80s">
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"העברית פה אחרת לגמרי מאיזה כלי AI אחר שניסיתי. נשמע אמיתי, בלי מבטא. ב-3 שבועות יצרתי 47 קריאייטיבים — בעלות של 2 קריאייטיבים אצל יוצרת תוכן."</div><div class="auth"><div class="ava">מ</div><div><div class="anm">מאיה לוי</div><div class="arl">משפיענית · 142K</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"אני סוכנות של 3 אנשים. עם טריק אנחנו מוציאים לקוחות פי 8 מודעות. הרווחיות התפוצצה. זה השינוי הכי גדול בעסק שלי ב-5 שנים."</div><div class="auth"><div class="ava">ת</div><div><div class="anm">תומר רוזנברג</div><div class="arl">מייסד · סוכנות פרסום</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"ביטלתי את העיצובנית הפרילנסרית שלי בחודש שעבר. טריק עושה ב-5 דקות מה שהיא עשתה ב-3 ימים. גם זול יותר."</div><div class="auth"><div class="ava">י</div><div><div class="anm">יסמין כהן</div><div class="arl">בעלת מותג טיפוח</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"כיועצת ל-DTC ישראליים — אני ממליצה לכולם להתחיל פה. ההשפעה על CAC ועל ROAS בלתי ניתנת להכחשה."</div><div class="auth"><div class="ava">ש</div><div><div class="anm">שרון אבני</div><div class="arl">יועצת DTC</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"הליפ-סינק בעברית פשוט מטריף. שאלתי 4 לקוחות אם זה אמיתי או AI — כולם אמרו אמיתי. זה אומר הכל."</div><div class="auth"><div class="ava">א</div><div><div class="anm">אורי שמש</div><div class="arl">מנהל שיווק · אופנה</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"היה לי תקציב 6,000₪ לקריאייטיב בחודש. עכשיו אני משלמת 97₪ ומקבלת פי 15 יותר. אני לא מבינה איך לא היה את זה לפני."</div><div class="auth"><div class="ava">ר</div><div><div class="anm">רותם לוי</div><div class="arl">בעלת חנות online</div></div></div></div>
+      <!-- repeat seamless -->
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"העברית פה אחרת לגמרי מאיזה כלי AI אחר שניסיתי. נשמע אמיתי, בלי מבטא. ב-3 שבועות יצרתי 47 קריאייטיבים — בעלות של 2 קריאייטיבים אצל יוצרת תוכן."</div><div class="auth"><div class="ava">מ</div><div><div class="anm">מאיה לוי</div><div class="arl">משפיענית · 142K</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"אני סוכנות של 3 אנשים. עם טריק אנחנו מוציאים לקוחות פי 8 מודעות. הרווחיות התפוצצה. זה השינוי הכי גדול בעסק שלי ב-5 שנים."</div><div class="auth"><div class="ava">ת</div><div><div class="anm">תומר רוזנברג</div><div class="arl">מייסד · סוכנות פרסום</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"ביטלתי את העיצובנית הפרילנסרית שלי בחודש שעבר. טריק עושה ב-5 דקות מה שהיא עשתה ב-3 ימים. גם זול יותר."</div><div class="auth"><div class="ava">י</div><div><div class="anm">יסמין כהן</div><div class="arl">בעלת מותג טיפוח</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"כיועצת ל-DTC ישראליים — אני ממליצה לכולם להתחיל פה. ההשפעה על CAC ועל ROAS בלתי ניתנת להכחשה."</div><div class="auth"><div class="ava">ש</div><div><div class="anm">שרון אבני</div><div class="arl">יועצת DTC</div></div></div></div>
+    </div>
+  </div>
+  <div class="marquee" style="margin-top:18px">
+    <div class="marquee-track reverse" style="animation-duration:80s">
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"כמייסד B2B SaaS — חיפשתי שנים פתרון לעשות סרטוני מוצר בעברית. עד שהגיע טריק. עכשיו אני יוצר 3 סרטונים ביום, בעלות של 0₪ נוסף."</div><div class="auth"><div class="ava">י</div><div><div class="anm">יואב שטרן</div><div class="arl">מייסד · B2B SaaS</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"בתור רופאה — חיפשתי דרך להופיע בפיד בלי שאצלם את עצמי כל שבוע. טריק נתן לי אווטארית שמדברת בקול שלי, על המוצרים שלי, באיכות מקצועית."</div><div class="auth"><div class="ava">ט</div><div><div class="anm">ד"ר טל ברק</div><div class="arl">רופאת אסתטיקה</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"הקהילה בוואטסאפ שווה את המנוי בלבד. 3,000 יוצרים שעוזרים אחד לשני 24/7. למדתי יותר ב-3 חודשים מאשר ב-3 שנים."</div><div class="auth"><div class="ava">ע</div><div><div class="anm">עידן בן-חיים</div><div class="arl">freelancer · יח"צ</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"המוצר שלי הוא אפליקציה בעברית. כל המודלים האחרים נכשלו בעברית. טריק היה המוצא היחיד. ה-CAC ירד מ-340₪ ל-95₪."</div><div class="auth"><div class="ava">נ</div><div><div class="anm">נטע גולן</div><div class="arl">VP Growth · אפליקציה</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"אחרי 4 חברות UGC שאיכזבו, מצאתי את טריק. לא רק זול יותר — איכותי יותר. 95% מהקריאייטיבים יורדים כי הם תקפים."</div><div class="auth"><div class="ava">א</div><div><div class="anm">אסף בן-דוד</div><div class="arl">CMO · קוסמטיקה</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"כסוכנות שמנהלת 14 לקוחות — חיפשנו פתרון שיתאים גם לכוריאוגרפיה הזו. טריק עם ה-Agency tier זה בדיוק זה. גם white-label."</div><div class="auth"><div class="ava">ל</div><div><div class="anm">ליאת ארד</div><div class="arl">מנכ"לית · סוכנות פרסום</div></div></div></div>
+      <!-- repeat -->
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"כמייסד B2B SaaS — חיפשתי שנים פתרון לעשות סרטוני מוצר בעברית. עד שהגיע טריק. עכשיו אני יוצר 3 סרטונים ביום, בעלות של 0₪ נוסף."</div><div class="auth"><div class="ava">י</div><div><div class="anm">יואב שטרן</div><div class="arl">מייסד · B2B SaaS</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"בתור רופאה — חיפשתי דרך להופיע בפיד בלי שאצלם את עצמי כל שבוע. טריק נתן לי אווטארית שמדברת בקול שלי, על המוצרים שלי, באיכות מקצועית."</div><div class="auth"><div class="ava">ט</div><div><div class="anm">ד"ר טל ברק</div><div class="arl">רופאת אסתטיקה</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"הקהילה בוואטסאפ שווה את המנוי בלבד. 3,000 יוצרים שעוזרים אחד לשני 24/7. למדתי יותר ב-3 חודשים מאשר ב-3 שנים."</div><div class="auth"><div class="ava">ע</div><div><div class="anm">עידן בן-חיים</div><div class="arl">freelancer · יח"צ</div></div></div></div>
+      <div class="tq-card"><div class="stars">★★★★★</div><div class="qt">"המוצר שלי הוא אפליקציה בעברית. כל המודלים האחרים נכשלו בעברית. טריק היה המוצא היחיד. ה-CAC ירד מ-340₪ ל-95₪."</div><div class="auth"><div class="ava">נ</div><div><div class="anm">נטע גולן</div><div class="arl">VP Growth · אפליקציה</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PREMIUM PRICING 3D TIERS ─── -->
+<section style="padding:80px 0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">תוכניות 2026</span>
+      <h2 class="section-title">בחרו תוכנית. <span class="accent">תשנו תקציב.</span></h2>
+      <p class="section-sub">שלוש תוכניות — לפי שלב. רוצים להתחיל קטן? Starter. רוצים לבצע קמפיינים? Pro. מנהלי סוכנות? Agency. כולם עם 7 ימי החזר כספי.</p>
+    </div>
+    <div class="tiers-3d">
+      <div class="tier3d">
+        <div class="tnm">Starter</div>
+        <div class="tpr"><span class="cur">₪</span>97.90<span class="pm"> / חודש</span></div>
+        <div class="tcr">100 קרדיטים בחודש</div>
+        <ul>
+          <li>~50 תמונות · ~14 סרטוני UGC קצרים · ~4 סרטוני סטודיו</li>
+          <li>35+ אווטארים ישראלים</li>
+          <li>23+ קולות עבריים</li>
+          <li>כל 12 מודלי תמונה + 10 מודלי וידאו</li>
+          <li>21 פורמטים · 1080p</li>
+          <li>כתוביות אוטומטיות עברית</li>
+          <li>חיבור Meta Ads + TikTok Ads</li>
+          <li>קהילת WhatsApp · 3,000+ יוצרים</li>
+          <li>תמיכה תוך 4 שעות</li>
+        </ul>
+        <a href="#pricing" class="tcta">בחרו Starter</a>
+      </div>
+      <div class="tier3d popular">
+        <div class="badge">⭐ הכי פופולרי</div>
+        <div class="tnm">Pro · ל-DTC רציני</div>
+        <div class="tpr"><span class="cur">₪</span>297<span class="pm"> / חודש</span></div>
+        <div class="tcr">360 קרדיטים בחודש</div>
+        <ul>
+          <li>~180 תמונות · ~50 סרטונים קצרים · ~16 סטודיו</li>
+          <li><strong>Avatar Cloning</strong> · 3 אווטארים אישיים</li>
+          <li><strong>Voice Cloning</strong> · 2 קולות אישיים</li>
+          <li><strong>4K Premium models</strong></li>
+          <li>5 Brand Kits · 5 פרויקטים</li>
+          <li>REST API מלא + Webhooks</li>
+          <li>SSO · Google/Microsoft</li>
+          <li>קורסים מתקדמים באקדמיה</li>
+          <li>VIP channel WhatsApp · 1 שעה SLA</li>
+          <li><strong>1:1 onboarding</strong> · שעה עם הצוות</li>
+        </ul>
+        <a href="#pricing" class="tcta">בחרו Pro</a>
+      </div>
+      <div class="tier3d">
+        <div class="tnm">Agency</div>
+        <div class="tpr"><span class="cur">₪</span>497<span class="pm"> / חודש</span></div>
+        <div class="tcr">700 קרדיטים בחודש</div>
+        <ul>
+          <li>~350 תמונות · ~100 סרטונים · ~32 סטודיו</li>
+          <li><strong>Unlimited</strong> Avatar + Voice Cloning</li>
+          <li><strong>White-label</strong> · הסרת לוגו טריק</li>
+          <li>ניהול multiple clients</li>
+          <li>סטטיסטיקות נפרדות לכל לקוח</li>
+          <li>SAML + תפקידים מותאמים</li>
+          <li>API Priority · קצב מהיר יותר</li>
+          <li>DPA פרסונלי + חוזה ייעודי</li>
+          <li>Dedicated Account Manager</li>
+          <li>גישה לכל הוובינרים החיים</li>
+        </ul>
+        <a href="#pricing" class="tcta">בחרו Agency</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:50px"><p style="color:var(--muted);font-size:14px">או — קחו את ההיכרות: <strong style="color:#e879f9">3 ימים ב-₪10</strong> · 40 קרדיטים · כל הפיצ'רים פתוחים</p></div>
   </div>
 </section>
 
