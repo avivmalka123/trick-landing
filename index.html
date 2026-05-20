@@ -843,6 +843,327 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
 /* ─── Section dividers ─── */
 .section-divider{display:flex;align-items:center;gap:18px;margin:30px auto 0;max-width:600px;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
 .section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── PAIN INTRO (top of page, pre-nav) ─── */
+.pain-intro{
+  position:relative;padding:80px 0 100px;
+  background:radial-gradient(ellipse at center, rgba(239,68,68,0.18) 0%, transparent 60%), #0a0a0d;
+  overflow:hidden;
+}
+.pain-intro::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(239,68,68,0.04) 80px,rgba(239,68,68,0.04) 81px);
+  pointer-events:none;
+}
+.pain-intro::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:140px;
+  background:linear-gradient(180deg,transparent,#0a0a0d);
+  pointer-events:none;
+}
+.pain-wrap{position:relative;z-index:1;text-align:center;max-width:980px;margin:0 auto;padding:0 28px}
+.pain-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 18px;border-radius:999px;
+  background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);
+  font-size:13px;font-weight:700;color:#fca5a5;letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:24px;
+}
+.pain-eyebrow .pin{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;box-shadow:0 0 14px #ef4444;animation:pulse-red 1.5s infinite}
+@keyframes pulse-red{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.2)}}
+.pain-headline{
+  font-size:clamp(40px,5.8vw,80px);font-weight:900;line-height:1.04;letter-spacing:-0.045em;
+}
+.pain-headline .strike{text-decoration:line-through;text-decoration-color:#ef4444;text-decoration-thickness:5px;color:#ef4444}
+.pain-headline .relief{
+  background:linear-gradient(135deg,#22c55e,#86efac);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.pain-headline .accent{
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.pain-sub{
+  font-size:clamp(18px,1.8vw,22px);color:var(--sub);margin-top:24px;
+  max-width:780px;margin-inline:auto;line-height:1.6;
+}
+.pain-sub strong{color:var(--fg)}
+.pain-stack3d{
+  margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  perspective:1400px;
+}
+.pain-card{
+  position:relative;padding:32px 28px;border-radius:24px;
+  background:linear-gradient(180deg,rgba(239,68,68,0.10),rgba(28,28,37,0.95));
+  border:1px solid rgba(239,68,68,0.25);
+  box-shadow:0 30px 80px -20px rgba(239,68,68,0.35);
+  transform:rotateY(8deg) rotateX(4deg);transition:transform 0.3s ease;
+  transform-style:preserve-3d;
+}
+.pain-card:nth-child(2){transform:rotateY(0) rotateX(0)}
+.pain-card:nth-child(3){transform:rotateY(-8deg) rotateX(4deg)}
+.pain-card:hover{transform:rotateY(0) rotateX(0) translateZ(20px)}
+.pain-card .ico{font-size:42px;margin-bottom:16px;filter:drop-shadow(0 6px 16px rgba(239,68,68,0.4))}
+.pain-card h3{font-size:22px;font-weight:900;letter-spacing:-0.025em;color:#fca5a5;margin-bottom:10px}
+.pain-card p{color:var(--sub);font-size:15px;line-height:1.6}
+.pain-card .num{font-size:54px;font-weight:900;background:linear-gradient(135deg,#ef4444,#fca5a5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.04em;line-height:1;margin-bottom:8px}
+.pain-card .sub{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.pain-arrow{
+  text-align:center;font-size:34px;color:#e879f9;margin-top:50px;
+  animation:bounce-down 1.6s infinite;
+}
+@keyframes bounce-down{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+@media (max-width:760px){.pain-stack3d{grid-template-columns:1fr}.pain-card{transform:none!important}}
+
+/* ─── Before/After Slider ─── */
+.beforeafter{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:50px}
+.ba-card{
+  border-radius:26px;overflow:hidden;border:1px solid var(--border);
+  background:rgba(255,255,255,0.03);
+  box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);
+}
+.ba-head{padding:20px 26px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.4)}
+.ba-head h4{font-size:18px;font-weight:900;letter-spacing:-0.02em}
+.ba-head .meta{color:var(--muted);font-size:13px;font-weight:600}
+.ba-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.ba-col{padding:30px 26px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.ba-col.before{background:rgba(239,68,68,0.06)}
+.ba-col.after{background:rgba(34,197,94,0.06)}
+.ba-col .lbl{padding:5px 14px;border-radius:999px;font-size:11.5px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase}
+.ba-col.before .lbl{background:rgba(239,68,68,0.18);color:#fca5a5}
+.ba-col.after .lbl{background:rgba(34,197,94,0.18);color:#86efac}
+.ba-col .big{font-size:46px;font-weight:900;letter-spacing:-0.04em;line-height:1}
+.ba-col.before .big{color:#fca5a5}
+.ba-col.after .big{background:linear-gradient(135deg,#22c55e,#86efac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ba-col .desc{color:var(--muted);font-size:13px;margin-top:4px;text-align:center}
+@media (max-width:760px){.beforeafter{grid-template-columns:1fr}}
+
+/* ─── Before/After Image Slider (with handle) ─── */
+.imgcompare{
+  position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;
+  border:1px solid var(--border);box-shadow:0 30px 80px -20px rgba(0,0,0,0.55);
+  cursor:ew-resize;background:#000;
+}
+.imgcompare .layer{position:absolute;inset:0}
+.imgcompare .layer.before{clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%)}
+.imgcompare .layer img{width:100%;height:100%;object-fit:cover}
+.imgcompare .tag-b,.imgcompare .tag-a{
+  position:absolute;top:18px;padding:6px 14px;border-radius:999px;
+  font-size:11.5px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;backdrop-filter:blur(10px);
+}
+.imgcompare .tag-b{right:18px;background:rgba(239,68,68,0.25);color:#fca5a5;border:1px solid rgba(239,68,68,0.4)}
+.imgcompare .tag-a{left:18px;background:rgba(34,197,94,0.25);color:#86efac;border:1px solid rgba(34,197,94,0.4)}
+.imgcompare .handle{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);
+  box-shadow:0 0 30px rgba(255,255,255,0.55);
+}
+.imgcompare .handle::before{
+  content:'⇆';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:48px;height:48px;border-radius:50%;background:#fff;
+  color:#0a0a0d;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+
+/* ─── 3D Pipeline (Idea → Result) ─── */
+.pipeline3d{
+  margin-top:50px;padding:50px 30px;
+  border-radius:32px;background:linear-gradient(180deg,rgba(168,85,247,0.06),rgba(28,28,37,0.95));
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.pipeline3d::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at top right, rgba(168,85,247,0.25), transparent 60%),
+             radial-gradient(ellipse at bottom left, rgba(217,70,239,0.20), transparent 60%);
+  pointer-events:none;
+}
+.pipe-rail{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:end}
+.pipe-node{
+  position:relative;text-align:center;perspective:1000px;
+  transform:translateY(calc(var(--i,0) * 8px));
+}
+.pipe-cube{
+  position:relative;width:88px;height:88px;margin:0 auto 16px;
+  transform-style:preserve-3d;
+  transform:rotateX(25deg) rotateY(-25deg);
+  animation:float-cube 4s ease-in-out infinite;
+  animation-delay:calc(var(--i,0) * 0.2s);
+}
+@keyframes float-cube{0%,100%{transform:rotateX(25deg) rotateY(-25deg) translateY(0)}50%{transform:rotateX(25deg) rotateY(-25deg) translateY(-14px)}}
+.pipe-cube .face{
+  position:absolute;width:88px;height:88px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;font-size:38px;
+  background:linear-gradient(135deg,#a855f7,#c026d3);
+  box-shadow:0 20px 50px -10px rgba(168,85,247,0.55),inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.pipe-cube .face.right{transform:rotateY(90deg) translateZ(44px);background:linear-gradient(135deg,#c026d3,#7c3aed);opacity:0.85}
+.pipe-cube .face.top{transform:rotateX(90deg) translateZ(44px);background:linear-gradient(135deg,#e879f9,#a855f7);opacity:0.92}
+.pipe-node h5{font-size:13px;font-weight:800;letter-spacing:-0.01em;margin-bottom:4px}
+.pipe-node p{color:var(--muted);font-size:11.5px;line-height:1.5;max-width:130px;margin-inline:auto}
+.pipe-step-num{
+  display:inline-block;padding:3px 10px;border-radius:999px;
+  background:rgba(168,85,247,0.18);color:#e879f9;font-size:11px;font-weight:900;letter-spacing:0.06em;
+  margin-bottom:8px;
+}
+.pipe-arrow{
+  position:absolute;top:34px;left:-12px;color:#e879f9;font-size:22px;font-weight:900;opacity:0.5;
+}
+.pipe-result-bar{
+  margin-top:50px;padding:32px 36px;border-radius:22px;
+  background:linear-gradient(90deg,rgba(34,197,94,0.10),rgba(34,197,94,0.04));
+  border:1px solid rgba(34,197,94,0.25);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+}
+.pipe-result-bar .label{font-size:14px;color:#86efac;font-weight:800;letter-spacing:0.04em;text-transform:uppercase}
+.pipe-result-bar .text{font-size:28px;font-weight:900;letter-spacing:-0.025em}
+.pipe-result-bar .text strong{background:linear-gradient(135deg,#22c55e,#86efac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media (max-width:880px){.pipe-rail{grid-template-columns:repeat(2,1fr);gap:24px}.pipe-arrow{display:none}.pipe-node{transform:none!important}}
+
+/* ─── Image Models Grid (Visual) ─── */
+.imgmodels{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px;
+}
+.imgm{
+  border-radius:22px;overflow:hidden;border:1px solid var(--border);
+  background:rgba(255,255,255,0.03);position:relative;
+  transition:transform 0.2s ease, border-color 0.2s ease;
+}
+.imgm:hover{transform:translateY(-4px);border-color:rgba(168,85,247,0.4)}
+.imgm .sample{
+  aspect-ratio:1/1;background:linear-gradient(135deg,#a855f7,#c026d3,#e879f9);
+  display:flex;align-items:center;justify-content:center;font-size:72px;
+  position:relative;overflow:hidden;
+}
+.imgm .sample.s2{background:linear-gradient(135deg,#06b6d4,#0ea5e9,#6366f1)}
+.imgm .sample.s3{background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899)}
+.imgm .sample.s4{background:linear-gradient(135deg,#10b981,#14b8a6,#0ea5e9)}
+.imgm .sample.s5{background:linear-gradient(135deg,#f43f5e,#ec4899,#a855f7)}
+.imgm .sample.s6{background:linear-gradient(135deg,#facc15,#f59e0b,#dc2626)}
+.imgm .sample.s7{background:linear-gradient(135deg,#84cc16,#22c55e,#10b981)}
+.imgm .sample.s8{background:linear-gradient(135deg,#3b82f6,#6366f1,#8b5cf6)}
+.imgm .sample.s9{background:linear-gradient(135deg,#1f2937,#374151,#6b7280)}
+.imgm .sample.s10{background:linear-gradient(135deg,#fb923c,#f97316,#ea580c)}
+.imgm .sample.s11{background:linear-gradient(135deg,#e0e7ff,#c7d2fe,#a5b4fc);color:#4338ca}
+.imgm .sample.s12{background:linear-gradient(135deg,#fef3c7,#fde047,#facc15);color:#854d0e}
+.imgm .sample::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent 50%);
+  pointer-events:none;
+}
+.imgm .info{padding:16px 18px}
+.imgm .name{font-size:16px;font-weight:900;letter-spacing:-0.02em}
+.imgm .tag{color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-top:3px}
+.imgm .pill{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:999px;background:rgba(168,85,247,0.12);color:#e879f9;font-size:11px;font-weight:700}
+@media (max-width:880px){.imgmodels{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Visual Examples Gallery ─── */
+.visgallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:36px;grid-auto-rows:160px}
+.vg{
+  border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;
+  position:relative;transition:transform 0.2s;
+}
+.vg:hover{transform:scale(1.03);z-index:2}
+.vg.big{grid-column:span 2;grid-row:span 2}
+.vg.tall{grid-row:span 2}
+.vg.wide{grid-column:span 2}
+.vg img,.vg video{width:100%;height:100%;object-fit:cover}
+.vg .vtag{position:absolute;bottom:8px;right:8px;padding:4px 8px;border-radius:6px;background:rgba(0,0,0,0.7);font-size:10px;font-weight:700;color:#fff;backdrop-filter:blur(8px)}
+.vg.placeholder{display:flex;align-items:center;justify-content:center;font-size:50px}
+.vg.gradient1{background:linear-gradient(135deg,#a855f7,#c026d3)}
+.vg.gradient2{background:linear-gradient(135deg,#06b6d4,#0ea5e9)}
+.vg.gradient3{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.vg.gradient4{background:linear-gradient(135deg,#10b981,#14b8a6)}
+.vg.gradient5{background:linear-gradient(135deg,#f43f5e,#ec4899)}
+.vg.gradient6{background:linear-gradient(135deg,#facc15,#f59e0b)}
+@media (max-width:760px){.visgallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}.vg.big,.vg.tall,.vg.wide{grid-column:span 2;grid-row:span 1}}
+
+/* ─── 3D Iso Stat ─── */
+.iso-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:36px;perspective:1200px}
+.iso-stat{
+  padding:36px 30px;border-radius:24px;
+  background:linear-gradient(135deg,rgba(168,85,247,0.10),rgba(255,255,255,0.02));
+  border:1px solid rgba(168,85,247,0.25);
+  transform:rotateY(-8deg) rotateX(6deg);transition:transform 0.3s ease;
+  box-shadow:0 40px 100px -25px rgba(168,85,247,0.45);
+  transform-style:preserve-3d;
+}
+.iso-stat:nth-child(2){transform:rotateY(0) rotateX(6deg)}
+.iso-stat:nth-child(3){transform:rotateY(8deg) rotateX(6deg)}
+.iso-stat:hover{transform:rotateY(0) rotateX(0) translateZ(30px)}
+.iso-stat .ico{font-size:46px;margin-bottom:18px;filter:drop-shadow(0 8px 20px rgba(168,85,247,0.45))}
+.iso-stat .num{font-size:58px;font-weight:900;letter-spacing:-0.045em;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.iso-stat .lbl{font-size:15px;color:var(--sub);font-weight:600;margin-top:8px}
+@media (max-width:880px){.iso-stats{grid-template-columns:1fr;gap:24px}.iso-stat{transform:none!important}}
+
+/* ─── Floating Image Cards (3D) ─── */
+.floating-deck{
+  position:relative;height:520px;display:flex;align-items:center;justify-content:center;perspective:1600px;margin-top:30px;
+}
+.fd-card{
+  position:absolute;width:280px;aspect-ratio:9/16;border-radius:22px;overflow:hidden;
+  border:1px solid var(--border);box-shadow:0 40px 100px -20px rgba(0,0,0,0.6);
+  transform-style:preserve-3d;animation:float-card 6s ease-in-out infinite;
+}
+.fd-card img,.fd-card video{width:100%;height:100%;object-fit:cover}
+.fd-card.c1{transform:translateX(-340px) rotateY(15deg) rotateZ(-5deg) scale(0.85);animation-delay:0s;z-index:1}
+.fd-card.c2{transform:translateX(-170px) rotateY(8deg) rotateZ(-2deg) scale(0.92);animation-delay:0.5s;z-index:2}
+.fd-card.c3{transform:translateX(0) rotateY(0) scale(1);animation-delay:1s;z-index:3}
+.fd-card.c4{transform:translateX(170px) rotateY(-8deg) rotateZ(2deg) scale(0.92);animation-delay:1.5s;z-index:2}
+.fd-card.c5{transform:translateX(340px) rotateY(-15deg) rotateZ(5deg) scale(0.85);animation-delay:2s;z-index:1}
+@keyframes float-card{0%,100%{translate:0 0}50%{translate:0 -18px}}
+.fd-card .ftag{position:absolute;top:12px;right:12px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);font-size:11px;font-weight:700;color:#fff}
+@media (max-width:880px){.floating-deck{height:auto;flex-wrap:wrap;justify-content:center;gap:14px}.fd-card{position:relative;transform:none!important;animation:none;width:160px}}
+
+/* ─── Workflow Visual (idea→video) ─── */
+.flow-visual{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:18px;align-items:center;
+  padding:40px 30px;margin-top:30px;border-radius:28px;
+  background:linear-gradient(180deg,rgba(168,85,247,0.05),rgba(255,255,255,0.01));
+  border:1px solid var(--border);
+}
+.flow-node{
+  padding:28px 22px;border-radius:18px;background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);text-align:center;
+  box-shadow:0 20px 50px -15px rgba(0,0,0,0.4);
+  transform:rotateY(8deg) rotateX(4deg);transition:transform 0.3s;
+}
+.flow-node.center{transform:rotateY(0) rotateX(0);background:linear-gradient(180deg,rgba(168,85,247,0.10),rgba(255,255,255,0.02));border-color:rgba(168,85,247,0.35);box-shadow:0 30px 80px -15px rgba(168,85,247,0.4)}
+.flow-node.right{transform:rotateY(-8deg) rotateX(4deg)}
+.flow-node:hover{transform:rotateY(0) rotateX(0) translateZ(20px)}
+.flow-node .em{font-size:42px;margin-bottom:14px}
+.flow-node h4{font-size:18px;font-weight:900;letter-spacing:-0.02em;margin-bottom:6px}
+.flow-node p{color:var(--sub);font-size:13.5px;line-height:1.5}
+.flow-arrow{font-size:36px;color:#e879f9;font-weight:900;text-align:center;animation:slide-right 1.5s ease-in-out infinite}
+@keyframes slide-right{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+@media (max-width:880px){.flow-visual{grid-template-columns:1fr;gap:18px}.flow-arrow{transform:rotate(90deg)}.flow-node{transform:none!important}}
+
+/* ─── BAR Chart visual ─── */
+.barchart{display:flex;flex-direction:column;gap:18px;margin-top:30px;padding:36px;border-radius:24px;background:rgba(255,255,255,0.04);border:1px solid var(--border)}
+.bcrow{display:grid;grid-template-columns:140px 1fr 100px;gap:18px;align-items:center}
+.bcrow .lbl{font-size:14.5px;font-weight:700;color:var(--fg)}
+.bcrow .barwrap{height:32px;background:rgba(255,255,255,0.05);border-radius:8px;overflow:hidden;position:relative}
+.bcrow .bar{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 14px;color:#fff;font-weight:800;font-size:13.5px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.2)}
+.bcrow .bar.red{background:linear-gradient(90deg,#ef4444,#fca5a5);width:95%}
+.bcrow .bar.orange{background:linear-gradient(90deg,#f97316,#fbbf24);width:72%}
+.bcrow .bar.yellow{background:linear-gradient(90deg,#facc15,#fde047);width:55%}
+.bcrow .bar.green{background:linear-gradient(90deg,#22c55e,#86efac);width:8%}
+.bcrow .bar.purple{background:var(--gradient);width:100%}
+.bcrow .price{font-size:18px;font-weight:900;color:var(--fg);text-align:left;letter-spacing:-0.02em}
+.bcrow .price.win{background:linear-gradient(135deg,#22c55e,#86efac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media (max-width:760px){.bcrow{grid-template-columns:1fr;gap:8px}}
+
+/* ─── Big number marquee ─── */
+.bignums{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+.bignum{padding:24px 18px;border-radius:18px;background:linear-gradient(180deg,rgba(168,85,247,0.06),rgba(255,255,255,0.02));border:1px solid rgba(168,85,247,0.20);text-align:center;transform-style:preserve-3d;transition:transform 0.2s}
+.bignum:hover{transform:translateY(-4px) rotateX(8deg)}
+.bignum .v{font-size:48px;font-weight:900;letter-spacing:-0.045em;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.bignum .l{font-size:12.5px;color:var(--sub);margin-top:8px;font-weight:600}
+@media (max-width:760px){.bignums{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Floating elements bg ─── */
+.float-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float-bg .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.35}
+.float-bg .blob.b1{width:300px;height:300px;background:#a855f7;top:10%;right:5%;animation:drift 14s ease-in-out infinite}
+.float-bg .blob.b2{width:240px;height:240px;background:#c026d3;bottom:15%;left:8%;animation:drift 16s ease-in-out infinite reverse}
+.float-bg .blob.b3{width:180px;height:180px;background:#e879f9;top:50%;left:50%;animation:drift 12s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-40px)}}
 </style>
 </head>
 <body>
@@ -881,6 +1202,47 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
     <a href="#pricing" class="nav-cta">התחל ב-₪10</a>
   </div>
 </nav>
+
+<!-- ─── PAIN INTRO (top of page) ─── -->
+<section class="pain-intro">
+  <div class="float-bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="pain-wrap">
+    <div class="pain-eyebrow"><span class="pin"></span>הבעיה האמיתית של 2026</div>
+    <h1 class="pain-headline">
+      <span class="strike">12,000₪ לסרטון.</span><br>
+      <span class="strike">17 ימים המתנה.</span><br>
+      ועדיין <span class="accent">לא יוצא טוב.</span>
+    </h1>
+    <p class="pain-sub">
+      <strong>אתם מכירים את זה.</strong> שלמתם אלפי שקלים ליוצר/ת תוכן, חיכיתם שבועיים, וקיבלתם 30 שניות שלא מצליחים להריץ. המודעה לא קונה, ה-CAC רץ למעלה, וכל קמפיין חדש מתחיל מאפס. השוק התעלה — קריאייטיב הפך לסחורה. אבל ספקי התוכן עוד מתנהגים כאילו הם אומנים יחידים. <strong>זה הזמן שזה ייגמר.</strong>
+    </p>
+    <div class="pain-stack3d">
+      <div class="pain-card">
+        <div class="ico">💸</div>
+        <div class="num">12,000₪</div>
+        <div class="sub">לסרטון בודד</div>
+        <h3>הכסף נוזל</h3>
+        <p>יוצרי תוכן בעברית גובים 2,500-15,000₪ לקריאייטיב. אם תרצו 5 וריאציות לבדיקת A/B — תכפילו ב-5. רק ההפקה לוקחת 60-80% מתקציב הפרסום שלכם.</p>
+      </div>
+      <div class="pain-card">
+        <div class="ico">⏰</div>
+        <div class="num">17 ימים</div>
+        <div class="sub">מההזמנה ועד הסרטון</div>
+        <h3>הזמן נשרף</h3>
+        <p>בריף → תיאום ימים → צילום → עריכה → ראונד שני → ראונד שלישי. בינתיים המתחרים שלכם כבר מעלים 10 קריאייטיבים, הקהל הקודם שכח אתכם, והאלגוריתם זז הלאה.</p>
+      </div>
+      <div class="pain-card">
+        <div class="ico">📉</div>
+        <div class="num">82%</div>
+        <div class="sub">מהקריאייטיבים נכשלים</div>
+        <h3>התוצאה לא מתאימה</h3>
+        <p>הסטטיסטיקה מ-Meta: 4 מתוך 5 קריאייטיבים לא חוזרים על ROI. אבל בלי לבדוק 5-10 וריאציות — אי אפשר למצוא את החזק. עם הכלים הישנים — אין סיכוי לבדוק כל-כך הרבה.</p>
+      </div>
+    </div>
+    <div class="pain-arrow">↓</div>
+    <p style="margin-top:18px;font-size:15px;color:var(--muted);font-weight:600">יש דרך אחרת. תכף נראה איך.</p>
+  </div>
+</section>
 
 <!-- ─── HERO ─── -->
 <header class="hero">
@@ -969,6 +1331,140 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
         <h3>וריאציה אחת</h3>
         <p>גרסה אחת. אם לא ממירה — לחכות עוד 3 שבועות. <strong style="color:#fafafa">בלי A/B test, בלי סקייל.</strong></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE / AFTER MEGA ─── -->
+<section id="beforeafter">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">לפני · אחרי</span>
+      <h2 class="section-title">אותה משימה. <span class="accent">תוצאות שונות לחלוטין.</span></h2>
+      <p class="section-sub">לקחנו את 4 המדדים החשובים ביותר ביצירת קריאייטיב — וערכנו השוואה ישירה. אותו מותג, אותה מטרה, אותו קהל. הדרך הישנה מול טריק.</p>
+    </div>
+
+    <div class="beforeafter">
+      <div class="ba-card">
+        <div class="ba-head"><h4>💸 עלות לקריאייטיב</h4><div class="meta">סרטון UGC · 30 שניות</div></div>
+        <div class="ba-row">
+          <div class="ba-col before"><div class="lbl">הדרך הישנה</div><div class="big">3,000₪</div><div class="desc">יוצר/ת תוכן ממוצע<br>(טווח: 2,500-15,000₪)</div></div>
+          <div class="ba-col after"><div class="lbl">עם טריק</div><div class="big">3.27₪</div><div class="desc">בתוך מנוי ₪97.90/חודש<br>(30 קריאייטיבים בחודש)</div></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-head"><h4>⏰ זמן הפקה</h4><div class="meta">בריף → קובץ מוכן</div></div>
+        <div class="ba-row">
+          <div class="ba-col before"><div class="lbl">הדרך הישנה</div><div class="big">17 ימים</div><div class="desc">בריף + צילום + עריכה + ראונדים</div></div>
+          <div class="ba-col after"><div class="lbl">עם טריק</div><div class="big">3 דקות</div><div class="desc">פתיחת סטודיו → MP4 ב-Downloads</div></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-head"><h4>🧪 וריאציות לבדיקה</h4><div class="meta">בחודש · בתקציב זהה</div></div>
+        <div class="ba-row">
+          <div class="ba-col before"><div class="lbl">הדרך הישנה</div><div class="big">2-3</div><div class="desc">בקושי. תקציב מוגבל</div></div>
+          <div class="ba-col after"><div class="lbl">עם טריק</div><div class="big">30+</div><div class="desc">כמה שתחליטו · ללא תוספת</div></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-head"><h4>🔁 שינויים אחרי דליברי</h4><div class="meta">תיקון משפט, סיום, CTA</div></div>
+        <div class="ba-row">
+          <div class="ba-col before"><div class="lbl">הדרך הישנה</div><div class="big">3-7 ימים</div><div class="desc">לפעמים חיוב נוסף</div></div>
+          <div class="ba-col after"><div class="lbl">עם טריק</div><div class="big">90 שניות</div><div class="desc">עריכה בסטודיו · רנדור מחדש</div></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:60px;font-size:26px;font-weight:900;letter-spacing:-0.025em;text-align:center">המתחרים כולם — מאותו צד של המגרש</h3>
+    <p style="text-align:center;color:var(--muted);font-size:15px;margin-top:8px;margin-bottom:8px">השוואת עלויות לסרטון UGC יחיד · אומדן 2026</p>
+    <div class="barchart">
+      <div class="bcrow"><div class="lbl">משפיענ/ית VIP</div><div class="barwrap"><div class="bar red">15,000₪+ לסרטון</div></div><div class="price">15,000₪</div></div>
+      <div class="bcrow"><div class="lbl">יוצר UGC ממוצע</div><div class="barwrap"><div class="bar orange">3,000₪ לסרטון · 17 ימים</div></div><div class="price">3,000₪</div></div>
+      <div class="bcrow"><div class="lbl">סוכנות עיצוב</div><div class="barwrap"><div class="bar yellow">2,400₪ + ימי עבודה</div></div><div class="price">2,400₪</div></div>
+      <div class="bcrow"><div class="lbl">HeyGen / Synthesia</div><div class="barwrap"><div class="bar yellow" style="width:50%">$49-79/חודש · אנגלית בלבד</div></div><div class="price">~290₪</div></div>
+      <div class="bcrow"><div class="lbl">Arcads (חו"ל)</div><div class="barwrap"><div class="bar yellow" style="width:40%">$110/חודש · בלי עברית</div></div><div class="price">~410₪</div></div>
+      <div class="bcrow"><div class="lbl" style="color:#86efac">🇮🇱 Trick.ai</div><div class="barwrap"><div class="bar purple">₪97.90/חודש · 100 קרדיטים · עברית מלאה</div></div><div class="price win">97.90₪</div></div>
+    </div>
+
+    <div class="iso-stats">
+      <div class="iso-stat"><div class="ico">⚡</div><div class="num">×340</div><div class="lbl">מהיר יותר<br>(17 ימים vs 3 דקות)</div></div>
+      <div class="iso-stat"><div class="ico">💰</div><div class="num">-99%</div><div class="lbl">חיסכון בעלות<br>(3,000₪ vs 3.27₪)</div></div>
+      <div class="iso-stat"><div class="ico">📊</div><div class="num">×15</div><div class="lbl">יותר וריאציות לבדיקה<br>(2 vs 30+)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 3D PIPELINE: IDEA → RESULT ─── -->
+<section id="pipeline">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מרעיון לתוצאה</span>
+      <h2 class="section-title">צינור הייצור <span class="accent">של טריק.</span></h2>
+      <p class="section-sub">בסטודיו פרימיום, מהרעיון הראשון ועד הקובץ ב-Downloads — 6 תחנות, 3 דקות סה"כ. כל תחנה אוטומטית. אתם פשוט מאשרים את התוצאה ב-Preview ועוברים הלאה.</p>
+    </div>
+    <div class="pipeline3d">
+      <div class="pipe-rail">
+        <div class="pipe-node" style="--i:5">
+          <div class="pipe-step-num">06</div>
+          <div class="pipe-cube"><div class="face">🎬</div><div class="face right"></div><div class="face top"></div></div>
+          <h5>קובץ מוכן</h5>
+          <p>MP4 + 4 וריאציות + כתוביות. מורידים.</p>
+          <div class="pipe-arrow">←</div>
+        </div>
+        <div class="pipe-node" style="--i:4">
+          <div class="pipe-step-num">05</div>
+          <div class="pipe-cube"><div class="face">🎵</div><div class="face right"></div><div class="face top"></div></div>
+          <h5>קול וכתוביות</h5>
+          <p>23 קולות עברית · כתוביות RTL</p>
+          <div class="pipe-arrow">←</div>
+        </div>
+        <div class="pipe-node" style="--i:3">
+          <div class="pipe-step-num">04</div>
+          <div class="pipe-cube"><div class="face">📸</div><div class="face right"></div><div class="face top"></div></div>
+          <h5>9 פוזות AI</h5>
+          <p>נוצרות אוטומטית · 60 שניות</p>
+          <div class="pipe-arrow">←</div>
+        </div>
+        <div class="pipe-node" style="--i:2">
+          <div class="pipe-step-num">03</div>
+          <div class="pipe-cube"><div class="face">✍️</div><div class="face right"></div><div class="face top"></div></div>
+          <h5>3 תסריטים</h5>
+          <p>בעברית · 3 סגנונות שונים</p>
+          <div class="pipe-arrow">←</div>
+        </div>
+        <div class="pipe-node" style="--i:1">
+          <div class="pipe-step-num">02</div>
+          <div class="pipe-cube"><div class="face">👤</div><div class="face right"></div><div class="face top"></div></div>
+          <h5>בחירת אווטאר</h5>
+          <p>35+ ישראלים · 10 שניות</p>
+          <div class="pipe-arrow">←</div>
+        </div>
+        <div class="pipe-node" style="--i:0">
+          <div class="pipe-step-num">01</div>
+          <div class="pipe-cube"><div class="face">💡</div><div class="face right"></div><div class="face top"></div></div>
+          <h5>הרעיון</h5>
+          <p>שם מוצר + תיאור בעברית</p>
+        </div>
+      </div>
+      <div class="pipe-result-bar">
+        <div>
+          <div class="label">סה"כ זמן · אוטומטי</div>
+          <div class="text">⏱ <strong>2 דקות 47 שניות</strong> · רעיון → קובץ מוכן</div>
+        </div>
+        <div>
+          <div class="label">סה"כ עלות</div>
+          <div class="text">💎 <strong>15-25 קרדיטים</strong> (כ-7-12₪)</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:50px;text-align:center"><h3 style="font-size:22px;font-weight:900;letter-spacing:-0.025em">או אם אתם רוצים לראות בעיניים:</h3></div>
+    <div class="flow-visual">
+      <div class="flow-node"><div class="em">💭</div><h4>רעיון</h4><p>"סרום ויטמין C לכל קהל הנשים 25-40"</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node center"><div class="em">⚙️</div><h4>טריק עובד</h4><p>אווטאר + תסריט + 9 פוזות + עריכה + ליפ-סינק + כתוביות</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node right"><div class="em">📽</div><h4>קריאייטיב</h4><p>סרטון UGC 30 שניות, מוכן ל-Reels/TikTok/Meta</p></div>
     </div>
   </div>
 </section>
@@ -1328,6 +1824,87 @@ footer .row{display:flex;justify-content:space-between;align-items:center;flex-w
       </div>
     </div>
     <div class="section-divider">בלי לדאוג מה לבחור · טריק בוחר אוטומטית לפי המשימה</div>
+  </div>
+</section>
+
+<!-- ─── ALL IMAGE MODELS (Visual Gallery) ─── -->
+<section id="imgmodels">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מודלי תמונה · 12+ מנועים</span>
+      <h2 class="section-title">כל מודל תמונה <span class="accent">בעולם. במקום אחד.</span></h2>
+      <p class="section-sub">לא קונים מנוי לכל אחד — מקבלים את כולם בטריק. כל מודל מומחה בסגנון שלו: פוטו-ריאליסטי, אומנותי, טקסט-תוך-תמונה, אנימציה, אופי או 3D. בוחרים את הנכון לכל משימה — או שטריק בוחר אוטומטית.</p>
+    </div>
+    <div class="imgmodels">
+      <div class="imgm"><div class="sample">🍌</div><div class="info"><div class="name">Nano Banana Pro</div><div class="tag">Photo-Real · 4K</div><span class="pill">⭐ הכי נפוץ</span></div></div>
+      <div class="imgm"><div class="sample s2">🎨</div><div class="info"><div class="name">Seedream 5</div><div class="tag">Stylized · Art</div><span class="pill">poster</span></div></div>
+      <div class="imgm"><div class="sample s3">📝</div><div class="info"><div class="name">GPT Image 2</div><div class="tag">Text-in-image</div><span class="pill">עברית בתמונה</span></div></div>
+      <div class="imgm"><div class="sample s4">🌅</div><div class="info"><div class="name">Imagen 3 (Google)</div><div class="tag">Landscape</div><span class="pill">סצנות רחבות</span></div></div>
+      <div class="imgm"><div class="sample s5">🎭</div><div class="info"><div class="name">Midjourney v7</div><div class="tag">Cinematic</div><span class="pill">קונספט · stylized</span></div></div>
+      <div class="imgm"><div class="sample s6">⚡</div><div class="info"><div class="name">FLUX 1.1 Pro</div><div class="tag">Fast · Hi-Quality</div><span class="pill">⚡ הכי מהיר</span></div></div>
+      <div class="imgm"><div class="sample s7">🖼️</div><div class="info"><div class="name">Ideogram 2.0</div><div class="tag">Typography</div><span class="pill">לוגואים</span></div></div>
+      <div class="imgm"><div class="sample s8">🔮</div><div class="info"><div class="name">DALL-E 3</div><div class="tag">Conceptual</div><span class="pill">creative</span></div></div>
+      <div class="imgm"><div class="sample s9">🎯</div><div class="info"><div class="name">Recraft V3</div><div class="tag">Brand Assets</div><span class="pill">SVG · vector</span></div></div>
+      <div class="imgm"><div class="sample s10">🦁</div><div class="info"><div class="name">Leonardo Phoenix</div><div class="tag">Characters</div><span class="pill">דמויות אנימה</span></div></div>
+      <div class="imgm"><div class="sample s11">📐</div><div class="info"><div class="name">SDXL Turbo</div><div class="tag">Open · Custom</div><span class="pill">חינמי</span></div></div>
+      <div class="imgm"><div class="sample s12">✨</div><div class="info"><div class="name">Stable Diffusion 3</div><div class="tag">Versatile</div><span class="pill">general</span></div></div>
+    </div>
+
+    <div style="margin-top:60px;text-align:center"><h3 style="font-size:24px;font-weight:900;letter-spacing:-0.025em;margin-bottom:10px">דוגמאות פלט אמיתיות</h3><p style="color:var(--muted);font-size:14px">קליק על כל תמונה לפתיחה במלאה</p></div>
+
+    <div class="visgallery">
+      <div class="vg big"><img src="assets/example-product.jpg" alt=""><div class="vtag">Nano Banana · GLOW</div></div>
+      <div class="vg"><img src="assets/usage-apply.jpg" alt=""><div class="vtag">Photo-Real</div></div>
+      <div class="vg"><img src="assets/usage-dropper.jpg" alt=""><div class="vtag">Macro</div></div>
+      <div class="vg tall"><img src="assets/usage-hold.jpg" alt=""><div class="vtag">Lifestyle</div></div>
+      <div class="vg gradient1 placeholder">🧴</div>
+      <div class="vg gradient2 placeholder">💄</div>
+      <div class="vg wide gradient3 placeholder">👗 קמפיין אופנה</div>
+      <div class="vg gradient4 placeholder">🥤</div>
+      <div class="vg gradient5 placeholder">🌹</div>
+      <div class="vg gradient6 placeholder">📱</div>
+      <div class="vg gradient1 placeholder">💊</div>
+    </div>
+
+    <h3 style="margin-top:60px;font-size:22px;font-weight:900;letter-spacing:-0.025em;text-align:center">קלפים שצפים — דוגמאות מהקטלוג</h3>
+    <div class="floating-deck">
+      <div class="fd-card c1"><img src="assets/usage-dropper.jpg" alt=""><div class="ftag">Macro · Nano Banana</div></div>
+      <div class="fd-card c2"><img src="assets/usage-apply.jpg" alt=""><div class="ftag">Lifestyle · Imagen 3</div></div>
+      <div class="fd-card c3"><img src="assets/example-product.jpg" alt=""><div class="ftag">Hero · 4K</div></div>
+      <div class="fd-card c4"><img src="assets/usage-hold.jpg" alt=""><div class="ftag">UGC · Seedream</div></div>
+      <div class="fd-card c5"><img src="assets/example-product.jpg" alt=""><div class="ftag">Studio · FLUX</div></div>
+    </div>
+
+    <div class="bignums">
+      <div class="bignum"><div class="v">12</div><div class="l">מודלי תמונה</div></div>
+      <div class="bignum"><div class="v">21</div><div class="l">פורמטים</div></div>
+      <div class="bignum"><div class="v">4K</div><div class="l">רזולוציה מקסימלית</div></div>
+      <div class="bignum"><div class="v">3.2s</div><div class="l">זמן יצירה ממוצע</div></div>
+      <div class="bignum"><div class="v">∞</div><div class="l">וריאציות</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE/AFTER IMAGE COMPARE ─── -->
+<section id="img-compare">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">לפני · אחרי תמונה</span>
+      <h2 class="section-title">המוצר שלכם, <span class="accent">אבל מקצועי.</span></h2>
+      <p class="section-sub">תעלו תמונה גולמית של מוצר (גם מהטלפון, גם מהאתר Aliexpress) — וטריק יהפוך אותה לתמונה שהקהל לא מבדיל מצילום סטודיו של 20,000₪.</p>
+    </div>
+    <div class="imgcompare">
+      <div class="layer after"><img src="assets/example-product.jpg" alt="אחרי"></div>
+      <div class="layer before"><img src="assets/usage-hold.jpg" alt="לפני"></div>
+      <div class="tag-b">לפני · תמונה גולמית</div>
+      <div class="tag-a">אחרי · טריק</div>
+      <div class="handle"></div>
+    </div>
+    <div class="iso-stats" style="margin-top:50px">
+      <div class="iso-stat"><div class="ico">🎬</div><div class="num">15-30s</div><div class="lbl">מתמונה לתוצאה</div></div>
+      <div class="iso-stat"><div class="ico">💎</div><div class="num">2 קרדיטים</div><div class="lbl">לכל תמונה · ₪0.2</div></div>
+      <div class="iso-stat"><div class="ico">📐</div><div class="num">21</div><div class="lbl">פורמטים מקבילים</div></div>
+    </div>
   </div>
 </section>
 
