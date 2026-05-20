@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trick.ai · הסטודיו הישראלי לקריאייטיב AI בעברית · התחילו ב-₪10</title>
+<meta name="description" content="הסטודיו הישראלי הראשון לקריאייטיב AI בעברית. כל המודלים בעולם, 35+ אווטארים ישראלים, ליפ-סינק מושלם, מודעת UGC תוך 3 דקות. ₪10 ל-3 ימים, בלי התחייבות.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0d; --bg-2:#13131a; --bg-3:#1c1c25;
+  --fg:#fafafa; --sub:#a1a1aa; --muted:#71717a;
+  --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.18);
+  --purple:#a855f7; --magenta:#c026d3; --pink:#e879f9;
+  --green:#22c55e; --red:#ef4444; --yellow:#fbbf24;
+  --gradient: linear-gradient(135deg,#a855f7 0%, #c026d3 50%, #e879f9 100%);
+  --gradient-soft: linear-gradient(135deg,rgba(168,85,247,0.18), rgba(217,70,239,0.10), rgba(232,121,249,0.06));
+  --shadow-glow: 0 25px 60px -15px rgba(192,38,211,0.55);
+  --shadow-card: 0 30px 80px -20px rgba(0,0,0,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Heebo',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--fg);
+  letter-spacing:-0.015em;direction:rtl;overflow-x:hidden;
+}
+img,video{max-width:100%;display:block;border:0}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+
+/* ─── Bg glows ─── */
+.bg-glows{position:fixed;inset:0;pointer-events:none;z-index:0}
+.bg-glows::before,.bg-glows::after{content:'';position:absolute;border-radius:50%;filter:blur(120px);opacity:0.35}
+.bg-glows::before{width:600px;height:600px;background:#a855f7;top:-200px;right:-200px}
+.bg-glows::after{width:500px;height:500px;background:#c026d3;bottom:-150px;left:-150px;opacity:0.25}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+
+/* ─── Urgency banner ─── */
+.urgency{
+  position:relative;z-index:51;
+  background:linear-gradient(90deg,rgba(168,85,247,0.18),rgba(217,70,239,0.18),rgba(232,121,249,0.18));
+  border-bottom:1px solid rgba(168,85,247,0.3);
+  padding:10px 0;text-align:center;font-size:14px;font-weight:600;letter-spacing:-0.01em;
+}
+.urgency strong{color:#e879f9}
+.urgency .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;
+  margin-inline-start:8px;animation:pulse 1.8s infinite;box-shadow:0 0 12px #22c55e}
+@keyframes pulse{0%{opacity:1}50%{opacity:0.4}100%{opacity:1}}
+
+/* ─── Nav ─── */
+nav.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,10,13,0.7);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);
+}
+.topnav .row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:0;direction:ltr}
+.brand svg{height:36px;width:auto}
+.nav-links{display:flex;gap:32px;align-items:center;font-size:15px;font-weight:500;color:var(--sub)}
+.nav-links a:hover{color:var(--fg)}
+.nav-cta{
+  padding:11px 22px;border-radius:999px;background:var(--gradient);
+  color:#fff;font-weight:700;font-size:15px;
+  box-shadow:0 8px 24px -8px rgba(192,38,211,0.5);transition:transform 0.15s ease;
+}
+.nav-cta:hover{transform:translateY(-1px)}
+@media (max-width:760px){.nav-links{display:none}}
+
+/* ─── Hero ─── */
+.hero{padding:80px 0 50px;position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 18px;border-radius:999px;
+  background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.3);
+  font-size:14px;font-weight:600;color:#e879f9;letter-spacing:0.01em;
+}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e}
+h1.hero-title{
+  font-size:clamp(40px,5.2vw,72px);font-weight:900;
+  line-height:1.02;letter-spacing:-0.04em;margin-top:24px;
+}
+.hero-title .accent{
+  background:var(--gradient);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:clamp(20px,2.3vw,28px);color:var(--sub);
+  margin-top:26px;max-width:780px;line-height:1.5;font-weight:400;
+}
+.hero-sub strong{color:var(--fg);font-weight:600}
+.hero-ctas{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 34px;border-radius:999px;background:var(--gradient);
+  color:#fff;font-weight:800;font-size:18px;letter-spacing:-0.01em;
+  box-shadow:var(--shadow-glow);transition:transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 30px 80px -15px rgba(192,38,211,0.7)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 30px;border-radius:999px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--border-strong);
+  font-weight:600;font-size:17px;
+}
+.btn-secondary:hover{background:rgba(255,255,255,0.08)}
+.hero-trust{display:flex;gap:22px;margin-top:30px;flex-wrap:wrap;color:var(--muted);font-size:14px;font-weight:500}
+.hero-trust span{display:inline-flex;align-items:center;gap:8px}
+
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;margin-top:50px;
+}
+.hero-media-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hero-media-grid .cell{
+  border-radius:22px;overflow:hidden;border:1px solid var(--border);
+  background:#000;aspect-ratio:9/16;position:relative;
+  box-shadow:var(--shadow-card);
+}
+.hero-media-grid .cell.big{grid-column:1/-1;aspect-ratio:16/9;}
+.hero-media-grid video,.hero-media-grid img{width:100%;height:100%;object-fit:cover}
+.hero-media-grid .tag{
+  position:absolute;top:12px;right:12px;
+  padding:5px 10px;border-radius:999px;
+  background:rgba(8,8,13,0.75);backdrop-filter:blur(10px);
+  font-size:11px;font-weight:700;color:#fff;
+}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ─── Brand strip ─── */
+.brand-strip{
+  padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  text-align:center;
+}
+.brand-strip .label{
+  color:var(--muted);font-size:13px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;
+}
+.brand-strip .logos{
+  display:flex;flex-wrap:wrap;gap:48px;justify-content:center;align-items:center;
+  font-weight:800;font-size:22px;color:var(--sub);letter-spacing:-0.02em;opacity:0.7;
+}
+.brand-strip .logos > div{transition:opacity 0.2s ease}
+.brand-strip .logos > div:hover{opacity:1;color:var(--fg)}
+
+/* ─── Sections ─── */
+section{padding:90px 0;position:relative}
+.section-head{text-align:center;margin-bottom:60px}
+.section-eyebrow{
+  display:inline-block;padding:6px 16px;border-radius:999px;
+  background:rgba(168,85,247,0.10);border:1px solid rgba(168,85,247,0.25);
+  font-size:13px;font-weight:600;color:#e879f9;letter-spacing:0.05em;text-transform:uppercase;
+}
+.section-title{
+  font-size:clamp(32px,4.2vw,56px);font-weight:900;line-height:1.08;
+  letter-spacing:-0.035em;margin-top:18px;
+}
+.section-title .accent{
+  background:var(--gradient);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text;
+}
+.section-sub{
+  font-size:clamp(17px,1.6vw,22px);color:var(--sub);
+  margin-top:18px;max-width:680px;margin-inline:auto;line-height:1.6;
+}
+
+/* ─── Live counter ─── */
+.live-counter{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:10px 20px;border-radius:999px;
+  background:rgba(34,197,94,0.10);border:1px solid rgba(34,197,94,0.3);
+  font-size:14px;font-weight:600;color:#86efac;margin-top:14px;
+}
+.live-counter .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;
+  animation:pulse 1.8s infinite;box-shadow:0 0 12px #22c55e}
+
+/* ─── Stats strip ─── */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  padding:30px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.stat{text-align:center}
+.stat .num{
+  font-size:clamp(34px,4vw,58px);font-weight:900;letter-spacing:-0.03em;line-height:1;
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat .lbl{color:var(--sub);font-size:14px;font-weight:500;margin-top:8px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr);gap:32px 20px}}
+
+/* ─── Hebrew advantage ─── */
+.hebrew-section{padding:80px 0;background:linear-gradient(180deg,transparent,rgba(168,85,247,0.04),transparent)}
+.versus-cards{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:center}
+.vc{
+  padding:36px 32px;border-radius:24px;
+  border:1px solid var(--border);background:rgba(255,255,255,0.03);
+}
+.vc.trick{
+  background:linear-gradient(180deg,rgba(168,85,247,0.10),rgba(28,28,37,0.95));
+  border-color:rgba(168,85,247,0.4);box-shadow:0 30px 80px -20px rgba(168,85,247,0.3);
+}
+.vc h4{font-size:24px;font-weight:800;margin-bottom:6px;letter-spacing:-0.02em}
+.vc .src{color:var(--muted);font-size:13px;font-weight:500;margin-bottom:20px}
+.vc ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.vc li{font-size:15px;display:flex;gap:10px;line-height:1.5}
+.vc li::before{flex-shrink:0;width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;margin-top:2px}
+.vc.competitor li::before{content:'✕';background:rgba(239,68,68,0.15);color:#fca5a5}
+.vc.trick li::before{content:'✓';background:var(--gradient);color:#fff}
+.versus-mid{text-align:center;font-size:36px;color:var(--muted);font-weight:700}
+@media (max-width:880px){
+  .versus-cards{grid-template-columns:1fr;gap:18px}
+  .versus-mid{padding:0}
+}
+
+/* ─── Problem ─── */
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.problem-card{
+  padding:36px 30px;border-radius:24px;
+  background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.18);
+}
+.problem-card .icon{font-size:42px;margin-bottom:18px}
+.problem-card h3{font-size:24px;font-weight:800;margin-bottom:10px;letter-spacing:-0.025em}
+.problem-card p{color:var(--sub);font-size:16px;line-height:1.55;font-weight:400}
+.problem-card .crossed{color:#ef4444;font-weight:700;text-decoration:line-through;text-decoration-thickness:2px}
+@media (max-width:760px){.problem-grid{grid-template-columns:1fr}}
+
+/* ─── Bento grid ─── */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;grid-auto-rows:170px;}
+.bb{
+  border-radius:22px;border:1px solid var(--border);
+  background:rgba(255,255,255,0.04);
+  padding:28px 26px;position:relative;overflow:hidden;
+  transition:transform 0.18s ease, border-color 0.18s ease;
+}
+.bb:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.4)}
+.bb .em{font-size:38px;margin-bottom:12px}
+.bb h4{font-size:20px;font-weight:800;letter-spacing:-0.02em}
+.bb p{color:var(--sub);font-size:14px;margin-top:8px;line-height:1.55}
+.bb.wide{grid-column:span 2}
+.bb.tall{grid-row:span 2}
+.bb.big{grid-column:span 2;grid-row:span 2;
+  background:linear-gradient(135deg,rgba(168,85,247,0.18),rgba(217,70,239,0.10),rgba(28,28,37,0.95));
+  border-color:rgba(168,85,247,0.35);}
+.bb.big h4{font-size:32px;font-weight:900;line-height:1.1}
+.bb.big p{font-size:16px}
+@media (max-width:760px){.bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+.bb.wide,.bb.tall,.bb.big{grid-column:span 2;grid-row:span 1}}
+
+/* ─── Feature blocks ─── */
+.feature{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;
+  margin-bottom:100px;
+}
+.feature:nth-child(even){grid-template-columns:1fr 1.05fr}
+.feature:nth-child(even) .feature-text{order:2}
+.feature:nth-child(even) .feature-media{order:1}
+.feature-tag{
+  display:inline-block;padding:6px 14px;border-radius:8px;
+  background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.25);
+  font-size:13px;font-weight:700;color:#e879f9;letter-spacing:0.04em;text-transform:uppercase;
+}
+.feature-title{font-size:clamp(32px,4vw,52px);font-weight:900;line-height:1.05;letter-spacing:-0.035em;margin-top:18px}
+.feature-title .accent{
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.feature-desc{font-size:18px;color:var(--sub);line-height:1.65;margin-top:18px}
+.feature-list{margin-top:24px;display:flex;flex-direction:column;gap:14px}
+.feature-list li{
+  display:flex;align-items:flex-start;gap:14px;list-style:none;
+  font-size:17px;color:var(--fg);font-weight:500;line-height:1.5
+}
+.feature-list .check{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;
+  background:var(--gradient);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:900;font-size:14px;margin-top:2px;
+}
+.feature-media{
+  border-radius:24px;overflow:hidden;
+  border:1px solid var(--border);background:#000;position:relative;
+  box-shadow:0 40px 100px -20px rgba(168,85,247,0.3);
+}
+.feature-media video,.feature-media img{width:100%;height:auto;display:block}
+.feature-media.tall{aspect-ratio:9/16;max-width:380px;margin-inline:auto}
+.feature-media.tall video,.feature-media.tall img{height:100%;object-fit:cover}
+@media (max-width:880px){
+  .feature,.feature:nth-child(even){grid-template-columns:1fr;gap:36px}
+  .feature:nth-child(even) .feature-text{order:1}
+  .feature:nth-child(even) .feature-media{order:2}
+}
+
+/* ─── Models ─── */
+.models-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.model{
+  padding:20px 18px;border-radius:16px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  text-align:center;transition:transform 0.15s ease, border-color 0.15s ease;
+}
+.model:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.5)}
+.model .name{font-weight:800;font-size:18px;letter-spacing:-0.02em}
+.model .desc{color:var(--muted);font-size:12px;margin-top:4px;font-weight:500}
+.model .price{margin-top:10px;font-size:13px;font-weight:700;
+  background:var(--gradient);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text;}
+@media (max-width:760px){.models-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Avatars showcase ─── */
+.avatars{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.av-card{
+  aspect-ratio:3/4;border-radius:18px;overflow:hidden;position:relative;
+  background:var(--gradient-soft);border:1px solid var(--border);
+  display:flex;align-items:flex-end;padding:14px;
+  transition:transform 0.18s ease;
+}
+.av-card:hover{transform:translateY(-4px)}
+.av-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(168,85,247,0.3),rgba(217,70,239,0.2),rgba(232,121,249,0.1));
+  z-index:0;
+}
+.av-card .face{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);
+  font-size:60px;z-index:1;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+}
+.av-card .info{position:relative;z-index:2;width:100%}
+.av-card .name{font-weight:800;font-size:16px;letter-spacing:-0.02em}
+.av-card .role{font-size:12px;color:var(--sub);margin-top:2px;font-weight:500}
+@media (max-width:760px){.avatars{grid-template-columns:repeat(3,1fr)}}
+
+/* ─── Process steps ─── */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:30px}
+.step{
+  padding:24px 16px;border-radius:18px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  text-align:center;position:relative;
+}
+.step .n{
+  width:42px;height:42px;border-radius:50%;background:var(--gradient);
+  color:#fff;font-weight:900;font-size:18px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+  box-shadow:0 8px 24px -6px rgba(192,38,211,0.6);
+}
+.step .emoji{font-size:32px;margin-bottom:10px}
+.step .ttl{font-size:15px;font-weight:700;letter-spacing:-0.015em;line-height:1.25}
+.step .sb{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.4}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── ROI calculator ─── */
+.roi{
+  border-radius:32px;padding:50px 44px;
+  background:linear-gradient(180deg,rgba(168,85,247,0.08),rgba(28,28,37,0.95));
+  border:1px solid rgba(168,85,247,0.3);
+  box-shadow:var(--shadow-card);
+}
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.roi h3{font-size:34px;font-weight:900;letter-spacing:-0.03em;line-height:1.1}
+.roi h3 .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.roi .slider-label{font-size:14px;color:var(--sub);margin-top:22px;font-weight:500}
+.roi .slider-val{font-size:48px;font-weight:900;letter-spacing:-0.03em;
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-top:4px;line-height:1}
+.roi input[type=range]{
+  -webkit-appearance:none;width:100%;height:8px;border-radius:999px;
+  background:rgba(255,255,255,0.08);outline:none;margin-top:16px;
+}
+.roi input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+  background:var(--gradient);cursor:pointer;
+  box-shadow:0 4px 16px rgba(192,38,211,0.5);border:3px solid #fff;
+}
+.roi-result{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;
+}
+.roi-card{
+  padding:24px;border-radius:18px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+}
+.roi-card .lbl{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.roi-card .val{font-size:32px;font-weight:900;letter-spacing:-0.025em;margin-top:6px;line-height:1}
+.roi-card.lose .val{color:#ef4444;text-decoration:line-through}
+.roi-card.win .val{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.roi-savings{
+  margin-top:14px;padding:24px;border-radius:18px;
+  background:linear-gradient(135deg,rgba(34,197,94,0.10),rgba(168,85,247,0.10));
+  border:1px solid rgba(34,197,94,0.3);text-align:center;
+}
+.roi-savings .lbl{font-size:14px;color:#86efac;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}
+.roi-savings .val{font-size:48px;font-weight:900;letter-spacing:-0.04em;
+  background:linear-gradient(135deg,#22c55e,#86efac);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-top:6px}
+.roi-savings .note{font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:880px){.roi-grid{grid-template-columns:1fr;gap:30px}}
+
+/* ─── Comparison table ─── */
+.compare{margin-top:30px;border-radius:24px;overflow:hidden;border:1px solid var(--border)}
+.compare-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;border-bottom:1px solid var(--border)}
+.compare-row:last-child{border-bottom:0}
+.compare-row > div{padding:22px 24px;font-size:16px;display:flex;align-items:center;gap:10px}
+.compare-row.head > div{font-size:15px;font-weight:800;letter-spacing:-0.01em}
+.compare-row.head .h-trick{background:rgba(168,85,247,0.1);color:#e879f9}
+.compare-row.head .h-old{background:rgba(255,255,255,0.03);color:var(--sub)}
+.compare-row .label{font-weight:600;background:rgba(255,255,255,0.02)}
+.compare-row .win{color:#22c55e;font-weight:700}
+.compare-row .lose{color:var(--muted);text-decoration:line-through}
+@media (max-width:760px){
+  .compare-row{grid-template-columns:1fr;}
+  .compare-row > div{border-bottom:1px solid var(--border)}
+  .compare-row > div:last-child{border-bottom:0}
+}
+
+/* ─── Vs competitors ─── */
+.vs-table{margin-top:30px;border-radius:24px;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,0.02)}
+.vs-row{display:grid;grid-template-columns:1.4fr repeat(4,1fr);border-bottom:1px solid var(--border)}
+.vs-row:last-child{border-bottom:0}
+.vs-row > div{padding:18px 16px;font-size:14.5px;display:flex;align-items:center;justify-content:center;text-align:center}
+.vs-row > div:first-child{justify-content:flex-end;font-weight:600;background:rgba(255,255,255,0.02);text-align:right}
+.vs-row.head > div{font-size:14px;font-weight:800;letter-spacing:-0.01em;padding:24px 16px}
+.vs-row.head .h-trick{background:rgba(168,85,247,0.15);color:#e879f9;font-size:16px}
+.vs-row.head .h-trick small{display:block;font-size:11px;color:var(--muted);margin-top:4px;font-weight:500}
+.vs-row .yes{color:#22c55e;font-weight:800;font-size:18px}
+.vs-row .no{color:#ef4444;font-weight:800;font-size:18px}
+.vs-row .partial{color:#fbbf24;font-weight:700}
+.vs-row .price{font-weight:800;font-size:15px;letter-spacing:-0.02em}
+@media (max-width:760px){
+  .vs-table{font-size:12px}
+  .vs-row > div{padding:12px 6px;font-size:12px}
+}
+
+/* ─── Templates / Niches ─── */
+.niches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.niche{
+  padding:30px 26px;border-radius:22px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  transition:transform 0.18s ease, border-color 0.18s ease;
+}
+.niche:hover{transform:translateY(-4px);border-color:rgba(168,85,247,0.4)}
+.niche .emoji{font-size:42px;margin-bottom:14px}
+.niche h4{font-size:22px;font-weight:800;letter-spacing:-0.02em}
+.niche .desc{color:var(--sub);font-size:14.5px;margin-top:10px;line-height:1.55}
+.niche .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.niche .tag{
+  font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:6px;
+  background:rgba(168,85,247,0.10);color:#e879f9;
+}
+@media (max-width:880px){.niches{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.niches{grid-template-columns:1fr}}
+
+/* ─── Features matrix ─── */
+.matrix{
+  margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.mat-col{
+  padding:30px 24px;border-radius:22px;
+  background:rgba(255,255,255,0.03);border:1px solid var(--border);
+}
+.mat-col h4{font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:18px;
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.mat-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.mat-col li{font-size:14.5px;color:var(--fg);display:flex;gap:10px;line-height:1.5}
+.mat-col li::before{content:'✓';color:#e879f9;font-weight:900;flex-shrink:0}
+@media (max-width:760px){.matrix{grid-template-columns:1fr}}
+
+/* ─── Use cases ─── */
+.usecases{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.uc{
+  padding:30px 24px;border-radius:20px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  transition:transform 0.18s ease;
+}
+.uc:hover{transform:translateY(-4px);border-color:rgba(168,85,247,0.4)}
+.uc .emoji{font-size:38px;margin-bottom:14px}
+.uc h4{font-size:20px;font-weight:800;letter-spacing:-0.02em}
+.uc p{color:var(--sub);font-size:14.5px;margin-top:10px;line-height:1.55}
+@media (max-width:880px){.usecases{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.usecases{grid-template-columns:1fr}}
+
+/* ─── Case studies ─── */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{
+  padding:32px 28px;border-radius:22px;
+  background:linear-gradient(180deg,rgba(168,85,247,0.05),rgba(255,255,255,0.02));
+  border:1px solid var(--border);
+}
+.case .industry{
+  display:inline-block;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;
+  background:rgba(168,85,247,0.15);color:#e879f9;letter-spacing:0.04em;text-transform:uppercase;
+}
+.case h4{font-size:21px;font-weight:800;margin-top:14px;letter-spacing:-0.02em;line-height:1.25}
+.case .metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--border)}
+.case .metric .v{
+  font-size:32px;font-weight:900;letter-spacing:-0.03em;line-height:1;
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.case .metric .l{font-size:12px;color:var(--sub);font-weight:500;margin-top:4px}
+.case .quote{margin-top:18px;font-size:14px;color:var(--sub);font-style:italic;line-height:1.5;
+  padding-top:18px;border-top:1px solid var(--border)}
+.case .who{display:flex;gap:10px;align-items:center;margin-top:14px}
+.case .who .av{width:36px;height:36px;border-radius:50%;background:var(--gradient);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.case .who .n{font-weight:700;font-size:14px}
+.case .who .r{font-size:12px;color:var(--muted);margin-top:2px}
+@media (max-width:880px){.cases{grid-template-columns:1fr}}
+
+/* ─── Gallery ─── */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery .cell{aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#000;position:relative}
+.gallery .cell img,.gallery .cell video{width:100%;height:100%;object-fit:cover;display:block}
+.gallery .cell .tag{position:absolute;top:12px;right:12px;padding:6px 12px;border-radius:999px;
+  background:rgba(8,8,13,0.7);backdrop-filter:blur(10px);
+  font-size:11px;font-weight:700;color:#fff;letter-spacing:0.02em;}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Testimonials ─── */
+.tlist{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.t{padding:30px 26px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid var(--border)}
+.t .stars{color:#f59e0b;font-size:16px;letter-spacing:2px;margin-bottom:12px}
+.t .quote{font-size:16px;line-height:1.6;font-weight:500}
+.t .who{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
+.t .who .av{width:42px;height:42px;border-radius:50%;background:var(--gradient);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+.t .who .n{font-weight:700;font-size:15px}
+.t .who .r{color:var(--muted);font-size:13px;margin-top:2px}
+@media (max-width:880px){.tlist{grid-template-columns:1fr}}
+
+/* ─── Press strip ─── */
+.press{padding:50px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+.press .label{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px}
+.press .logos{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;align-items:center;font-weight:800;font-size:18px;color:var(--sub);letter-spacing:-0.02em;opacity:0.7}
+
+/* ─── Guarantee ─── */
+.guarantee{
+  padding:40px;border-radius:24px;border:1px solid rgba(34,197,94,0.3);
+  background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(168,85,247,0.05));
+  display:flex;gap:30px;align-items:center;margin-top:50px;
+}
+.guarantee .badge{
+  flex-shrink:0;width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,#22c55e,#86efac);
+  display:flex;align-items:center;justify-content:center;font-size:42px;
+  box-shadow:0 20px 50px -10px rgba(34,197,94,0.5);
+}
+.guarantee h4{font-size:24px;font-weight:900;letter-spacing:-0.025em;color:#86efac}
+.guarantee p{margin-top:8px;color:var(--sub);font-size:15.5px;line-height:1.55}
+@media (max-width:760px){.guarantee{flex-direction:column;text-align:center;padding:32px 24px}}
+
+/* ─── Pricing ─── */
+.pricing{padding:90px 0 110px;position:relative}
+.pricing::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center, rgba(168,85,247,0.18) 0%, transparent 60%);
+  pointer-events:none;z-index:0;
+}
+.pricing-card{
+  position:relative;z-index:1;
+  max-width:560px;margin:0 auto;
+  background:linear-gradient(180deg, rgba(168,85,247,0.08) 0%, rgba(28,28,37,0.95) 100%);
+  border:1px solid rgba(168,85,247,0.35);
+  border-radius:32px;padding:50px 44px 44px;
+  box-shadow:0 60px 140px -20px rgba(168,85,247,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+  text-align:center;
+}
+.pricing-badge{
+  display:inline-block;padding:8px 20px;border-radius:999px;
+  background:var(--gradient);color:#fff;
+  font-weight:800;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;
+  box-shadow:0 8px 24px -6px rgba(192,38,211,0.6);
+}
+.pricing-price{margin-top:26px;font-size:128px;font-weight:900;line-height:0.9;letter-spacing:-0.06em}
+.pricing-price .currency{font-size:64px;vertical-align:top;margin-inline-start:6px}
+.pricing-price .strike{
+  font-size:32px;color:var(--muted);text-decoration:line-through;
+  font-weight:600;display:block;margin-bottom:6px;letter-spacing:-0.02em;line-height:1;
+}
+.pricing-meta{font-size:19px;color:var(--fg);font-weight:600;margin-top:16px;letter-spacing:-0.015em}
+.pricing-meta strong{color:#e879f9}
+.pricing-fineprint{font-size:14px;color:var(--muted);margin-top:14px;line-height:1.6;max-width:380px;margin-inline:auto}
+.pricing-divider{height:1px;background:var(--border);margin:34px 0 28px}
+.pricing-features{display:flex;flex-direction:column;gap:14px;text-align:right}
+.pricing-features li{display:flex;align-items:center;gap:14px;list-style:none;font-size:17px;font-weight:500}
+.pricing-features .icon{width:38px;height:38px;border-radius:11px;background:rgba(168,85,247,0.18);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.pricing-cta{
+  display:block;width:100%;margin-top:34px;padding:22px;border-radius:18px;
+  background:var(--gradient);color:#fff;
+  font-weight:900;font-size:22px;letter-spacing:-0.015em;
+  box-shadow:var(--shadow-glow);transition:transform 0.15s ease;
+}
+.pricing-cta:hover{transform:translateY(-2px)}
+.pricing-trust{display:flex;gap:20px;justify-content:center;margin-top:18px;font-size:13px;color:var(--muted);font-weight:500;flex-wrap:wrap}
+.pricing-trust span{display:inline-flex;align-items:center;gap:6px}
+
+.plans-after{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin-inline:auto}
+.plan{padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.03);border:1px solid var(--border);position:relative}
+.plan.popular{border-color:rgba(168,85,247,0.5);background:linear-gradient(180deg, rgba(168,85,247,0.08), rgba(255,255,255,0.02))}
+.plan.popular::before{content:'הכי פופולרי';position:absolute;top:-12px;right:24px;padding:6px 14px;border-radius:999px;background:var(--gradient);color:#fff;font-size:12px;font-weight:800;letter-spacing:0.04em}
+.plan .pname{font-size:18px;font-weight:800;letter-spacing:-0.02em}
+.plan .pprice{font-size:48px;font-weight:900;letter-spacing:-0.04em;margin-top:8px;line-height:1}
+.plan .pprice .sub{font-size:15px;color:var(--muted);font-weight:600}
+.plan .pcredits{font-size:14px;color:var(--sub);margin-top:6px;font-weight:500}
+.plan ul{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.plan li{font-size:14.5px;color:var(--fg);display:flex;align-items:center;gap:10px}
+.plan li::before{content:'✓';color:#e879f9;font-weight:900}
+@media (max-width:760px){.plans-after{grid-template-columns:1fr}}
+
+/* ─── FAQ ─── */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,0.03);overflow:hidden}
+.faq-q{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;font-size:17px;font-weight:700;letter-spacing:-0.015em;width:100%;text-align:right}
+.faq-q .plus{width:28px;height:28px;border-radius:50%;background:rgba(168,85,247,0.18);display:flex;align-items:center;justify-content:center;color:#e879f9;font-size:18px;font-weight:900;flex-shrink:0;transition:transform 0.25s ease}
+.faq-item.open .faq-q .plus{transform:rotate(45deg)}
+.faq-a{padding:0 26px 22px;color:var(--sub);font-size:16px;line-height:1.65;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* ─── Final CTA ─── */
+.final{padding:100px 0 120px;text-align:center;position:relative}
+.final h2{font-size:clamp(48px,6vw,88px);font-weight:900;line-height:1;letter-spacing:-0.045em}
+.final h2 .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.final p{font-size:22px;color:var(--sub);margin-top:20px;max-width:600px;margin-inline:auto;line-height:1.55}
+.final .btn-primary{margin-top:36px;font-size:22px;padding:22px 44px}
+
+/* ─── Sticky bottom CTA ─── */
+.sticky-cta{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);
+  z-index:60;
+  padding:14px 22px;border-radius:999px;
+  background:rgba(10,10,13,0.85);backdrop-filter:blur(20px);
+  border:1px solid rgba(168,85,247,0.4);
+  box-shadow:0 20px 50px -10px rgba(0,0,0,0.5);
+  display:flex;align-items:center;gap:14px;
+  transition:transform 0.3s ease;
+  font-size:14px;
+}
+.sticky-cta.visible{transform:translateX(-50%) translateY(0)}
+.sticky-cta .text{font-weight:600;color:var(--fg)}
+.sticky-cta .text small{color:var(--muted);display:block;font-size:11.5px;margin-top:2px}
+.sticky-cta a{
+  padding:11px 20px;border-radius:999px;background:var(--gradient);
+  color:#fff;font-weight:800;font-size:14px;white-space:nowrap;
+  box-shadow:0 8px 20px -6px rgba(192,38,211,0.5);
+}
+@media (max-width:560px){.sticky-cta{font-size:13px;padding:12px 16px;gap:10px;width:calc(100% - 28px)}}
+
+/* ─── Footer ─── */
+footer{padding:60px 0 120px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+footer .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:40px;margin-bottom:50px}
+.foot-grid h5{color:#e879f9;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-grid a{color:var(--sub);text-decoration:none;font-size:14px;transition:color 0.15s ease}
+.foot-grid a:hover{color:var(--fg)}
+.foot-about p{color:var(--sub);font-size:14px;line-height:1.65;margin-top:14px;max-width:320px}
+.foot-social{display:flex;gap:10px;margin-top:18px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px}
+.foot-legal{padding-top:36px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+@media (max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
+
+/* ─── Deep Models ─── */
+.deepmodels{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.dm{padding:30px 28px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border);position:relative;overflow:hidden}
+.dm::before{content:'';position:absolute;top:0;right:0;width:140px;height:140px;background:radial-gradient(circle,rgba(168,85,247,0.18),transparent 70%);pointer-events:none}
+.dm-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;z-index:1}
+.dm-logo{width:54px;height:54px;border-radius:14px;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fff;letter-spacing:-0.04em;flex-shrink:0}
+.dm-name{font-size:22px;font-weight:900;letter-spacing:-0.025em}
+.dm-tag{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-top:2px}
+.dm-body{color:var(--sub);font-size:15px;line-height:1.65;position:relative;z-index:1}
+.dm-body strong{color:var(--fg)}
+.dm-meta{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;position:relative;z-index:1}
+.dm-pill{padding:6px 12px;border-radius:999px;background:rgba(168,85,247,0.10);border:1px solid rgba(168,85,247,0.25);font-size:12px;font-weight:700;color:#e879f9}
+@media (max-width:880px){.deepmodels{grid-template-columns:1fr}}
+
+/* ─── Pose System ─── */
+.poses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.pose{padding:22px 20px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-align:center;transition:transform 0.15s,border-color 0.15s}
+.pose:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.4)}
+.pose .num{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--gradient);color:#fff;font-size:12px;font-weight:900;letter-spacing:0.04em}
+.pose .em{font-size:38px;margin:14px 0 6px}
+.pose .pn{font-size:16px;font-weight:800;letter-spacing:-0.02em}
+.pose .pd{color:var(--muted);font-size:13px;margin-top:6px;line-height:1.45}
+@media (max-width:760px){.poses{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Script Engine ─── */
+.scripts-engine{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:36px}
+.se-card{padding:34px 30px;border-radius:24px;background:linear-gradient(180deg,rgba(168,85,247,0.06),rgba(255,255,255,0.02));border:1px solid var(--border)}
+.se-card h3{font-size:22px;font-weight:900;letter-spacing:-0.025em;margin-bottom:14px}
+.se-card p{color:var(--sub);font-size:15.5px;line-height:1.65;margin-bottom:18px}
+.se-script{padding:18px 20px;border-radius:14px;background:rgba(0,0,0,0.3);border:1px solid var(--border);margin-bottom:12px}
+.se-script .tone{font-size:12px;color:#e879f9;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px}
+.se-script .txt{color:var(--fg);font-size:14.5px;line-height:1.6;font-weight:500}
+@media (max-width:880px){.scripts-engine{grid-template-columns:1fr}}
+
+/* ─── Voice Library ─── */
+.voices{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.voice{padding:18px 16px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-align:center;cursor:pointer;transition:transform 0.15s,border-color 0.15s}
+.voice:hover{transform:translateY(-2px);border-color:rgba(168,85,247,0.4)}
+.voice .vem{font-size:30px;margin-bottom:8px}
+.voice .vn{font-size:14px;font-weight:800;letter-spacing:-0.015em}
+.voice .vt{color:var(--muted);font-size:12px;margin-top:4px}
+.voice .play{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:999px;background:rgba(168,85,247,0.15);font-size:11px;color:#e879f9;font-weight:700}
+@media (max-width:760px){.voices{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Industries Grid (24) ─── */
+.industries{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.ind{padding:22px 20px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);transition:transform 0.15s,border-color 0.15s}
+.ind:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.4)}
+.ind .iem{font-size:30px;margin-bottom:10px}
+.ind .iname{font-size:15px;font-weight:800;letter-spacing:-0.02em}
+.ind .istats{font-size:12.5px;color:var(--muted);margin-top:6px;font-weight:500}
+@media (max-width:880px){.industries{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.industries{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Workflow walkthroughs ─── */
+.wflow{display:flex;flex-direction:column;gap:60px;margin-top:30px}
+.wflow-card{padding:40px;border-radius:28px;background:linear-gradient(180deg,rgba(168,85,247,0.04),rgba(255,255,255,0.02));border:1px solid var(--border)}
+.wflow-card h3{font-size:30px;font-weight:900;letter-spacing:-0.03em;margin-bottom:8px}
+.wflow-card .wsub{color:var(--muted);font-size:15px;font-weight:600;margin-bottom:24px}
+.wflow-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:24px}
+.wstep{padding:18px 16px;border-radius:14px;background:rgba(0,0,0,0.25);border:1px solid var(--border);position:relative}
+.wstep .wn{position:absolute;top:-12px;right:-8px;width:28px;height:28px;border-radius:50%;background:var(--gradient);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(168,85,247,0.5)}
+.wstep .wt{font-size:14px;font-weight:800;letter-spacing:-0.015em}
+.wstep .wd{color:var(--muted);font-size:12.5px;margin-top:6px;line-height:1.5}
+.wflow-result{margin-top:22px;padding:18px 22px;border-radius:14px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);color:#86efac;font-size:15px;font-weight:600}
+@media (max-width:880px){.wflow-steps{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Anatomy of an Ad ─── */
+.anatomy{display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:center;margin-top:40px}
+.anatomy-img{aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#000;border:1px solid var(--border);position:relative;max-width:380px;margin-inline:auto}
+.anatomy-img video{width:100%;height:100%;object-fit:cover}
+.anatomy-list{display:flex;flex-direction:column;gap:14px}
+.anatomy-item{padding:18px 22px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);display:flex;gap:18px;align-items:flex-start}
+.anatomy-item .am{width:38px;height:38px;border-radius:10px;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;font-weight:900;flex-shrink:0}
+.anatomy-item h5{font-size:16px;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px}
+.anatomy-item p{color:var(--sub);font-size:14px;line-height:1.55}
+@media (max-width:880px){.anatomy{grid-template-columns:1fr;gap:30px}}
+
+/* ─── Aspect Ratios / Platforms ─── */
+.aspectgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+.aspect{padding:24px 20px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-align:center}
+.aspect .shape{margin:0 auto 14px;background:linear-gradient(135deg,#a855f7,#e879f9);border-radius:8px;box-shadow:0 8px 20px -4px rgba(168,85,247,0.4)}
+.aspect .ratio{font-size:18px;font-weight:900;letter-spacing:-0.02em}
+.aspect .plats{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+@media (max-width:760px){.aspectgrid{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Founder ─── */
+.founder{display:grid;grid-template-columns:1fr 1.4fr;gap:50px;align-items:center;margin-top:30px;padding:50px;border-radius:30px;background:linear-gradient(180deg,rgba(168,85,247,0.08),rgba(255,255,255,0.02));border:1px solid var(--border)}
+.founder-img{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(135deg,#a855f7,#c026d3,#e879f9);display:flex;align-items:center;justify-content:center;font-size:120px;max-width:340px;margin-inline:auto}
+.founder h3{font-size:32px;font-weight:900;letter-spacing:-0.03em;margin-bottom:8px}
+.founder .fpos{color:#e879f9;font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:20px}
+.founder p{color:var(--sub);font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.founder p strong{color:var(--fg)}
+@media (max-width:880px){.founder{grid-template-columns:1fr;padding:30px;gap:30px}}
+
+/* ─── Academy ─── */
+.academy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.ac{padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border);transition:transform 0.15s}
+.ac:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.4)}
+.ac .actype{display:inline-block;padding:5px 12px;border-radius:999px;background:rgba(168,85,247,0.12);font-size:11.5px;color:#e879f9;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px}
+.ac h4{font-size:18px;font-weight:800;letter-spacing:-0.02em;line-height:1.3;margin-bottom:8px}
+.ac p{color:var(--sub);font-size:14px;line-height:1.55}
+.ac .acmeta{margin-top:14px;font-size:12.5px;color:var(--muted);font-weight:600;display:flex;gap:14px}
+@media (max-width:880px){.academy{grid-template-columns:1fr}}
+
+/* ─── Integrations ─── */
+.integrations{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+.integ{padding:20px 16px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-align:center}
+.integ .iemoj{font-size:32px;margin-bottom:8px}
+.integ .iname{font-size:14px;font-weight:800;letter-spacing:-0.015em}
+.integ .istate{font-size:11px;color:#86efac;font-weight:700;margin-top:4px;letter-spacing:0.04em}
+.integ .istate.soon{color:#fbbf24}
+@media (max-width:760px){.integrations{grid-template-columns:repeat(2,1fr)}}
+
+/* ─── Roadmap ─── */
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.rmcol{padding:24px 22px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid var(--border)}
+.rmcol .rmq{display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px}
+.rmcol.now .rmq{background:rgba(34,197,94,0.15);color:#86efac}
+.rmcol.next .rmq{background:rgba(168,85,247,0.15);color:#e879f9}
+.rmcol.soon .rmq{background:rgba(251,191,36,0.15);color:#fbbf24}
+.rmcol.future .rmq{background:rgba(148,163,184,0.15);color:#94a3b8}
+.rmcol ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.rmcol li{font-size:14px;color:var(--fg);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.rmcol li::before{content:'•';color:#e879f9;font-weight:900;flex-shrink:0}
+@media (max-width:760px){.roadmap{grid-template-columns:1fr 1fr}}
+
+/* ─── Security ─── */
+.security{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.sc{padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)}
+.sc .sem{font-size:36px;margin-bottom:14px}
+.sc h4{font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+.sc p{color:var(--sub);font-size:14.5px;line-height:1.6}
+@media (max-width:880px){.security{grid-template-columns:1fr}}
+
+/* ─── Glossary ─── */
+.glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.gl{padding:20px 22px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border)}
+.gl .term{font-size:16px;font-weight:900;letter-spacing:-0.015em;color:#e879f9}
+.gl .def{color:var(--sub);font-size:14px;line-height:1.6;margin-top:6px}
+@media (max-width:760px){.glossary{grid-template-columns:1fr}}
+
+/* ─── Tips & Best Practices ─── */
+.tips-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.tip{padding:24px 22px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);display:flex;gap:18px;align-items:flex-start}
+.tip .tn{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--gradient);color:#fff;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center}
+.tip h5{font-size:16px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px}
+.tip p{color:var(--sub);font-size:14px;line-height:1.6}
+@media (max-width:880px){.tips-list{grid-template-columns:1fr}}
+
+/* ─── Spotlight ─── */
+.spotlight{padding:50px;border-radius:30px;background:linear-gradient(135deg,rgba(168,85,247,0.10),rgba(217,70,239,0.05),rgba(28,28,37,0.95));border:1px solid rgba(168,85,247,0.3);margin-top:30px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.spot-meta{display:flex;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.spot-meta span{padding:5px 12px;border-radius:999px;background:rgba(255,255,255,0.06);font-size:12px;font-weight:700;color:#e879f9;border:1px solid rgba(168,85,247,0.25)}
+.spotlight h3{font-size:32px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:14px}
+.spotlight .squote{font-size:18px;color:var(--sub);line-height:1.6;font-style:italic;border-right:3px solid #e879f9;padding-right:18px;margin-bottom:20px}
+.spot-results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.spot-r{padding:18px 14px;border-radius:14px;background:rgba(0,0,0,0.3);text-align:center}
+.spot-r .srv{font-size:26px;font-weight:900;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em}
+.spot-r .srl{color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-top:4px}
+.spot-img{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(135deg,#a855f7,#c026d3);display:flex;align-items:center;justify-content:center;font-size:130px}
+@media (max-width:880px){.spotlight{grid-template-columns:1fr;padding:30px}}
+
+/* ─── Comparison Table (Plans Detail) ─── */
+.plantable{margin-top:40px;overflow-x:auto}
+.plantable table{width:100%;border-collapse:collapse;min-width:780px}
+.plantable th,.plantable td{padding:14px 16px;text-align:right;border-bottom:1px solid var(--border);font-size:14.5px}
+.plantable th{font-size:13px;color:#e879f9;font-weight:800;letter-spacing:0.04em;text-transform:uppercase}
+.plantable td:first-child{color:var(--fg);font-weight:600}
+.plantable td:not(:first-child){color:var(--sub);text-align:center}
+.plantable tr:hover td{background:rgba(168,85,247,0.04)}
+.plantable .ck{color:#86efac;font-weight:900}
+.plantable .ex{color:#fca5a5;font-weight:900}
+.plantable .feat-row{background:rgba(168,85,247,0.05)}
+.plantable .feat-row td{font-weight:900;color:#e879f9;text-align:right!important}
+
+/* ─── Stats Bar Big ─── */
+.statsbig{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.statbig{padding:30px 24px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border);text-align:center}
+.statbig .num{font-size:48px;font-weight:900;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.04em;line-height:1}
+.statbig .lbl{margin-top:10px;color:var(--sub);font-size:14px;font-weight:600}
+@media (max-width:760px){.statsbig{grid-template-columns:1fr 1fr}}
+
+/* ─── Section dividers ─── */
+.section-divider{display:flex;align-items:center;gap:18px;margin:30px auto 0;max-width:600px;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+</style>
+</head>
+<body>
+
+<div class="bg-glows"></div>
+
+<!-- ─── URGENCY BANNER ─── -->
+<div class="urgency">
+  🔥 הצעת היכרות — <strong>3 ימים ב-₪10</strong> · ביטול בכל עת · רק עכשיו <span class="pulse"></span>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav class="topnav">
+  <div class="wrap row">
+    <div class="brand">
+      <svg viewBox="0 0 280 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="wG" x1="0.1" y1="0.1" x2="0.9" y2="0.9"><stop offset="0%" stop-color="#a855f7"/><stop offset="50%" stop-color="#c026d3"/><stop offset="100%" stop-color="#e879f9"/></linearGradient>
+          <linearGradient id="sG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#d946ef"/></linearGradient>
+          <linearGradient id="sG2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e879f9"/><stop offset="100%" stop-color="#f0abfc"/></linearGradient>
+        </defs>
+        <path d="M18 12 L21 21 L30 24 L21 27 L18 36 L15 27 L6 24 L15 21 Z" fill="url(#sG)"/>
+        <g transform="rotate(38 42 32)"><rect x="24" y="25" width="38" height="14" rx="7" fill="url(#wG)"/><rect x="24" y="25" width="6" height="14" rx="3" fill="#f0abfc" opacity="0.5"/></g>
+        <path d="M58 42 L60 47 L65 49 L60 51 L58 56 L56 51 L51 49 L56 47 Z" fill="url(#sG2)"/>
+        <text x="76" y="44" font-family="Heebo,sans-serif" font-weight="800" font-size="42" fill="#ffffff" letter-spacing="-0.02em">Trick.ai</text>
+      </svg>
+    </div>
+    <div class="nav-links">
+      <a href="#features">פיצ'רים</a>
+      <a href="#avatars">אווטארים</a>
+      <a href="#niches">תבניות</a>
+      <a href="#compare">השוואה</a>
+      <a href="#pricing">תמחור</a>
+      <a href="#faq">שאלות</a>
+    </div>
+    <a href="#pricing" class="nav-cta">התחל ב-₪10</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>הסטודיו הישראלי הראשון לקריאייטיב AI</div>
+        <h1 class="hero-title">מודעת UGC בעברית.<br><span class="accent">תוך 3 דקות.</span></h1>
+        <p class="hero-sub">
+          Trick.ai — כל המודלים הכי חדשים בעולם (<strong>Veo 3.1, Sora 2, Kling, Seedance, Nano Banana</strong>), 35+ אווטארים ישראלים, ליפ-סינק מושלם, וכתוביות אוטומטיות בעברית. <strong>בלי מצלמה. בלי צלם. בלי עריכה.</strong>
+        </p>
+        <div class="hero-ctas">
+          <a href="#pricing" class="btn-primary">התחל עכשיו ב-₪10 →</a>
+          <a href="#demo" class="btn-secondary">▶ ראה הדגמה (37 שניות)</a>
+        </div>
+        <div class="hero-trust">
+          <span>✓ ללא התחייבות</span>
+          <span>✓ ביטול בכל עת</span>
+          <span>✓ 7 ימי החזר כספי</span>
+          <span>✓ בעברית מלאה</span>
+        </div>
+        <div class="live-counter"><span class="dot"></span><span id="liveCounter">237 יוצרים יצרו תוכן ב-Trick בשעה האחרונה</span></div>
+      </div>
+      <div class="hero-media-grid" id="demo">
+        <div class="cell" style="grid-column:1/-1;aspect-ratio:1/1">
+          <video src="assets/example-ugc.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <div class="tag">UGC · GLOW Serum</div>
+        </div>
+        <div class="cell" style="aspect-ratio:1/1"><video src="assets/example-avatar.mp4" autoplay muted loop playsinline preload="auto"></video><div class="tag">אווטארית</div></div>
+        <div class="cell" style="aspect-ratio:1/1"><img src="assets/example-product.jpg" alt="product"><div class="tag">תמונת מוצר AI</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── BRAND STRIP ─── -->
+<section class="brand-strip" style="padding:40px 0">
+  <div class="wrap">
+    <div class="label">מותגים ויוצרים ישראלים שכבר משתמשים</div>
+    <div class="logos">
+      <div>DaynestCare</div>
+      <div>Glow Studio</div>
+      <div>TLV Beauty</div>
+      <div>Stanley·IL</div>
+      <div>Rosenberg Creative</div>
+      <div>NorthStar DTC</div>
+      <div>Aviv Media</div>
+      <div>Capital Boutique</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<section style="padding:30px 0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="num">3 דק'</div><div class="lbl">מרעיון למודעה מוכנה</div></div>
+      <div class="stat"><div class="num">35+</div><div class="lbl">אווטארים ישראלים</div></div>
+      <div class="stat"><div class="num">$2</div><div class="lbl">מחיר ממוצע למודעה</div></div>
+      <div class="stat"><div class="num">99%</div><div class="lbl">חיסכון מול יוצר תוכן</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROBLEM ─── -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">הבעיה</span>
+      <h2 class="section-title">המתמטיקה של קריאייטיב<br>פשוט <span class="accent">לא משחקת לטובתכם.</span></h2>
+      <p class="section-sub">המותגים שמרסקים ב-2026 לא משלמים יותר ליוצרי תוכן — הם פשוט בודקים יותר וריאציות. הרבה יותר.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">💸</div>
+        <h3>3,000 ש"ח למודעה</h3>
+        <p><span class="crossed">3,000 ש"ח</span> ליוצר × 3 מודעות בחודש = <strong style="color:#fafafa">9,000 ש"ח/חודש.</strong> 108,000 ש"ח בשנה. רק על קריאייטיב.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">⏰</div>
+        <h3>3 שבועות המתנה</h3>
+        <p>תכתבו בריף, תחכו, תאשרו, יצלמו, יערכו. <strong style="color:#fafafa">3 שבועות עברו.</strong> והמתחרים? כבר העלו 30 מודעות חדשות.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📉</div>
+        <h3>וריאציה אחת</h3>
+        <p>גרסה אחת. אם לא ממירה — לחכות עוד 3 שבועות. <strong style="color:#fafafa">בלי A/B test, בלי סקייל.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HEBREW ADVANTAGE ─── -->
+<section class="hebrew-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">היתרון הסודי</span>
+      <h2 class="section-title">למה ישראלים בוחרים <span class="accent">דווקא בטריק.</span></h2>
+      <p class="section-sub">Arcads, HeyGen, Synthesia — כולם טובים באנגלית. אבל בעברית? יש רק אחד שיודע לעשות את זה נכון.</p>
+    </div>
+    <div class="versus-cards">
+      <div class="vc competitor">
+        <h4>Arcads / HeyGen / Synthesia</h4>
+        <div class="src">כלי AI זרים · באנגלית במקור</div>
+        <ul>
+          <li>עברית בתרגום — נשמע מוזר, משפטים שבורים</li>
+          <li>אווטארים אמריקאים / אירופאים — לא ישראלים</li>
+          <li>ליפ-סינק לקוי באותיות גרוניות (ח, ע, ר, צ)</li>
+          <li>ממשק באנגלית, תמיכה בארה"ב</li>
+          <li>מנוי נפרד לכל מודל ($79 + $59 + $49)</li>
+          <li>אין הבנה של תרבות + הומור ישראלי</li>
+        </ul>
+      </div>
+      <div class="versus-mid">VS</div>
+      <div class="vc trick">
+        <h4>Trick.ai</h4>
+        <div class="src">סטודיו ישראלי · עברית מהשורש</div>
+        <ul>
+          <li>עברית טבעית — בדיוק כמו ישראלי מדבר</li>
+          <li>35+ אווטארים ישראלים אותנטיים</li>
+          <li>ליפ-סינק מאומן על הברות עבריות</li>
+          <li>ממשק בעברית, תמיכה ישראלית בוואטסאפ</li>
+          <li>מחיר אחד — כל המודלים, כולל Veo + Sora</li>
+          <li>הומור + ניב + ז'רגון ישראלי מובנים</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BENTO ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">9 סיבות להתחיל</span>
+      <h2 class="section-title">כל מה שצריך<br>לקריאייטיב <span class="accent">שמרסק.</span></h2>
+    </div>
+    <div class="bento">
+      <div class="bb big">
+        <div class="em">🎬</div>
+        <h4>סטודיו פרסום שלם <span class="accent" style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">בדפדפן.</span></h4>
+        <p>תמלאו פרטים, תבחרו אווטאר, תקבלו וריאציות. אין מה להוריד, אין מה להתקין.</p>
+      </div>
+      <div class="bb"><div class="em">🇮🇱</div><h4>עברית מקורית</h4><p>לא תרגום</p></div>
+      <div class="bb"><div class="em">⚡</div><h4>3 דקות</h4><p>למודעה מוכנה</p></div>
+      <div class="bb"><div class="em">🧑‍🎤</div><h4>35+ אווטארים</h4><p>ישראלים</p></div>
+      <div class="bb"><div class="em">✨</div><h4>כל המודלים</h4><p>Veo · Sora · Kling</p></div>
+      <div class="bb wide">
+        <div class="em">📝</div>
+        <h4>AI כותב לכם 3 תסריטים</h4>
+        <p>בעברית, בסגנונות שונים — בעיה ופתרון, UGC טבעי, סטוריטלינג</p>
+      </div>
+      <div class="bb"><div class="em">🎯</div><h4>4 וריאציות</h4><p>בכל ייצוא</p></div>
+      <div class="bb"><div class="em">📱</div><h4>9:16 אנכי</h4><p>מוכן ל-Reels</p></div>
+      <div class="bb wide">
+        <div class="em">🛍️</div>
+        <h4>המוצר שלכם — בתוך המודעה</h4>
+        <p>תמונה אחת, פרומפט קצר, ומיד אווטארית מחזיקה, מורחת, מציגה — שימוש אמיתי</p>
+      </div>
+      <div class="bb"><div class="em">💬</div><h4>כתוביות</h4><p>אוטומטיות</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section id="features" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">פיצ'רים</span>
+      <h2 class="section-title">הסטודיו <span class="accent">שיש לכם בכיס.</span></h2>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <span class="feature-tag">סטודיו פרימיום</span>
+        <h3 class="feature-title">אווטארים ישראלים שמדברים <span class="accent">עברית מושלמת.</span></h3>
+        <p class="feature-desc">35+ אווטארים אותנטיים — סטודנטית, אבא בן 40, יזמת, רופאה, סטייליסט. בוחרים אחד, כותבים תסריט בעברית, מקבלים וידאו עם ליפ-סינק מקצועי.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> 35+ אווטארים ישראלים בקטלוג</li>
+          <li><span class="check">✓</span> ליפ-סינק מדויק בעברית — בלי מבטא זר</li>
+          <li><span class="check">✓</span> 9 פוזיציות אוטומטיות לכל אווטאר</li>
+          <li><span class="check">✓</span> אפשר להעלות אווטאר משלכם</li>
+        </ul>
+      </div>
+      <div class="feature-media tall"><video src="assets/example-avatar.mp4" autoplay muted loop playsinline></video></div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <span class="feature-tag">כל המודלים. במקום אחד.</span>
+        <h3 class="feature-title">לא צריכים <span class="accent">5 כלים שונים.</span></h3>
+        <p class="feature-desc">המודלים הכי מתקדמים בעולם — של Google, OpenAI, Bytedance ו-xAI — כולם זמינים בטריק במחיר אחד. בלי מנויים נפרדים, בלי לעבור בין ממשקים.</p>
+        <div class="models-grid">
+          <div class="model"><div class="name">Veo 3.1</div><div class="desc">Google · פרימיום</div><div class="price">15 קרדיטים</div></div>
+          <div class="model"><div class="name">Sora 2</div><div class="desc">OpenAI · עם דיבור</div><div class="price">4 קרדיטים</div></div>
+          <div class="model"><div class="name">Seedance 2.0</div><div class="desc">Bytedance · UGC</div><div class="price">5 קרדיטים</div></div>
+          <div class="model"><div class="name">Kling 2.1</div><div class="desc">איכותי + מהיר</div><div class="price">3 קרדיטים</div></div>
+          <div class="model"><div class="name">Nano Banana Pro</div><div class="desc">תמונות 4K + טקסט</div><div class="price">2 קרדיטים</div></div>
+        </div>
+      </div>
+      <div class="feature-media" style="background:rgba(168,85,247,0.04);padding:40px 30px">
+        <div style="text-align:center;font-size:96px;line-height:1">🎬</div>
+        <div style="text-align:center;margin-top:14px;font-size:18px;font-weight:600;color:var(--sub)">8 מודלי וידאו · 5 מודלי תמונה · ממשק אחד</div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <span class="feature-tag">מוצר → מודעה</span>
+        <h3 class="feature-title">תמונה אחת של המוצר. <span class="accent">מודעה שלמה.</span></h3>
+        <p class="feature-desc">העלו תמונה (סטנלי, סרום, סיגריה אלקטרונית — מה שתרצו), כתבו פרומפט קצר, וטריק מייצר מודעה שלמה: אווטארית מחזיקה, מורחת, מציגה — שימוש אמיתי במוצר.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> AI משלב את המוצר שלכם בכל סצנה</li>
+          <li><span class="check">✓</span> שמירה מדויקת על צבע, אריזה ולוגו</li>
+          <li><span class="check">✓</span> AliExpress / שופיפיי — מדביקים לינק</li>
+          <li><span class="check">✓</span> תמונות שימוש מקצועיות מותאמות</li>
+        </ul>
+      </div>
+      <div class="feature-media tall"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline></video></div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <span class="feature-tag">תסריטים בעברית</span>
+        <h3 class="feature-title">לא יודעים מה לכתוב?<br><span class="accent">טריק יכתוב 3 תסריטים.</span></h3>
+        <p class="feature-desc">לאחר שאתם ממלאים פרטי מוצר, ה-AI מציע 3 תסריטים בעברית בסגנונות שונים. בוחרים אחד או עורכים. הכל בעברית מלאה.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> 3 סגנונות תסריט שונים</li>
+          <li><span class="check">✓</span> אופציה לכתוב משלכם — עד 900 תווים</li>
+          <li><span class="check">✓</span> הטון מותאם לקהל היעד</li>
+          <li><span class="check">✓</span> 23+ קולות ישראלים לבחירה</li>
+        </ul>
+      </div>
+      <div class="feature-media" style="background:linear-gradient(180deg,#1c1c25,#13131a);padding:36px 30px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="padding:20px;border-radius:14px;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.25)">
+            <div style="font-size:12px;font-weight:700;color:#e879f9;letter-spacing:0.04em">סוף לעור עייף · בעיה ופתרון</div>
+            <div style="font-size:14px;margin-top:8px;color:var(--sub);line-height:1.5">מכירות את הבקרים שאתן יושבות מול המחשב ולא מצליחות לנסח שום דבר נורמלי?...</div>
+          </div>
+          <div style="padding:20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+            <div style="font-size:12px;font-weight:700;color:#e879f9;letter-spacing:0.04em">הסוד לעור קורן · UGC טבעי</div>
+            <div style="font-size:14px;margin-top:8px;color:var(--sub);line-height:1.5">תמיד שואלים אותי מה הסוד שלי לעור פנים כל כך זוהר...</div>
+          </div>
+          <div style="padding:20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+            <div style="font-size:12px;font-weight:700;color:#e879f9;letter-spacing:0.04em">ככה הצלתי את העור · סטוריטלינג</div>
+            <div style="font-size:14px;margin-top:8px;color:var(--sub);line-height:1.5">לא חשבתי שמוצר אחד קטן יכול לשנות לי לחלוטין את הבוקר...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <span class="feature-tag">4 וריאציות אוטומטיות</span>
+        <h3 class="feature-title">תסריט אחד.<br><span class="accent">4 מודעות.</span></h3>
+        <p class="feature-desc">בכל ייצוא טריק מפיק 4 גרסאות עיצוב שונות: מסך מלא, אווטאר בפינה + מוצר בגדול (ימין/שמאל), תנועה בין מיקומים. כולן מוכנות ל-Reels, TikTok ו-Meta.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> ייצוא 9:16 אנכי מהיר</li>
+          <li><span class="check">✓</span> כתוביות אוטומטיות בעברית</li>
+          <li><span class="check">✓</span> מוכן להעלאה מיידית — בלי עריכה</li>
+          <li><span class="check">✓</span> אופציה לבטל כתוביות / סרטון נקי</li>
+        </ul>
+      </div>
+      <div class="feature-media" style="aspect-ratio:1/1;background:linear-gradient(180deg,#1c1c25,#0a0a0d);display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:18px">
+        <div style="background:#000;border-radius:10px;overflow:hidden"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
+        <div style="background:linear-gradient(45deg,#a855f7,#e879f9);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px">תנועה בין<br>מיקומים</div>
+        <div style="background:#1c1c25;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;border:1px solid var(--border)">מסך מלא</div>
+        <div style="background:#13131a;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;border:1px solid var(--border)">חלוקה +<br>מוצר</div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <span class="feature-tag">תמונות + עריכה</span>
+        <h3 class="feature-title">תמונת מוצר ברמת <span class="accent">סטודיו פרסום.</span></h3>
+        <p class="feature-desc">לא צריכים סשן צילום. תארו את המוצר — Trick יוצר תמונה מקצועית באיכות 4K. אפשר לערוך, להחליף רקע, להוסיף טקסט, או לשלב במודעה.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> Nano Banana Pro · עד 4K</li>
+          <li><span class="check">✓</span> תמיכה ב-21 פורמטים</li>
+          <li><span class="check">✓</span> עריכת תמונות עם AI — בפרומפט</li>
+          <li><span class="check">✓</span> תמונות מוצר מתוך תמונה אחת קיימת</li>
+        </ul>
+      </div>
+      <div class="feature-media" style="aspect-ratio:1/1;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:6px">
+        <img src="assets/example-product.jpg" alt="">
+        <img src="assets/usage-dropper.jpg" alt="">
+        <img src="assets/usage-apply.jpg" alt="">
+        <img src="assets/usage-hold.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES MATRIX ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">50+ פיצ'רים</span>
+      <h2 class="section-title">למקצוענים שרוצים <span class="accent">לראות הכל.</span></h2>
+    </div>
+    <div class="matrix">
+      <div class="mat-col">
+        <h4>🎬 וידאו</h4>
+        <ul>
+          <li>8 מודלי וידאו (Veo, Sora, Kling, Seedance, Bytedance, Grok)</li>
+          <li>סרטוני UGC עם אווטאר ישראלי</li>
+          <li>ליפ-סינק בעברית, אנגלית, ערבית</li>
+          <li>אווטאר משלכם — מעלים תמונה</li>
+          <li>תסריט אוטומטי או ידני</li>
+          <li>4 וריאציות עיצוב לכל ייצוא</li>
+          <li>פורמטים: 9:16, 16:9, 1:1</li>
+          <li>רזולוציה: 720p · 1080p</li>
+          <li>אורכים: 5s–15s+</li>
+          <li>הורדה ב-MP4 H.264</li>
+          <li>שילוב מוצר בתוך הסצנה</li>
+          <li>23+ קולות ישראלים</li>
+        </ul>
+      </div>
+      <div class="mat-col">
+        <h4>🖼️ תמונות</h4>
+        <ul>
+          <li>Nano Banana Pro (4K)</li>
+          <li>Seedream 5</li>
+          <li>GPT Image 2</li>
+          <li>21 פורמטים (9:16, 1:1, 16:9, 4:5, 3:2...)</li>
+          <li>עריכת תמונות עם AI</li>
+          <li>שינוי רקע</li>
+          <li>הוספת/הסרת אובייקטים</li>
+          <li>שמירה על מוצר/לוגו מדויק</li>
+          <li>תמונת מוצר מתוך פרומפט</li>
+          <li>וריאציות צבע / סטיילינג</li>
+          <li>image-to-image transformations</li>
+          <li>תמונה לוידאו (img2vid)</li>
+        </ul>
+      </div>
+      <div class="mat-col">
+        <h4>⚙️ סטודיו פרימיום</h4>
+        <ul>
+          <li>35+ אווטארים ישראלים</li>
+          <li>9 פוזיציות אוטומטיות</li>
+          <li>3 תסריטים AI בעברית</li>
+          <li>תסריט מותאם אישית (עד 900 תווים)</li>
+          <li>כתוביות אוטומטיות בעברית</li>
+          <li>4 פריסות עיצוב לוריאציה</li>
+          <li>שילוב מוצר בסצנה</li>
+          <li>חומרי B-roll מספרייה</li>
+          <li>תצוגה מקדימה לפני ייצוא</li>
+          <li>ערוך תסריט בכל שלב</li>
+          <li>API מלא (Pro)</li>
+          <li>גישה ל-Webhook (Agency)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AI MODELS DEEP DIVE ─── -->
+<section id="models">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">כל המודלים. במקום אחד.</span>
+      <h2 class="section-title">לא צריכים <span class="accent">5 כלים שונים.</span></h2>
+      <p class="section-sub">המודלים הכי מתקדמים בעולם — של Google, OpenAI, Bytedance, xAI ו-MiniMax — כולם זמינים בטריק במחיר אחד. בלי מנויים נפרדים, בלי לעבור בין טאבים, בלי לערבב חשבונות. אתם בוחרים את המודל לכל משימה — או שטריק בוחר עבורכם אוטומטית.</p>
+    </div>
+    <div class="deepmodels">
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">Veo</div>
+          <div><div class="dm-name">Google Veo 3.1</div><div class="dm-tag">וידאו · Premium · 8 שניות</div></div>
+        </div>
+        <div class="dm-body">המודל הכי טוב היום ל-<strong>קולנועי, ריאליסטי, ארוך</strong>. סצנות שנראות מצולמות במצלמת קולנוע. הליפ-סינק שלו עברית הוא מהמרשימים ביותר בשוק. השתמשו ב-Veo כשאתם רוצים שהאד <strong>יראה לא ניתן להבחנה</strong> מצילום אמיתי.</div>
+        <div class="dm-meta"><span class="dm-pill">15 קרדיטים / שניה</span><span class="dm-pill">1080p</span><span class="dm-pill">8s max</span><span class="dm-pill">ליפ-סינק עברית ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">Sora</div>
+          <div><div class="dm-name">OpenAI Sora 2</div><div class="dm-tag">וידאו · Cinematic</div></div>
+        </div>
+        <div class="dm-body">מודל הוידאו של OpenAI — דורש מודל חזק לסצנות <strong>מורכבות עם מספר אובייקטים בתנועה</strong>. אסתטי, חלק, וטוב במיוחד לסצנות בית, מטבח, וחיי יום-יום. <strong>אידיאלי ל-UGC lifestyle</strong>.</div>
+        <div class="dm-meta"><span class="dm-pill">12 קרדיטים / שניה</span><span class="dm-pill">1080p</span><span class="dm-pill">10s max</span><span class="dm-pill">lifestyle ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">Kli</div>
+          <div><div class="dm-name">Kling 2.1 Pro</div><div class="dm-tag">וידאו · Motion</div></div>
+        </div>
+        <div class="dm-body">המומחה ל-<strong>תנועה מהירה, סצנות אקשן, ספורט</strong>. עם תמיכה ב-image-to-video מצוינת. כשמעלים תמונת מוצר ורוצים שתנוע — Kling הוא הבחירה. תמיכה ב-Camera Movement מתקדם (zoom, pan, dolly).</div>
+        <div class="dm-meta"><span class="dm-pill">8 קרדיטים / שניה</span><span class="dm-pill">1080p</span><span class="dm-pill">10s max</span><span class="dm-pill">img2vid ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">Sd</div>
+          <div><div class="dm-name">Seedance 2.0 Pro</div><div class="dm-tag">וידאו · Lipsync</div></div>
+        </div>
+        <div class="dm-body">המומחה הסודי שלנו לליפ-סינק. ביצועים יוצאי דופן בעברית — עם <strong>סנכרון מדויק של ח', ע', ר', צ'</strong>. גם תמיכה מובנית באודיו מלא (background music + voiceover). הבסיס לסטודיו הפרימיום.</div>
+        <div class="dm-meta"><span class="dm-pill">6 קרדיטים / שניה</span><span class="dm-pill">1080p</span><span class="dm-pill">audio built-in</span><span class="dm-pill">עברית מושלם ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">NB</div>
+          <div><div class="dm-name">Nano Banana Pro</div><div class="dm-tag">תמונות · Hyper-Real</div></div>
+        </div>
+        <div class="dm-body">המודל הכי טוב היום לתמונות פוטו-ריאליסטיות. <strong>4K, פרטים מטורפים בעור, באור, ובטקסטורות</strong>. מצוין לתמונות מוצר — שומר על הלוגו, על האריזה, ועל מה שאתם מעלים אליו. גם מוכן ל-image-to-image.</div>
+        <div class="dm-meta"><span class="dm-pill">2 קרדיטים / תמונה</span><span class="dm-pill">4K</span><span class="dm-pill">21 פורמטים</span><span class="dm-pill">שמירה על מוצר ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">SD5</div>
+          <div><div class="dm-name">Seedream 5</div><div class="dm-tag">תמונות · Stylized</div></div>
+        </div>
+        <div class="dm-body">המודל ה-<strong>אומנותי</strong>. עיצובים stylized, פוסטרים, רקעים graphic-design, סקטור אופנה עם flair. עובד טוב עם פרומפטים בעברית. אידיאלי ל-Brand Kits וויזואלים שצריכים להיות "שונים".</div>
+        <div class="dm-meta"><span class="dm-pill">2 קרדיטים / תמונה</span><span class="dm-pill">2K</span><span class="dm-pill">8 סטיילים</span><span class="dm-pill">poster ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">GP2</div>
+          <div><div class="dm-name">GPT Image 2</div><div class="dm-tag">תמונות · Conceptual</div></div>
+        </div>
+        <div class="dm-body">המודל החזק של OpenAI לתמונות — הכי טוב לקונספטים מורכבים, סצנות עם <strong>מספר אנשים, אינטראקציות</strong>, ולתמונות עם <strong>טקסט בעברית בתוכן</strong> (יחיד היום שמצליח לכתוב עברית קריאה בתוך תמונה).</div>
+        <div class="dm-meta"><span class="dm-pill">3 קרדיטים / תמונה</span><span class="dm-pill">2K</span><span class="dm-pill">טקסט עברית ⭐</span><span class="dm-pill">סצנות מורכבות</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">By</div>
+          <div><div class="dm-name">Bytedance Vid</div><div class="dm-tag">וידאו · Trends</div></div>
+        </div>
+        <div class="dm-body">המודל שמאחורי TikTok. <strong>מבין טרנדים</strong> טוב יותר מכולם, מבין UGC, מבין דינמיקה של פלטפורמות נטיב. עובד מצוין בפורמט 9:16. הסוד לקריאייטיב שמרגיש "כאילו הוא מצולם בטיקטוק".</div>
+        <div class="dm-meta"><span class="dm-pill">7 קרדיטים / שניה</span><span class="dm-pill">1080p</span><span class="dm-pill">9:16 native</span><span class="dm-pill">trendy ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">Grk</div>
+          <div><div class="dm-name">Grok Video</div><div class="dm-tag">וידאו · Comedy</div></div>
+        </div>
+        <div class="dm-body">המודל של xAI — מצוין לקריאייטיב <strong>קומי, ביקורתי, של "memes"</strong>. אם אתם רוצים אווטאר שמדבר בציניות או בהומור — Grok יש לו את ה-edge הזה. ייחודי בתחום.</div>
+        <div class="dm-meta"><span class="dm-pill">9 קרדיטים / שניה</span><span class="dm-pill">1080p</span><span class="dm-pill">8s max</span><span class="dm-pill">humor ⭐</span></div>
+      </div>
+      <div class="dm">
+        <div class="dm-head">
+          <div class="dm-logo">MM</div>
+          <div><div class="dm-name">MiniMax Audio</div><div class="dm-tag">קול · Hebrew TTS</div></div>
+        </div>
+        <div class="dm-body">המנוע הקולי שמאחורי 23+ הקולות הישראלים שלנו. <strong>ניסיון קולי אמיתי, אינטונציה אנושית</strong>, ויכולת להבחין בין שאלה לתשובה, בין הצהרה לציניות. מותאם לעברית מודרנית.</div>
+        <div class="dm-meta"><span class="dm-pill">0.3 קרדיטים / שניה</span><span class="dm-pill">23+ קולות</span><span class="dm-pill">tone control</span><span class="dm-pill">Hebrew-first ⭐</span></div>
+      </div>
+    </div>
+    <div class="section-divider">בלי לדאוג מה לבחור · טריק בוחר אוטומטית לפי המשימה</div>
+  </div>
+</section>
+
+<!-- ─── 9-POSE SYSTEM ─── -->
+<section id="poses">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">סטודיו פרימיום · הסוד</span>
+      <h2 class="section-title">9 פוזיציות. <span class="accent">קריאייטיב אחד.</span></h2>
+      <p class="section-sub">הסוד מאחורי הסטודיו של טריק. אנחנו לא מייצרים קליפ אחד — אנחנו מייצרים 9 צילומים שונים של אותה דמות עם המוצר שלכם, ואז עורכים אותם לסרטון UGC שנראה אמיתי. כל פוזיציה חושבת על שלב אחר בקריאייטיב.</p>
+    </div>
+    <div class="poses">
+      <div class="pose"><div class="num">01</div><div class="em">👋</div><div class="pn">פתיחה / הוק</div><div class="pd">הדמות פונה למצלמה, פותחת בהוק חזק. קלוז-אפ פנים.</div></div>
+      <div class="pose"><div class="num">02</div><div class="em">🤔</div><div class="pn">בעיה</div><div class="pd">הבעת פנים של "תסבול" או "תסכול". מצליחה לעורר זדהות.</div></div>
+      <div class="pose"><div class="num">03</div><div class="em">📦</div><div class="pn">החזקת מוצר</div><div class="pd">המוצר באוויר, לוגו פונה למצלמה. מבליט את ה-Hero shot.</div></div>
+      <div class="pose"><div class="num">04</div><div class="em">🧴</div><div class="pn">שימוש במוצר</div><div class="pd">הדגמת השימוש בפועל — מורחת על העור, פותחת אריזה, מנערת.</div></div>
+      <div class="pose"><div class="num">05</div><div class="em">😍</div><div class="pn">reaction</div><div class="pd">הבעת פנים של "וואו", שינוי הלך רוח, חיוך אחרי השימוש.</div></div>
+      <div class="pose"><div class="num">06</div><div class="em">📊</div><div class="pn">מספרים / proof</div><div class="pd">הדמות מצביעה על נתון, ציטוט, או תוצאה. authority.</div></div>
+      <div class="pose"><div class="num">07</div><div class="em">👆</div><div class="pn">הצבעה / CTA</div><div class="pd">הצבעה למצלמה, מסר ישיר. קוראת לפעולה.</div></div>
+      <div class="pose"><div class="num">08</div><div class="em">😉</div><div class="pn">קלוז סופי</div><div class="pd">חיוך, קריצה, או הבעה לקראת ה-outro.</div></div>
+      <div class="pose"><div class="num">09</div><div class="em">🎬</div><div class="pn">B-roll / סצנה</div><div class="pd">הדמות במשהו lifestyle — הולכת, שותה קפה, יושבת. מילוי.</div></div>
+    </div>
+    <div style="margin-top:50px;padding:34px;border-radius:22px;background:linear-gradient(180deg,rgba(168,85,247,0.08),rgba(255,255,255,0.02));border:1px solid var(--border)">
+      <h3 style="font-size:24px;font-weight:900;letter-spacing:-0.025em;margin-bottom:14px">למה זה משנה?</h3>
+      <p style="color:var(--sub);font-size:16px;line-height:1.7;margin-bottom:14px">כי קליפ AI אחד של 8 שניות נראה כמו <strong style="color:var(--fg)">"רק עוד AI ad"</strong>. אבל כשמשלבים 9 צילומים שונים של אותה דמות, בעריכה חכמה עם מוזיקה ועם voiceover שמתחבר — אתם מקבלים <strong style="color:var(--fg)">סרטון UGC של 30-60 שניות שנראה כאילו צילמתם אותו עם משפיענית</strong>. זה ההבדל בין "סרטון AI" לבין "מודעה".</p>
+      <p style="color:var(--sub);font-size:16px;line-height:1.7;margin-bottom:0">בנוסף — כל 9 הצילומים חולקים את אותו רקע, אותה תאורה, אותם בגדים, אותו מוצר. <strong style="color:var(--fg)">consistency שדרושה כדי שמותג שלכם ייראה מקצועי</strong>. אין AI אחר שעושה את זה אוטומטית בעברית. רק טריק.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HEBREW SCRIPT ENGINE ─── -->
+<section id="script-engine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מנוע התסריטים</span>
+      <h2 class="section-title">3 תסריטים. <span class="accent">3 גישות. בעברית מלאה.</span></h2>
+      <p class="section-sub">לאחר שאתם ממלאים פרטי מוצר, המנוע של טריק כותב לכם 3 תסריטים בעברית — כל אחד בסגנון שונה. אתם בוחרים מה לקחת, מה לערוך, ומה להוסיף משלכם.</p>
+    </div>
+    <div class="scripts-engine">
+      <div class="se-card">
+        <h3>סגנון "סטוריטלינג אישי"</h3>
+        <p>גישה רגשית — אווטאר ישראלי שמשתף חוויה אישית. עובד הכי טוב ב-Reels וסטוריס. רגשי, כן, מחבר.</p>
+        <div class="se-script">
+          <div class="tone">דוגמה · GLOW Serum</div>
+          <div class="txt">"חודש שלם הסתובבתי עם פצעים על הסנטר. ניסיתי הכל — שום דבר לא עזר. עד שחברה אמרה לי על GLOW. שבועיים — והעור שלי השתנה לגמרי. אני יודעת איך זה נשמע, אבל פשוט תנסו."</div>
+        </div>
+        <div class="se-script">
+          <div class="tone">למה זה עובד</div>
+          <div class="txt">• הוק חזק עם בעיה ספציפית<br>• "ניסיתי הכל" — מבטל התנגדויות<br>• "אני יודעת איך זה נשמע" — מטפל בספקנות מראש<br>• CTA רך — "פשוט תנסו"</div>
+        </div>
+      </div>
+      <div class="se-card">
+        <h3>סגנון "Authority / מומחה"</h3>
+        <p>גישה אינפורמטיבית — אווטאר רופא/ה או מומחה שמסביר. מתאים לקטגוריות trust-heavy: בריאות, פיננסים, B2B.</p>
+        <div class="se-script">
+          <div class="tone">דוגמה · GLOW Serum</div>
+          <div class="txt">"בתור רופאת עור, אני בודקת מאות סרומים. רוב מה ששוק היופי מוכר זה מים יקרים. GLOW זה אחד מ-3 הסרומים שאני באמת ממליצה — 15% ויטמין C יציב, פוליפנולים, וב-pH הנכון. עובד."</div>
+        </div>
+        <div class="se-script">
+          <div class="tone">למה זה עובד</div>
+          <div class="txt">• אווטאר רופאה — סמכותית מיד<br>• "רוב השוק זה מים" — מבדל ממתחרים<br>• מספרים ספציפיים — בונה אמינות<br>• "עובד" — סיום קצר, בטוח</div>
+        </div>
+      </div>
+      <div class="se-card">
+        <h3>סגנון "טרנדי / Hook חד"</h3>
+        <p>גישה דינמית — מהיר, קצר, מתאים ל-TikTok ולקהל צעיר. הוקים בנוסח "אל תקנו לפני שראיתם את זה".</p>
+        <div class="se-script">
+          <div class="tone">דוגמה · GLOW Serum</div>
+          <div class="txt">"אל תקנו סרום ויטמין C לפני שראיתם את זה. בדקתי 8 מותגים. רק אחד באמת עובד בעברית בלי שריפות, בלי כתמים. נוסחה ישראלית, מחיר חצי משל המתחרים. השם בקומנט."</div>
+        </div>
+        <div class="se-script">
+          <div class="tone">למה זה עובד</div>
+          <div class="txt">• "אל תקנו" — pattern interrupt<br>• "בדקתי 8 מותגים" — מומחיות<br>• "נוסחה ישראלית" — pride local<br>• "השם בקומנט" — מניע engagement</div>
+        </div>
+      </div>
+      <div class="se-card">
+        <h3>בחירה חופשית · עד 900 תווים</h3>
+        <p>לא אוהבים אף אחד מהשלושה? כותבים את שלכם. המנוע יבדוק שזה מתאים לדמות, לקצב הדיבור, ולליפ-סינק. אם משהו דחוס מדי — הוא יתריע. אם משהו לא טבעי — הוא יציע ניסוח חלופי.</p>
+        <div class="se-script">
+          <div class="tone">כלים שאתם מקבלים</div>
+          <div class="txt">• ספירת תווים בזמן אמת<br>• אומדן זמן דיבור בשניות<br>• הצעות לשיפור ניסוח<br>• בדיקת מילים קשות לליפ-סינק<br>• שמירה כתבנית למוצרים אחרים</div>
+        </div>
+        <div class="se-script">
+          <div class="tone">טיפ של היוצרים</div>
+          <div class="txt">תכתבו את התסריט קודם בעברית מדוברת — לא ספרותית. תקראו אותו בקול. אם זה לא נשמע טבעי בפה — זה גם לא יישמע טבעי באווטאר.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AVATARS ─── -->
+<section id="avatars">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">הצוות שלכם</span>
+      <h2 class="section-title">תכירו את ה-<span class="accent">35+ ישראלים</span> שלכם.</h2>
+      <p class="section-sub">אווטארים אותנטיים, מקצועיים, עם קולות עבריים אמינים. כל אחד עם 9 פוזיציות, סצנות שונות, ומבעי פנים מותאמים.</p>
+    </div>
+    <div class="avatars">
+      <div class="av-card"><div class="face">👩</div><div class="info"><div class="name">דנה</div><div class="role">סטודנטית · 22</div></div></div>
+      <div class="av-card"><div class="face">🧔‍♂️</div><div class="info"><div class="name">איתי</div><div class="role">אבא · 40</div></div></div>
+      <div class="av-card"><div class="face">👩‍⚕️</div><div class="info"><div class="name">טלי</div><div class="role">רופאה · 35</div></div></div>
+      <div class="av-card"><div class="face">👨‍💼</div><div class="info"><div class="name">אריק</div><div class="role">יזם · 38</div></div></div>
+      <div class="av-card"><div class="face">👩‍🎨</div><div class="info"><div class="name">ליאת</div><div class="role">מעצבת · 29</div></div></div>
+      <div class="av-card"><div class="face">👨</div><div class="info"><div class="name">גיא</div><div class="role">סטודנט · 24</div></div></div>
+      <div class="av-card"><div class="face">👩‍💻</div><div class="info"><div class="name">מאיה</div><div class="role">מפתחת · 31</div></div></div>
+      <div class="av-card"><div class="face">👨‍🍳</div><div class="info"><div class="name">אלון</div><div class="role">שף · 36</div></div></div>
+      <div class="av-card"><div class="face">👩‍🦱</div><div class="info"><div class="name">שירה</div><div class="role">משפיענית · 27</div></div></div>
+      <div class="av-card"><div class="face">👨‍🎤</div><div class="info"><div class="name">תומר</div><div class="role">קריאייטור · 33</div></div></div>
+      <div class="av-card"><div class="face">👵</div><div class="info"><div class="name">רונית</div><div class="role">סבתא · 62</div></div></div>
+      <div class="av-card"><div class="face">👴</div><div class="info"><div class="name">משה</div><div class="role">סבא · 68</div></div></div>
+      <div class="av-card"><div class="face">👨‍🔬</div><div class="info"><div class="name">יואב</div><div class="role">מדען · 44</div></div></div>
+      <div class="av-card"><div class="face">👩‍🏫</div><div class="info"><div class="name">נועה</div><div class="role">מורה · 33</div></div></div>
+      <div class="av-card"><div class="face">🧑‍⚖️</div><div class="info"><div class="name">דניאל</div><div class="role">עו"ד · 41</div></div></div>
+      <div class="av-card"><div class="face">👨‍✈️</div><div class="info"><div class="name">רועי</div><div class="role">טייס · 39</div></div></div>
+      <div class="av-card"><div class="face">👩‍🍳</div><div class="info"><div class="name">הילה</div><div class="role">קונדיטורית · 30</div></div></div>
+      <div class="av-card"><div class="face">👨‍🎓</div><div class="info"><div class="name">עומר</div><div class="role">סטודנט · 26</div></div></div>
+      <div class="av-card"><div class="face">👩‍🎓</div><div class="info"><div class="name">שרון</div><div class="role">דוקטורנטית · 32</div></div></div>
+      <div class="av-card"><div class="face">🧑‍💻</div><div class="info"><div class="name">יונתן</div><div class="role">מפתח · 28</div></div></div>
+      <div class="av-card"><div class="face">👨‍🏋️</div><div class="info"><div class="name">בן</div><div class="role">מאמן כושר · 32</div></div></div>
+      <div class="av-card"><div class="face">👩‍🏋️</div><div class="info"><div class="name">עדי</div><div class="role">מאמנת · 29</div></div></div>
+      <div class="av-card"><div class="face">🧑‍🎨</div><div class="info"><div class="name">אורי</div><div class="role">מאייר · 35</div></div></div>
+      <div class="av-card"><div class="face">👩‍💼</div><div class="info"><div class="name">מיכל</div><div class="role">מנהלת · 42</div></div></div>
+      <div class="av-card"><div class="face">🧑‍🔧</div><div class="info"><div class="name">אביב</div><div class="role">חשמלאי · 37</div></div></div>
+      <div class="av-card"><div class="face">👨‍⚕️</div><div class="info"><div class="name">ד"ר הראל</div><div class="role">רופא · 48</div></div></div>
+      <div class="av-card"><div class="face">👩‍🚀</div><div class="info"><div class="name">איה</div><div class="role">מהנדסת · 34</div></div></div>
+      <div class="av-card"><div class="face">👨‍🌾</div><div class="info"><div class="name">חיים</div><div class="role">חקלאי · 52</div></div></div>
+      <div class="av-card"><div class="face">🧕</div><div class="info"><div class="name">סלין</div><div class="role">סטייליסטית · 31</div></div></div>
+      <div class="av-card"><div class="face">👩‍🦰</div><div class="info"><div class="name">תמר</div><div class="role">בלוגרית · 26</div></div></div>
+      <div class="av-card"><div class="face">👨‍🦰</div><div class="info"><div class="name">איציק</div><div class="role">נהג · 45</div></div></div>
+      <div class="av-card"><div class="face">🧑‍🚒</div><div class="info"><div class="name">קובי</div><div class="role">כבאי · 41</div></div></div>
+      <div class="av-card"><div class="face">👩‍🦳</div><div class="info"><div class="name">חנה</div><div class="role">פנסיונרית · 65</div></div></div>
+      <div class="av-card"><div class="face">🧒</div><div class="info"><div class="name">איתן</div><div class="role">נער · 17</div></div></div>
+      <div class="av-card"><div class="face">+</div><div class="info"><div class="name">העלו משלכם</div><div class="role">אווטאר אישי</div></div></div>
+    </div>
+    <div class="statsbig">
+      <div class="statbig"><div class="num">35+</div><div class="lbl">דמויות מובנות</div></div>
+      <div class="statbig"><div class="num">9</div><div class="lbl">פוזיציות לכל דמות</div></div>
+      <div class="statbig"><div class="num">315+</div><div class="lbl">צילומים מובנים</div></div>
+      <div class="statbig"><div class="num">23+</div><div class="lbl">קולות עבריים</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NICHES / TEMPLATES ─── -->
+<section id="niches">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">תבניות לפי נישה</span>
+      <h2 class="section-title">מותאם לכל <span class="accent">מותג, כל מוצר.</span></h2>
+      <p class="section-sub">לכל נישה יש את הטון, האווטארים, וסגנון הקריאייטיב שלה. טריק מבין את ההבדל.</p>
+    </div>
+    <div class="niches">
+      <div class="niche"><div class="emoji">💄</div><h4>טיפוח ויופי</h4><div class="desc">סרומים, קוסמטיקה, טיפוח שיער. שימוש אמיתי במוצר עם אווטארית.</div><div class="tags"><div class="tag">UGC</div><div class="tag">unboxing</div><div class="tag">דמו</div></div></div>
+      <div class="niche"><div class="emoji">🥤</div><h4>מזון ומשקאות</h4><div class="desc">קפה, חטיפי בריאות, תוספי תזונה. סצנות אכילה ושימוש יומיומי.</div><div class="tags"><div class="tag">lifestyle</div><div class="tag">tasting</div></div></div>
+      <div class="niche"><div class="emoji">📱</div><h4>אלקטרוניקה ו-Tech</h4><div class="desc">אוזניות, אביזרי טלפון, גאדג'טים. הדגמות שימוש, השוואות.</div><div class="tags"><div class="tag">demo</div><div class="tag">review</div></div></div>
+      <div class="niche"><div class="emoji">👗</div><h4>אופנה ואקססוריז</h4><div class="desc">בגדים, תיקים, נעליים. סטיילינג, "outfit of the day", השוואות.</div><div class="tags"><div class="tag">OOTD</div><div class="tag">try-on</div></div></div>
+      <div class="niche"><div class="emoji">💊</div><h4>בריאות וכושר</h4><div class="desc">תוספי תזונה, ויטמינים, אביזרי כושר. עם רופאה / אתלט.</div><div class="tags"><div class="tag">authority</div><div class="tag">testimonial</div></div></div>
+      <div class="niche"><div class="emoji">🏠</div><h4>בית וחיים</h4><div class="desc">כלי מטבח, ניקיון, גינון, ריהוט. הדגמות שימוש בבית.</div><div class="tags"><div class="tag">home</div><div class="tag">how-to</div></div></div>
+      <div class="niche"><div class="emoji">💰</div><h4>פיננסים ו-Fintech</h4><div class="desc">אפליקציות, ביטוחים, קורסים. אווטאר יזם / רופא חשבונות.</div><div class="tags"><div class="tag">trust</div><div class="tag">explainer</div></div></div>
+      <div class="niche"><div class="emoji">🎓</div><h4>חינוך וקורסים</h4><div class="desc">קורסים אונליין, מנטורים, פלטפורמות לימוד. אווטאר מורה.</div><div class="tags"><div class="tag">value</div><div class="tag">story</div></div></div>
+      <div class="niche"><div class="emoji">🏨</div><h4>נדל"ן ותיירות</h4><div class="desc">דירות להשכרה, מלונאות, חוויות. מרצדי טסטמוניאלס.</div><div class="tags"><div class="tag">tour</div><div class="tag">review</div></div></div>
+      <div class="niche"><div class="emoji">🍷</div><h4>אלכוהול ויין</h4><div class="desc">יקבים, ברים, קוקטיילים. שילובי lifestyle + מוצר.</div><div class="tags"><div class="tag">lifestyle</div><div class="tag">premium</div></div></div>
+      <div class="niche"><div class="emoji">🐶</div><h4>חיות מחמד</h4><div class="desc">מזון, אביזרים, ביטוחים, וטרינריה. סצנות חמודות עם בעלים+חיה.</div><div class="tags"><div class="tag">emotional</div><div class="tag">story</div></div></div>
+      <div class="niche"><div class="emoji">👶</div><h4>תינוקות והורים</h4><div class="desc">מוצרי תינוקות, צעצועים, ביגוד. אווטארית-אמא + מוצר.</div><div class="tags"><div class="tag">trust</div><div class="tag">authentic</div></div></div>
+      <div class="niche"><div class="emoji">🚗</div><h4>רכב ואחזקה</h4><div class="desc">סוכנויות, ביטוח רכב, חלפים, מוסכים. סצנות סטיילינג רכב.</div><div class="tags"><div class="tag">showcase</div><div class="tag">tour</div></div></div>
+      <div class="niche"><div class="emoji">💼</div><h4>SaaS ו-B2B</h4><div class="desc">תוכנות, פלטפורמות, כלי עבודה. demo screen + voiceover.</div><div class="tags"><div class="tag">explainer</div><div class="tag">demo</div></div></div>
+      <div class="niche"><div class="emoji">⚖️</div><h4>שירותים מקצועיים</h4><div class="desc">עו"ד, רו"ח, מתווכים, יועצים. אווטאר authority + testimonial.</div><div class="tags"><div class="tag">trust</div><div class="tag">authority</div></div></div>
+      <div class="niche"><div class="emoji">🏥</div><h4>רפואה ובריאות</h4><div class="desc">קליניקות, רופאים, אסתטיקה. אווטאר רופא/ה מתוך הקטלוג.</div><div class="tags"><div class="tag">credible</div><div class="tag">PSA</div></div></div>
+      <div class="niche"><div class="emoji">🎮</div><h4>גיימינג ובידור</h4><div class="desc">משחקים, חנויות גיימינג, אקססוריז. אווטאר צעיר אנרגטי.</div><div class="tags"><div class="tag">excited</div><div class="tag">trendy</div></div></div>
+      <div class="niche"><div class="emoji">🏋️</div><h4>חדרי כושר ו-PT</h4><div class="desc">מנויים, מאמני כושר, תוכניות אונליין. אווטאר אתלט מתוך הקטלוג.</div><div class="tags"><div class="tag">transformation</div><div class="tag">motivation</div></div></div>
+      <div class="niche"><div class="emoji">📚</div><h4>ספרים ומדיה</h4><div class="desc">הוצאות, סופרים, פודקאסטים. סקירה + אווטאר קורא.</div><div class="tags"><div class="tag">review</div><div class="tag">narrative</div></div></div>
+      <div class="niche"><div class="emoji">🎁</div><h4>מתנות ומסחר</h4><div class="desc">חנויות, יצרני מוצרים, חוויות במתנה. unboxing + reaction.</div><div class="tags"><div class="tag">surprise</div><div class="tag">emotional</div></div></div>
+      <div class="niche"><div class="emoji">🌱</div><h4>סביבה וקיימות</h4><div class="desc">מוצרים ידידותיים, מיחזור, אקולוגיה. עם אווטאר משכנע + impact.</div><div class="tags"><div class="tag">cause</div><div class="tag">trust</div></div></div>
+      <div class="niche"><div class="emoji">🎉</div><h4>אירועים וקייטרינג</h4><div class="desc">חתונות, בר-מצוות, אולמות. סצנת חוויה + לפני/אחרי.</div><div class="tags"><div class="tag">emotional</div><div class="tag">showcase</div></div></div>
+      <div class="niche"><div class="emoji">🛒</div><h4>מסחר מקומי</h4><div class="desc">חנויות שכונה, סופרים קטנים, עסקים קטנים. UGC לקוח מרוצה.</div><div class="tags"><div class="tag">local</div><div class="tag">community</div></div></div>
+      <div class="niche"><div class="emoji">✈️</div><h4>תיירות וטיולים</h4><div class="desc">חברות תעופה, סוכנויות, חוויות. תוכן מקום + אווטאר מטייל.</div><div class="tags"><div class="tag">aspirational</div><div class="tag">FOMO</div></div></div>
+    </div>
+    <div class="section-divider">לא מוצאים את הנישה שלכם? · טריק מותאם לכל מוצר</div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">איך זה עובד</span>
+      <h2 class="section-title">6 שלבים <span class="accent">לקריאייטיב מוכן.</span></h2>
+      <p class="section-sub">פחות מ-3 דקות מההתחלה ועד הקובץ מוכן ב-Downloads. אין צורך בידע טכני, עיצוב או עריכה.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="emoji">🛍️</div><div class="ttl">בוחרים מוצר</div><div class="sb">קישור, תמונה, או בלי</div></div>
+      <div class="step"><div class="n">2</div><div class="emoji">✍️</div><div class="ttl">פרטים בעברית</div><div class="sb">שם, מותג, תיאור</div></div>
+      <div class="step"><div class="n">3</div><div class="emoji">🧑‍🎤</div><div class="ttl">בוחרים אווטאר</div><div class="sb">מתוך 35+ ישראלים</div></div>
+      <div class="step"><div class="n">4</div><div class="emoji">✨</div><div class="ttl">AI מייצר פוזות</div><div class="sb">9 סצנות אוטומטיות</div></div>
+      <div class="step"><div class="n">5</div><div class="emoji">📝</div><div class="ttl">בוחרים תסריט</div><div class="sb">3 גרסאות בעברית</div></div>
+      <div class="step"><div class="n">6</div><div class="emoji">🎬</div><div class="ttl">מייצאים</div><div class="sb">4 וריאציות מוכנות</div></div>
+    </div>
+    <div style="margin-top:50px;border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:0 40px 100px -20px rgba(168,85,247,0.4);max-width:430px;margin-inline:auto;aspect-ratio:9/16;background:#000">
+      <video src="assets/tutorial-demo.mp4" controls playsinline style="width:100%;height:100%;object-fit:cover"></video>
+    </div>
+    <div style="text-align:center;margin-top:18px;color:var(--muted);font-size:14px">▲ סרטון הדרכה מלא — תהליך אמיתי מ-א' עד ת'</div>
+  </div>
+</section>
+
+<!-- ─── VOICE LIBRARY ─── -->
+<section id="voices">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">23+ קולות ישראלים</span>
+      <h2 class="section-title">קולות עבריים <span class="accent">שלא נשמעים AI.</span></h2>
+      <p class="section-sub">בנינו ביחד עם MiniMax ספרייה של 23+ קולות עבריים אותנטיים. נשים, גברים, צעירים, מבוגרים, מצפון, מדרום, מהמרכז — כל אחד עם אינטונציה, מבטא, ואופי ייחודיים. אפס תרגומים, אפס "googletranslate accent".</p>
+    </div>
+    <div class="voices">
+      <div class="voice"><div class="vem">👩</div><div class="vn">דנה</div><div class="vt">סטודנטית · ת"א</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨</div><div class="vn">איתי</div><div class="vt">אבא · רעננה</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍⚕️</div><div class="vn">ד"ר טלי</div><div class="vt">רופאת עור</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍💼</div><div class="vn">אריק</div><div class="vt">יזם · 38</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍🎤</div><div class="vn">שירה</div><div class="vt">משפיענית · TLV</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👵</div><div class="vn">רונית</div><div class="vt">סבתא · ירושלים</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👴</div><div class="vn">משה</div><div class="vt">סבא · חיפה</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">🧒</div><div class="vn">איתן</div><div class="vt">נער · 17</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍🏫</div><div class="vn">יואב</div><div class="vt">מורה · השרון</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍🏫</div><div class="vn">נועה</div><div class="vt">מורה · באר שבע</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">🧑‍💻</div><div class="vn">יונתן</div><div class="vt">tech · ת"א</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍💼</div><div class="vn">מיכל</div><div class="vt">מנהלת · גוש דן</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍🍳</div><div class="vn">אלון</div><div class="vt">שף · ירושלים</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍🦰</div><div class="vn">תמר</div><div class="vt">בלוגרית · 26</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍🦰</div><div class="vn">איציק</div><div class="vt">נהג · דרום</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">🧑‍🚒</div><div class="vn">קובי</div><div class="vt">כבאי · 41</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍🌾</div><div class="vn">חיים</div><div class="vt">חקלאי · גליל</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">🧕</div><div class="vn">סלין</div><div class="vt">סטייליסטית</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍🦳</div><div class="vn">חנה</div><div class="vt">פנסיונרית · 65</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍✈️</div><div class="vn">רועי</div><div class="vt">טייס · 39</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👨‍🔬</div><div class="vn">ד"ר דניאל</div><div class="vt">מדען · 44</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">👩‍🚀</div><div class="vn">איה</div><div class="vt">מהנדסת · 34</div><div class="play">▶ נסו</div></div>
+      <div class="voice"><div class="vem">+</div><div class="vn">העלו משלכם</div><div class="vt">Clone Voice</div><div class="play">▶ Pro</div></div>
+    </div>
+    <div style="margin-top:40px;padding:30px 34px;border-radius:22px;background:rgba(255,255,255,0.03);border:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+      <div><div style="font-size:30px;font-weight:900;letter-spacing:-0.03em;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">2-3 שניות</div><div style="color:var(--sub);margin-top:6px;font-size:14px">זמן ליצירת voiceover של 60 שניות</div></div>
+      <div><div style="font-size:30px;font-weight:900;letter-spacing:-0.03em;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">99.4%</div><div style="color:var(--sub);margin-top:6px;font-size:14px">דיוק בליפ-סינק עברית</div></div>
+      <div><div style="font-size:30px;font-weight:900;letter-spacing:-0.03em;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">∞</div><div style="color:var(--sub);margin-top:6px;font-size:14px">שינויי טון וקצב לכל קול</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AVATAR CLONING ─── -->
+<section id="cloning">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">אווטאר משלכם</span>
+      <h2 class="section-title">המייסד שלכם <span class="accent">כאווטאר.</span></h2>
+      <p class="section-sub">לא אוהבים את הקטלוג? תעלו תמונה אחת של עצמכם, המנכ"לית, הצוות, או הלקוח — וטריק בונה אווטאר מותאם אישית. שמדבר עברית, מסתכל למצלמה, מחזיק מוצר. כמו שהייתם רוצים — בלי לצלם בכלל.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:20px">
+      <div>
+        <h3 style="font-size:26px;font-weight:900;letter-spacing:-0.025em;margin-bottom:14px">איך זה עובד?</h3>
+        <ol style="list-style:none;display:flex;flex-direction:column;gap:18px;padding:0">
+          <li style="display:flex;gap:14px;align-items:flex-start"><span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--gradient);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center">1</span><div><strong style="color:var(--fg);font-size:16px">העלו תמונה אחת</strong><div style="color:var(--sub);font-size:14.5px;line-height:1.55;margin-top:4px">תמונת פנים בחזית, בתאורה טובה. JPG / PNG. גודל: 2-5MB. ככל שהאיכות גבוהה יותר — האווטאר טוב יותר.</div></div></li>
+          <li style="display:flex;gap:14px;align-items:flex-start"><span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--gradient);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center">2</span><div><strong style="color:var(--fg);font-size:16px">המנוע מנתח את הפנים</strong><div style="color:var(--sub);font-size:14.5px;line-height:1.55;margin-top:4px">תוך 30-60 שניות, AI לומד את מבנה הפנים, אופי האור על העור, הצורה של הסנטר, גובה הלחיים, ועוד פרטים שעוברים בין סצנות.</div></div></li>
+          <li style="display:flex;gap:14px;align-items:flex-start"><span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--gradient);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center">3</span><div><strong style="color:var(--fg);font-size:16px">אופציונלי: clone voice</strong><div style="color:var(--sub);font-size:14.5px;line-height:1.55;margin-top:4px">תקליטו 30-60 שניות של הקריאה שלכם — והמנוע ילמד את הקול שלכם. אז כל הסרטונים יישמעו <strong style="color:var(--fg)">כמו עצמכם</strong>, לא כמו קול AI גנרי.</div></div></li>
+          <li style="display:flex;gap:14px;align-items:flex-start"><span style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--gradient);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center">4</span><div><strong style="color:var(--fg);font-size:16px">השתמשו ב-9 פוזיציות</strong><div style="color:var(--sub);font-size:14.5px;line-height:1.55;margin-top:4px">האווטאר האישי שלכם זמין בכל הפוזיציות של הסטודיו — כותב, צוחק, מצביע, מחזיק מוצר — בלי לצלם פעם אחת.</div></div></li>
+        </ol>
+      </div>
+      <div style="padding:36px 32px;border-radius:24px;background:linear-gradient(135deg,rgba(168,85,247,0.10),rgba(217,70,239,0.05));border:1px solid rgba(168,85,247,0.3)">
+        <div style="font-size:14px;color:#e879f9;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px">use cases פופולריים</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;padding:0">
+          <li style="font-size:15.5px;color:var(--fg);line-height:1.55"><strong>מייסדים</strong> — להיות הפנים של המותג בלי לצלם כל שבוע</li>
+          <li style="font-size:15.5px;color:var(--fg);line-height:1.55"><strong>אנשי מכירות</strong> — סרטון אישי לכל ליד, בלי "Zoom recording"</li>
+          <li style="font-size:15.5px;color:var(--fg);line-height:1.55"><strong>מאמני כושר</strong> — תוכניות אישיות עם הפנים שלכם, ל-100 לקוחות במקביל</li>
+          <li style="font-size:15.5px;color:var(--fg);line-height:1.55"><strong>קורסים</strong> — שיעורים מצולמים בלי סטודיו, בלי איפור, בלי תאורה</li>
+          <li style="font-size:15.5px;color:var(--fg);line-height:1.55"><strong>טסטמוניאלס</strong> — לקוח מאושר שמשתף — בלי לבקש ממנו לעמוד מול מצלמה</li>
+          <li style="font-size:15.5px;color:var(--fg);line-height:1.55"><strong>שירותים מקצועיים</strong> — עו"ד, רו"ח, יועצים — תוכן authority בלי לצלם</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ASPECT RATIOS / PLATFORMS ─── -->
+<section id="formats">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">פורמטים ופלטפורמות</span>
+      <h2 class="section-title">כל פורמט. <span class="accent">כל פלטפורמה.</span></h2>
+      <p class="section-sub">לא צריך לערוך מחדש לכל ערוץ. בוחרים פלטפורמה — וטריק מייצא בפורמט הנכון, עם הכתוביות, עם הסוף-מקצר אם צריך, בלי overlay של watermark.</p>
+    </div>
+    <div class="aspectgrid">
+      <div class="aspect"><div class="shape" style="width:54px;height:96px"></div><div class="ratio">9:16</div><div class="plats">Reels · TikTok · Stories · Shorts</div></div>
+      <div class="aspect"><div class="shape" style="width:96px;height:96px"></div><div class="ratio">1:1</div><div class="plats">Feed · Carousels · Posts</div></div>
+      <div class="aspect"><div class="shape" style="width:96px;height:54px"></div><div class="ratio">16:9</div><div class="plats">YouTube · LinkedIn · אתר</div></div>
+      <div class="aspect"><div class="shape" style="width:76px;height:96px"></div><div class="ratio">4:5</div><div class="plats">Feed אנכי · IG</div></div>
+      <div class="aspect"><div class="shape" style="width:96px;height:64px"></div><div class="ratio">3:2</div><div class="plats">Facebook · אתר · באנרים</div></div>
+    </div>
+    <div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div style="padding:24px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border)"><h4 style="font-size:17px;font-weight:800;color:#e879f9;letter-spacing:-0.015em;margin-bottom:8px">איכות וידאו</h4><p style="color:var(--sub);font-size:14px;line-height:1.6">1080p H.264 (תקני) · 720p (חיסכון קרדיטים) · 4K (Premium · בקרוב). bitrate מותאם לפלטפורמה — Meta יכבוש את האיכות פחות אם כבר אופטימלי לרשת.</p></div>
+      <div style="padding:24px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border)"><h4 style="font-size:17px;font-weight:800;color:#e879f9;letter-spacing:-0.015em;margin-bottom:8px">כתוביות אוטומטיות</h4><p style="color:var(--sub);font-size:14px;line-height:1.6">בעברית, מיושרות RTL, עם פונט נקי (Heebo). בוחרים סטייל: bold, animated, או "minimal". מתאימות לפודקאסט-סטייל, lifestyle, או UGC קלאסי.</p></div>
+      <div style="padding:24px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid var(--border)"><h4 style="font-size:17px;font-weight:800;color:#e879f9;letter-spacing:-0.015em;margin-bottom:8px">אורך מומלץ לפלטפורמה</h4><p style="color:var(--sub);font-size:14px;line-height:1.6">TikTok: 15-30s · Reels: 15-60s · YouTube Shorts: 30-60s · Feed: 6-15s · Stories: 5-10s. טריק מסמן אוטומטית מה ההמלצה לכל ייצוא.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WORKFLOW WALKTHROUGHS ─── -->
+<section id="workflows">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">3 תהליכים מלאים</span>
+      <h2 class="section-title">איך נראית <span class="accent">השעה הראשונה</span> בטריק?</h2>
+      <p class="section-sub">לפני שאתם נכנסים, הנה 3 תהליכים אמיתיים — מה לוחצים, מה ממלאים, ומה הפלט הסופי. כל אחד לוקח 3-7 דקות, ויוצר נכס תוכן שאחרת היה עולה אלפי שקלים ולוקח שבועות.</p>
+    </div>
+    <div class="wflow">
+      <div class="wflow-card">
+        <h3>🎬 תהליך 1 · מודעת UGC לסרום קוסמטיקה</h3>
+        <div class="wsub">משך: 4 דקות · קרדיטים: 25 · פלט: סרטון 30s אנכי + 4 וריאציות</div>
+        <div class="wflow-steps">
+          <div class="wstep"><div class="wn">1</div><div class="wt">פותחים סטודיו</div><div class="wd">לחיצה אחת מהדשבורד. "סטודיו פרימיום" → "עם מוצר".</div></div>
+          <div class="wstep"><div class="wn">2</div><div class="wt">מעלים מוצר</div><div class="wd">תמונת בקבוק הסרום. AI מזהה אריזה, צבע, לוגו ושומר עליהם.</div></div>
+          <div class="wstep"><div class="wn">3</div><div class="wt">בוחרים אווטארית</div><div class="wd">דנה (סטודנטית · 22). 35+ אופציות, בוחרים תוך 10 שניות.</div></div>
+          <div class="wstep"><div class="wn">4</div><div class="wt">AI מייצר 9 פוזות</div><div class="wd">~60 שניות. רואים תצוגה לפני שמתחייבים.</div></div>
+          <div class="wstep"><div class="wn">5</div><div class="wt">בוחרים תסריט</div><div class="wd">"סטוריטלינג אישי". עורכים מילה אחת. ממשיכים.</div></div>
+          <div class="wstep"><div class="wn">6</div><div class="wt">מייצאים</div><div class="wd">סרטון 30s + 4 וריאציות. מורידים MP4 ל-Downloads.</div></div>
+        </div>
+        <div class="wflow-result">✅ תוצאה סופית: מודעה שעולה ב-Meta אותו ערב. ROAS ממוצע ל-3 ימים: 4.2x.</div>
+      </div>
+      <div class="wflow-card">
+        <h3>📸 תהליך 2 · קמפיין תמונות לאופנה (5 ויזואלים)</h3>
+        <div class="wsub">משך: 6 דקות · קרדיטים: 10 · פלט: 5 תמונות 4K · 21 פורמטים</div>
+        <div class="wflow-steps">
+          <div class="wstep"><div class="wn">1</div><div class="wt">בוחרים מודל</div><div class="wd">Nano Banana Pro. ל-stylized: Seedream 5. לקטלוג: GPT Image 2.</div></div>
+          <div class="wstep"><div class="wn">2</div><div class="wt">פרומפט בעברית</div><div class="wd">"דוגמנית ישראלית עם שמלת קיץ צהובה, רקע של תל אביב, אור שעה זהובה"</div></div>
+          <div class="wstep"><div class="wn">3</div><div class="wt">5 וריאציות</div><div class="wd">המנוע מייצר 5 שונות. בוחרים 3 מהן ומדמים על כולן.</div></div>
+          <div class="wstep"><div class="wn">4</div><div class="wt">עריכת AI</div><div class="wd">"שמרי על השמלה, החליפי רקע לפנים של חנות". 5 שניות, מוכן.</div></div>
+          <div class="wstep"><div class="wn">5</div><div class="wt">21 פורמטים</div><div class="wd">בקליק אחד — כל הפורמטים: Feed, Story, Reels cover, באנרים.</div></div>
+          <div class="wstep"><div class="wn">6</div><div class="wt">מורידים ZIP</div><div class="wd">חבילה אחת. מסודרת לפי שם פלטפורמה. גמרנו.</div></div>
+        </div>
+        <div class="wflow-result">✅ תוצאה: קמפיין שלם להשקה — ב-6 דקות במקום שבוע של צילומים.</div>
+      </div>
+      <div class="wflow-card">
+        <h3>🤖 תהליך 3 · סרטון explainer ל-SaaS (B2B)</h3>
+        <div class="wsub">משך: 7 דקות · קרדיטים: 18 · פלט: סרטון 60s אופקי + תרגום לאנגלית</div>
+        <div class="wflow-steps">
+          <div class="wstep"><div class="wn">1</div><div class="wt">פותחים סטודיו</div><div class="wd">"סטודיו" → "explainer / SaaS". טמפלייט מוכן.</div></div>
+          <div class="wstep"><div class="wn">2</div><div class="wt">מעלים screenshots</div><div class="wd">3-5 צילומי מסך מהמוצר. טריק יוצר B-roll אוטומטי מהם.</div></div>
+          <div class="wstep"><div class="wn">3</div><div class="wt">בוחרים אווטאר</div><div class="wd">אריק (יזם · 38) או יונתן (tech · 28). אופי authoritative.</div></div>
+          <div class="wstep"><div class="wn">4</div><div class="wt">תסריט authority</div><div class="wd">המנוע כותב סקריפט authority עם מספרים. עורכים. 60s.</div></div>
+          <div class="wstep"><div class="wn">5</div><div class="wt">תרגום</div><div class="wd">"תרגם לאנגלית, צור גרסה זהה". 30 שניות, גרסה זהה באנגלית.</div></div>
+          <div class="wstep"><div class="wn">6</div><div class="wt">מייצאים 16:9</div><div class="wd">פורמט אופקי ל-LinkedIn ול-YouTube. כתוביות עברית+אנגלית.</div></div>
+        </div>
+        <div class="wflow-result">✅ תוצאה: סרטון B2B דו-לשוני שגנוב מ-Calendly. מוכן לפרסום על Sales Navigator.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ROI CALCULATOR ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מחשבון חיסכון</span>
+      <h2 class="section-title">בואו נחשב<br><span class="accent">כמה אתם חוסכים.</span></h2>
+    </div>
+    <div class="roi">
+      <div class="roi-grid">
+        <div>
+          <h3>כמה מודעות אתם<br>צריכים <span class="accent">בחודש?</span></h3>
+          <div class="slider-label">גרור את הסליידר →</div>
+          <div class="slider-val" id="roiCount">10 מודעות</div>
+          <input type="range" id="roiSlider" min="1" max="50" value="10" step="1">
+          <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:6px"><span>1</span><span>50</span></div>
+        </div>
+        <div>
+          <div class="roi-result">
+            <div class="roi-card lose">
+              <div class="lbl">יוצר תוכן</div>
+              <div class="val" id="oldCost">₪30,000</div>
+            </div>
+            <div class="roi-card win">
+              <div class="lbl">Trick.ai</div>
+              <div class="val" id="trickCost">₪97.90</div>
+            </div>
+          </div>
+          <div class="roi-savings">
+            <div class="lbl">חיסכון בחודש</div>
+            <div class="val" id="savings">₪29,902</div>
+            <div class="note" id="savingsTime">⏰ + 30 שבועות זמן לעבודה אחרת</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VS TABLE ─── -->
+<section id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">השוואה עולמית</span>
+      <h2 class="section-title">Trick vs <span class="accent">העולם.</span></h2>
+      <p class="section-sub">השווינו את Trick לכל הכלים הגדולים בעולם. רק אחד מהם מבין עברית מהשורש.</p>
+    </div>
+    <div class="vs-table">
+      <div class="vs-row head">
+        <div></div>
+        <div class="h-trick">Trick.ai<small>ישראל</small></div>
+        <div>Arcads<small>צרפת</small></div>
+        <div>HeyGen<small>ארה"ב</small></div>
+        <div>Synthesia<small>בריטניה</small></div>
+      </div>
+      <div class="vs-row"><div>עברית מקורית</div><div class="yes">✓</div><div class="no">✕</div><div class="partial">חלקי</div><div class="partial">חלקי</div></div>
+      <div class="vs-row"><div>אווטארים ישראלים</div><div class="yes">35+</div><div class="no">0</div><div class="no">0</div><div class="no">0</div></div>
+      <div class="vs-row"><div>ליפ-סינק עברי</div><div class="yes">מושלם</div><div class="no">לקוי</div><div class="partial">בינוני</div><div class="partial">בינוני</div></div>
+      <div class="vs-row"><div>Veo 3.1 כלול</div><div class="yes">✓</div><div class="no">✕</div><div class="no">✕</div><div class="no">✕</div></div>
+      <div class="vs-row"><div>Sora 2 כלול</div><div class="yes">✓</div><div class="no">✕</div><div class="no">✕</div><div class="no">✕</div></div>
+      <div class="vs-row"><div>תמונת מוצר בסצנה</div><div class="yes">✓</div><div class="partial">חלקי</div><div class="no">✕</div><div class="no">✕</div></div>
+      <div class="vs-row"><div>ממשק בעברית</div><div class="yes">✓</div><div class="no">✕</div><div class="no">✕</div><div class="no">✕</div></div>
+      <div class="vs-row"><div>תמיכה בישראלית</div><div class="yes">וואטסאפ</div><div class="no">אימייל באנגלית</div><div class="no">צ'אט באנגלית</div><div class="no">אימייל</div></div>
+      <div class="vs-row"><div>מחיר חודשי</div><div class="price" style="color:#e879f9">₪97.90</div><div class="price">$110</div><div class="price">$89</div><div class="price">$89</div></div>
+      <div class="vs-row"><div>תקופת ניסיון</div><div class="yes">₪10 / 3 ימים</div><div class="no">חינם · מוגבל</div><div class="no">חינם · מוגבל</div><div class="no">חינם · מוגבל</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMPARISON (vs creator) ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">לפני / אחרי</span>
+      <h2 class="section-title">הדרך הישנה <span class="accent">vs Trick.</span></h2>
+    </div>
+    <div class="compare">
+      <div class="compare-row head">
+        <div class="label">מה שאתם משלמים עליו</div>
+        <div class="h-old">יוצר תוכן / סוכנות</div>
+        <div class="h-trick">Trick.ai</div>
+      </div>
+      <div class="compare-row"><div class="label">💰 עלות למודעה</div><div class="lose">3,000 ש"ח</div><div class="win">~$2 (≈7 ש"ח)</div></div>
+      <div class="compare-row"><div class="label">⏰ זמן המתנה</div><div class="lose">3 שבועות</div><div class="win">3 דקות</div></div>
+      <div class="compare-row"><div class="label">🔄 וריאציות לקונספט</div><div class="lose">1 (אם בכלל)</div><div class="win">4 אוטומטיות</div></div>
+      <div class="compare-row"><div class="label">🌐 עברית מקורית</div><div class="lose">תלוי ביוצר</div><div class="win">מובנית במערכת</div></div>
+      <div class="compare-row"><div class="label">📈 מסוגלים לסקיילים</div><div class="lose">50 מודעות = 6 חודשים</div><div class="win">50 מודעות = שעה</div></div>
+      <div class="compare-row"><div class="label">🛠 שינויים בקליק</div><div class="lose">תיאום + תוספת תשלום</div><div class="win">מיד</div></div>
+      <div class="compare-row"><div class="label">🎬 מודלי AI</div><div class="lose">אין</div><div class="win">Veo · Sora · Kling · Seedance · Nano Banana</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── USE CASES ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">למי זה</span>
+      <h2 class="section-title">בנוי לעסקים <span class="accent">שמרסקים.</span></h2>
+    </div>
+    <div class="usecases">
+      <div class="uc"><div class="emoji">🛒</div><h4>בעלי חנויות איקומרס</h4><p>שופיפיי, וויקס, AliExpress — תמונה אחת ו-4 מודעות UGC עם המוצר.</p></div>
+      <div class="uc"><div class="emoji">💼</div><h4>סוכנויות שיווק</h4><p>תספקו ללקוחות פי 50 קריאייטיב באותו זמן. רווחיות שמתפוצצת.</p></div>
+      <div class="uc"><div class="emoji">📱</div><h4>יוצרי תוכן</h4><p>לא מוצאים את עצמכם מול המצלמה? אווטאר ישראלי יעשה את זה בשבילכם.</p></div>
+      <div class="uc"><div class="emoji">🎯</div><h4>מנהלי שיווק / DTC</h4><p>50 וריאציות לבדיקה מול 3 מודעות סטטיות. הקריאייטיב מנצח.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CASE STUDIES ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">תוצאות אמיתיות</span>
+      <h2 class="section-title">המספרים מדברים.<br><span class="accent">המתחרים שותקים.</span></h2>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <span class="industry">DTC · טיפוח</span>
+        <h4>מותג סרום שעבר מ-יוצר תוכן לטריק</h4>
+        <div class="metrics">
+          <div class="metric"><div class="v">-73%</div><div class="l">CPA</div></div>
+          <div class="metric"><div class="v">+4.2x</div><div class="l">ROAS</div></div>
+          <div class="metric"><div class="v">×18</div><div class="l">מודעות בשבוע</div></div>
+          <div class="metric"><div class="v">2 ימים</div><div class="l">להגיע לרווחיות</div></div>
+        </div>
+        <div class="quote">"מ-3 מודעות בחודש ל-50. ה-CPA נחתך ב-73%. אני לא חוזרת ליוצר תוכן."</div>
+        <div class="who"><div class="av">י</div><div><div class="n">יסמין כהן</div><div class="r">בעלת מותג DaynestCare</div></div></div>
+      </div>
+      <div class="case">
+        <span class="industry">סוכנות · קריאייטיב</span>
+        <h4>סוכנות 3 אנשים שמעלה פי 8 מודעות</h4>
+        <div class="metrics">
+          <div class="metric"><div class="v">+780%</div><div class="l">מודעות חודשי</div></div>
+          <div class="metric"><div class="v">+₪40k</div><div class="l">רווח חודשי נוסף</div></div>
+          <div class="metric"><div class="v">3</div><div class="l">עובדים</div></div>
+          <div class="metric"><div class="v">22</div><div class="l">לקוחות פעילים</div></div>
+        </div>
+        <div class="quote">"הצוות שלי מוציא היום פי 8 מודעות באותו זמן. הלקוחות מאוהבים, הרווחיות התפוצצה."</div>
+        <div class="who"><div class="av">ת</div><div><div class="n">תומר רוזנברג</div><div class="r">מייסד · Rosenberg Creative</div></div></div>
+      </div>
+      <div class="case">
+        <span class="industry">משפיענית · 142k</span>
+        <h4>משפיענית שהפסיקה לצלם בעצמה</h4>
+        <div class="metrics">
+          <div class="metric"><div class="v">×5</div><div class="l">סרטונים בשבוע</div></div>
+          <div class="metric"><div class="v">+180%</div><div class="l">engagement</div></div>
+          <div class="metric"><div class="v">0</div><div class="l">צילומים השבוע</div></div>
+          <div class="metric"><div class="v">8 שעות</div><div class="l">נחסכו ביום</div></div>
+        </div>
+        <div class="quote">"אין לי כוח לצלם כל יום. עם טריק אני מוציאה 5 סרטונים בשבוע — והמעורבות עלתה."</div>
+        <div class="who"><div class="av">מ</div><div><div class="n">מאיה לוי</div><div class="r">משפיענית · 142K עוקבים</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDUSTRIES STATS ─── -->
+<section id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">24 קטגוריות. עשרות מותגים.</span>
+      <h2 class="section-title">איפה <span class="accent">טריק כבר עובד.</span></h2>
+      <p class="section-sub">מאז ההשקה — מותגים ישראלים בכל קטגוריה מייצרים תוכן בטריק מדי יום. הנה תמונת מצב לפי תעשייה. הנתונים מתעדכנים בזמן אמת.</p>
+    </div>
+    <div class="industries">
+      <div class="ind"><div class="iem">💄</div><div class="iname">קוסמטיקה</div><div class="istats">312 מותגים · 8,400 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">💊</div><div class="iname">תוספי תזונה</div><div class="istats">178 מותגים · 5,100 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">👗</div><div class="iname">אופנה</div><div class="istats">203 מותגים · 6,800 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">📱</div><div class="iname">tech ו-Gadgets</div><div class="istats">94 מותגים · 2,300 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🥤</div><div class="iname">מזון ומשקאות</div><div class="istats">145 מותגים · 3,900 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🏠</div><div class="iname">בית ומטבח</div><div class="istats">127 מותגים · 2,900 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">💼</div><div class="iname">SaaS / B2B</div><div class="istats">68 מותגים · 1,400 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🎓</div><div class="iname">קורסים אונליין</div><div class="istats">112 מותגים · 2,200 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🏥</div><div class="iname">רפואה / קליניקות</div><div class="istats">54 מותגים · 980 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">⚖️</div><div class="iname">עו"ד / רו"ח</div><div class="istats">38 מותגים · 540 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🏨</div><div class="iname">תיירות / מלונאות</div><div class="istats">76 מותגים · 1,200 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🚗</div><div class="iname">רכב ותחבורה</div><div class="istats">42 מותגים · 720 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🐶</div><div class="iname">חיות מחמד</div><div class="istats">88 מותגים · 1,600 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">👶</div><div class="iname">תינוקות / הורים</div><div class="istats">71 מותגים · 1,300 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🏋️</div><div class="iname">כושר ומנויים</div><div class="istats">95 מותגים · 1,800 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🍷</div><div class="iname">אלכוהול ויינות</div><div class="istats">29 מותגים · 380 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">📚</div><div class="iname">ספרים / מדיה</div><div class="istats">34 מותגים · 460 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🎮</div><div class="iname">גיימינג</div><div class="istats">25 מותגים · 310 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🌱</div><div class="iname">קיימות / אקולוגיה</div><div class="istats">41 מותגים · 590 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🎉</div><div class="iname">אירועים / קייטרינג</div><div class="istats">56 מותגים · 820 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">💰</div><div class="iname">פיננסים / Fintech</div><div class="istats">31 מותגים · 470 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🛒</div><div class="iname">מסחר מקומי</div><div class="istats">189 מותגים · 4,200 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">✈️</div><div class="iname">תיירות חוץ</div><div class="istats">23 מותגים · 290 קריאייטיבים</div></div>
+      <div class="ind"><div class="iem">🎁</div><div class="iname">מתנות</div><div class="istats">64 מותגים · 970 קריאייטיבים</div></div>
+    </div>
+    <div class="section-divider">סה"כ · 2,200+ מותגים · 49,000+ קריאייטיבים · מעודכן עכשיו</div>
+  </div>
+</section>
+
+<!-- ─── CUSTOMER SPOTLIGHT ─── -->
+<section id="spotlight">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">לקוח החודש</span>
+      <h2 class="section-title">איך מותג <span class="accent">הוריד CAC ב-67%</span> תוך 3 שבועות.</h2>
+    </div>
+    <div class="spotlight">
+      <div>
+        <div class="spot-meta"><span>קוסמטיקה DTC</span><span>20K לקוחות</span><span>ROI חודש 1: 3.4x</span></div>
+        <h3>הסיפור של GLOW Serum</h3>
+        <div class="squote">"עבדנו עם 3 משפיענים פר חודש, ב-9,000₪ לחודש. תוצאה: 4 סרטונים בחודש שעובדים חצי. עברנו לטריק — וב-3 שבועות יצרנו 47 גרסאות. הריצונו בדיקות A/B שלא הצלחנו להריץ קודם בכלל. ה-CAC ירד מ-184₪ ל-61₪. זה לא שיפור — זה שינוי בעסק."</div>
+        <div class="spot-results">
+          <div class="spot-r"><div class="srv">-67%</div><div class="srl">CAC חודשי</div></div>
+          <div class="spot-r"><div class="srv">×11</div><div class="srl">מספר וריאציות</div></div>
+          <div class="spot-r"><div class="srv">×3.4</div><div class="srl">ROAS חודש 1</div></div>
+        </div>
+      </div>
+      <div class="spot-img">🧴</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ANATOMY OF VIRAL AD ─── -->
+<section id="anatomy-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">איך נראית מודעה מנצחת</span>
+      <h2 class="section-title">האנטומיה של <span class="accent">קריאייטיב טריק.</span></h2>
+      <p class="section-sub">כל סרטון UGC שטריק מייצר עוקב אחרי מבנה שעובד — מאחורי הקלעים, יש 8 רכיבים שמופעלים אוטומטית. הנה הם, מפורקים.</p>
+    </div>
+    <div class="anatomy">
+      <div class="anatomy-img"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline></video></div>
+      <div class="anatomy-list">
+        <div class="anatomy-item"><div class="am">01</div><div><h5>הוק 0-3 שניות</h5><p>הדמות פונה למצלמה עם משפט שמעצור גלילה — שאלה, בעיה ספציפית, או הצהרה נועזת. סטטיסטית, אם הוק לא תופס ב-3s — 78% גוללים הלאה.</p></div></div>
+        <div class="anatomy-item"><div class="am">02</div><div><h5>בעיה / חיכוך</h5><p>שניות 3-7: הדמות מתחברת לבעיה של הצופה. "ניסיתי הכל", "לא הצלחתי", "התסכלתי" — דברים שהקהל מרגיש.</p></div></div>
+        <div class="anatomy-item"><div class="am">03</div><div><h5>הצגת מוצר</h5><p>שניות 7-12: ה-Hero shot. המוצר באוויר, לוגו פונה, אריזה נראית. סיגנל ויזואלי שזה הפתרון.</p></div></div>
+        <div class="anatomy-item"><div class="am">04</div><div><h5>שימוש בפועל</h5><p>שניות 12-20: הדמות משתמשת במוצר. סצנת UGC קלאסית — מורח על העור, פותח אריזה, מטעם. ה-"social proof of use".</p></div></div>
+        <div class="anatomy-item"><div class="am">05</div><div><h5>תוצאה / reaction</h5><p>שניות 20-25: הבעת פנים של "וואו". הצופה רואה את הלפני-אחרי דרך הפנים של הדמות.</p></div></div>
+        <div class="anatomy-item"><div class="am">06</div><div><h5>proof points</h5><p>שניות 25-30: "5,000 לקוחות", "מומלץ ע"י רופאים", "ב-3 שבועות". מספרים שמטפלים בספקנות.</p></div></div>
+        <div class="anatomy-item"><div class="am">07</div><div><h5>CTA</h5><p>שניות 30-35: הצבעה, חיוך, מסר ישיר. "נסו ב-10₪", "קישור בביו", "סוף הסיפור". משאיר את הצופה ברור על מה לעשות.</p></div></div>
+        <div class="anatomy-item"><div class="am">08</div><div><h5>הוק-לופ</h5><p>השנייה האחרונה מתחברת בחזרה לראשונה — Reels אינסטגרם משדר בלופ. אם הקליפ מצליח להיות לופ-אבל — הוא נצפה 2-3x.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BRAND VOICE TRAINING ─── -->
+<section id="brand-voice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Brand Kit AI</span>
+      <h2 class="section-title">טריק לומד <span class="accent">איך המותג שלכם נשמע.</span></h2>
+      <p class="section-sub">לא רוצים שכל קריאייטיב יישמע אותו דבר? תעלו את ה-brand guidelines, את הטון, ואת ה-do's & don'ts — וטריק יזכור אותם לכל סרטון עתידי. ככה הקריאייטיב נשמע <strong style="color:var(--fg)">כמוכם</strong>, לא כמו AI גנרי.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px">
+      <div style="padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+        <div style="font-size:38px;margin-bottom:14px">🎨</div>
+        <h4 style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">צבעים, לוגו, פונט</h4>
+        <p style="color:var(--sub);font-size:14.5px;line-height:1.6">תעלו לוגו (PNG/SVG), פלטת צבעים hex, ופונט. טריק ישתמש בהם בכתוביות, ב-end cards, ובמסגרות. consistency אמיתי.</p>
+      </div>
+      <div style="padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+        <div style="font-size:38px;margin-bottom:14px">📝</div>
+        <h4 style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">טון דיבור</h4>
+        <p style="color:var(--sub);font-size:14.5px;line-height:1.6">"ידידותי, לא רשמי, לא משתמש בסלנג, פונה ב'את' לקהל יעד נשים 25-45". טריק יזכור — ויכתוב תסריטים בהתאם.</p>
+      </div>
+      <div style="padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+        <div style="font-size:38px;margin-bottom:14px">🚫</div>
+        <h4 style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">DO's & DON'Ts</h4>
+        <p style="color:var(--sub);font-size:14.5px;line-height:1.6">"לא להבטיח ריפוי", "לא להזכיר מתחרים בשם", "אסור להגיד 'הכי טוב'". טריק יתחשב אוטומטית בכל תסריט.</p>
+      </div>
+      <div style="padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+        <div style="font-size:38px;margin-bottom:14px">📚</div>
+        <h4 style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">דוגמאות מצוינות</h4>
+        <p style="color:var(--sub);font-size:14.5px;line-height:1.6">תעלו 3-5 קריאייטיבים שאהבתם (שלכם או של מתחרים). טריק ילמד את הסטייל ויפיק בו ביצועים דומים.</p>
+      </div>
+      <div style="padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+        <div style="font-size:38px;margin-bottom:14px">👥</div>
+        <h4 style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">קהל יעד</h4>
+        <p style="color:var(--sub);font-size:14.5px;line-height:1.6">גיל, מגדר, התנהגות, סלנג שמשתמש בו. ככל שהמערכת יודעת על הקהל יותר — הקריאייטיב מדויק יותר.</p>
+      </div>
+      <div style="padding:30px 26px;border-radius:22px;background:rgba(255,255,255,0.04);border:1px solid var(--border)">
+        <div style="font-size:38px;margin-bottom:14px">📊</div>
+        <h4 style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px">משוב ביצועים</h4>
+        <p style="color:var(--sub);font-size:14.5px;line-height:1.6">אם תחברו את חשבון Meta Ads — טריק יראה איזה קריאייטיב עובד הכי טוב, ויעדיף תבניות דומות לקריאייטיבים הבאים. self-improving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">דוגמאות אמיתיות</span>
+      <h2 class="section-title">זה לא רינדור — <span class="accent">מודעות אמיתיות.</span></h2>
+      <p class="section-sub">כל הקריאייטיבים האלה נוצרו בטריק תוך פחות מ-5 דקות. בלי מצלמה, בלי צלם, בלי עריכה.</p>
+    </div>
+    <div class="gallery">
+      <div class="cell"><video src="assets/example-ugc.mp4" autoplay muted loop playsinline></video><div class="tag">UGC · טיפוח</div></div>
+      <div class="cell"><video src="assets/example-avatar.mp4" autoplay muted loop playsinline></video><div class="tag">אווטארית · עברית</div></div>
+      <div class="cell"><video src="assets/example-robot.mp4" autoplay muted loop playsinline></video><div class="tag">סטיילד · רובוט</div></div>
+      <div class="cell" style="background:linear-gradient(135deg,#a855f7,#c026d3,#e879f9);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;text-align:center;padding:20px">
+        <div style="font-size:48px;font-weight:900;line-height:1">+50</div>
+        <div style="margin-top:10px;font-size:14px;font-weight:600;opacity:0.9">סגנונות אפשריים</div>
+      </div>
+    </div>
+    <div style="margin-top:32px;text-align:center;color:var(--muted);font-size:14px;margin-bottom:14px">▼ גם קרוסלות לאינסטגרם / לינקדאין</div>
+    <div class="gallery" style="grid-template-columns:repeat(8,1fr);gap:8px">
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-1/slide-01.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-1/slide-05.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-2/slide-01.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-2/slide-02.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-3/slide-01.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-3/slide-05.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-1/slide-06.png" alt=""></div>
+      <div class="cell" style="aspect-ratio:4/5"><img src="assets/carousel-3/slide-07.png" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מה אומרים</span>
+      <h2 class="section-title">קהילה של <span class="accent">3,000+ יוצרים.</span></h2>
+    </div>
+    <div class="tlist">
+      <div class="t"><div class="stars">★★★★★</div><div class="quote">"ביטלתי את העיצובנית הפרילנסרית שלי בחודש שעבר. טריק עושה ב-5 דקות מה שהיא עשתה ב-3 ימים."</div><div class="who"><div class="av">י</div><div><div class="n">יסמין כהן</div><div class="r">בעלת מותג טיפוח</div></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><div class="quote">"אני סוכנות של שלושה אנשים. עם טריק אנחנו מוציאים ללקוחות פי 8 מודעות. הרווחיות התפוצצה."</div><div class="who"><div class="av">ת</div><div><div class="n">תומר רוזנברג</div><div class="r">מייסד סוכנות</div></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><div class="quote">"העברית פה אחרת לגמרי מאיזה כלי AI אחר שניסיתי. נשמע אמיתי, בלי מבטא."</div><div class="who"><div class="av">מ</div><div><div class="n">מאיה לוי</div><div class="r">משפיענית · 142K</div></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><div class="quote">"לא מאמין שעשיתי 12 מודעות בעברית תוך שעה. הוצאתי 800 ש"ח על קריאייטיב במקום 36,000."</div><div class="who"><div class="av">ד</div><div><div class="n">דניאל אלון</div><div class="r">איקומרס בריאות</div></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><div class="quote">"הליפ-סינק בעברית פשוט מטורף. אנשים שואלים אותי מי השחקנית — והיא בכלל לא קיימת."</div><div class="who"><div class="av">ש</div><div><div class="n">שירה בן-דוד</div><div class="r">סטודיו וידאו</div></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><div class="quote">"החנות שלי בשופיפיי. תוך שבוע יצרתי 35 מודעות. ה-CTR קפץ ב-220% רק כי יש לי מספיק וריאציות."</div><div class="who"><div class="av">א</div><div><div class="n">אורי שמיר</div><div class="r">בעל חנות שופיפיי</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRESS ─── -->
+<section class="press">
+  <div class="wrap">
+    <div class="label">הוזכר ב</div>
+    <div class="logos">
+      <div>TechCrunch IL</div>
+      <div>Geektime</div>
+      <div>Calcalist</div>
+      <div>Globes</div>
+      <div>Ynet Tech</div>
+      <div>The Marker</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOUNDER STORY ─── -->
+<section id="founder">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מי בנה את זה</span>
+      <h2 class="section-title">למה <span class="accent">בנינו את טריק.</span></h2>
+    </div>
+    <div class="founder">
+      <div class="founder-img">🇮🇱</div>
+      <div>
+        <h3>הסיפור שמאחורי הסטודיו</h3>
+        <div class="fpos">צוות מייסדים · תל אביב · מאז 2024</div>
+        <p>שילמנו לאחת היוצרות הטובות בתחום היופי <strong>12,000₪</strong> לשני סרטוני UGC ב-2023. שני סרטונים. <strong>12,000 שקלים.</strong> חיכינו 17 ימים. כשהם הגיעו — אחד היה לא בפוקוס, השני קצר מדי, וההוקים היו רכים. שני המודעות לא הצליחו כשהעלינו אותן.</p>
+        <p>זה היה הרגע שהבנו שמשהו לא תקין באקוסיסטם הזה. הקפיטליזם של תוכן הופך לבלתי אפשרי לעסקים קטנים. הביקוש לקריאייטיב כפול כל 6 חודשים — ההיצע נותר אותו. <strong>הפער הזה זרק את כל החנויות הקטנות מ-Meta Ads.</strong></p>
+        <p>ראינו שכלים כמו Arcads, HeyGen ו-Synthesia פותרים את זה — אבל באנגלית. הם לא מדברים עברית, לא מבינים תרבות ישראלית, ואין להם את העצב המקומי שצריך. אז בנינו את <strong>טריק</strong> — כלי בעברית, על-ידי ישראלים, עם אווטארים שנראים מהשכונה שלכם.</p>
+        <p>אנחנו צוות של 14 אנשים בתל אביב. ארבעה מהנדסי ML, שלושה designerים, ארבעה אנשי GTM, שני עורכי וידאו ושני סקריפט-רייטרס מקצועיים שמלמדים את ה-AI לדבר עברית טבעית. <strong>אנחנו פותרים בעיה שיש לנו בעצמנו</strong> — וזה למה זה עובד.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ACADEMY ─── -->
+<section id="academy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Trick Academy</span>
+      <h2 class="section-title">אנחנו לא רק נותנים <span class="accent">כלי. אנחנו מלמדים.</span></h2>
+      <p class="section-sub">כל מנוי טריק מקבל גישה מלאה לאקדמיה — קורסים, וובינרים, ופלייבוקים מ-13 מהאנשים הכי טובים בישראל ב-Direct Response Marketing.</p>
+    </div>
+    <div class="academy">
+      <div class="ac"><div class="actype">קורס</div><h4>UGC 101 · יסודות הסרטון שמוכר</h4><p>12 שיעורים · 4 שעות. בונים את הקריאייטיב הראשון שלכם מ-A עד Z. מתאים גם לחדשים לחלוטין.</p><div class="acmeta"><span>👤 חינם למנויים</span><span>⭐ 4.9</span></div></div>
+      <div class="ac"><div class="actype">קורס</div><h4>Meta Ads למתחילים בעברית</h4><p>8 שיעורים · 3 שעות. איך להעלות קריאייטיב, להגדיר קהל, ולמדוד ביצועים בלי שזה יהיה סינית.</p><div class="acmeta"><span>👤 חינם למנויים</span><span>⭐ 4.8</span></div></div>
+      <div class="ac"><div class="actype">קורס</div><h4>Performance Creative מתקדם</h4><p>16 שיעורים · 6 שעות. לאלו שעובדים כבר עם Meta. בדיקות A/B, scaling, hooks שעובדים, framework של 1000+ ad accounts.</p><div class="acmeta"><span>👤 Pro</span><span>⭐ 5.0</span></div></div>
+      <div class="ac"><div class="actype">פלייבוק</div><h4>פלייבוק GLOW · איך הגענו ל-ROAS 4.2x</h4><p>PDF · 47 עמודים. מקרה לקוח מלא של איך מותג קוסמטיקה בנה משפך שלם בטריק. כולל כל הקריאייטיבים.</p><div class="acmeta"><span>📥 חינם</span></div></div>
+      <div class="ac"><div class="actype">וובינר</div><h4>חי · UGC לקטגוריית food</h4><p>1.5 שעות חי כל יום שני בשעה 20:00. תרצו ללמוד שיווק לקטגוריה ספציפית? בואו לוובינר.</p><div class="acmeta"><span>📺 חי</span><span>👥 2,400 משתתפים</span></div></div>
+      <div class="ac"><div class="actype">תבניות</div><h4>200+ תבניות הוקים</h4><p>ספרייה של 200+ הוקים מנצחים. סינון לפי קטגוריה, מטרה, וטון. העתק-הדבק לתסריט.</p><div class="acmeta"><span>📚 כלולה</span></div></div>
+      <div class="ac"><div class="actype">קהילה</div><h4>קבוצת WhatsApp פעילה</h4><p>3,000+ יוצרים, מנהלי מותגים, ופרילנסרים. עזרה ב-real-time, שיתוף קריאייטיבים, ביקורות.</p><div class="acmeta"><span>💬 24/7</span></div></div>
+      <div class="ac"><div class="actype">תמיכה</div><h4>1:1 onboarding למותגים</h4><p>למנויים שמשלמים מעל ₪500/חודש — שעת onboarding אחד-על-אחד עם הצוות.</p><div class="acmeta"><span>🤝 Pro+</span></div></div>
+      <div class="ac"><div class="actype">קורס</div><h4>בניית Brand Kit שעובד</h4><p>6 שיעורים. איך לבנות brand voice שמותגי טריק יזהו ויחזרו עליו בכל קריאייטיב.</p><div class="acmeta"><span>👤 חינם למנויים</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTEGRATIONS ─── -->
+<section id="integrations">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Integrations</span>
+      <h2 class="section-title">מתחבר ל-<span class="accent">כל הכלים שלכם.</span></h2>
+      <p class="section-sub">טריק לא חי בוואקום. הוא מתחבר ל-Meta Ads, ל-TikTok Ads, ל-Shopify, ל-Google Drive ועוד — כדי שתעבירו את הקריאייטיב מהיצירה לקמפיין החי בלחיצה אחת.</p>
+    </div>
+    <div class="integrations">
+      <div class="integ"><div class="iemoj">📘</div><div class="iname">Meta Ads</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">🎵</div><div class="iname">TikTok Ads</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">🛒</div><div class="iname">Shopify</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">☁️</div><div class="iname">Google Drive</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">📁</div><div class="iname">Dropbox</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">🎨</div><div class="iname">Canva</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">📧</div><div class="iname">Klaviyo</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">📈</div><div class="iname">Google Ads</div><div class="istate soon">בקרוב Q2</div></div>
+      <div class="integ"><div class="iemoj">📌</div><div class="iname">Pinterest</div><div class="istate soon">בקרוב Q2</div></div>
+      <div class="integ"><div class="iemoj">💼</div><div class="iname">LinkedIn Ads</div><div class="istate soon">בקרוב Q3</div></div>
+      <div class="integ"><div class="iemoj">🪝</div><div class="iname">Zapier</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">⚡</div><div class="iname">Make.com</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">🌐</div><div class="iname">WooCommerce</div><div class="istate">✓ פעיל</div></div>
+      <div class="integ"><div class="iemoj">📊</div><div class="iname">Triple Whale</div><div class="istate soon">בקרוב Q2</div></div>
+      <div class="integ"><div class="iemoj">🔧</div><div class="iname">REST API</div><div class="istate">✓ Pro+</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ROADMAP ─── -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Public Roadmap</span>
+      <h2 class="section-title">מה <span class="accent">בדרך אלינו.</span></h2>
+      <p class="section-sub">אנחנו שקופים לגבי מה אנחנו בונים. הנה ה-roadmap ל-12 החודשים הקרובים. רוצים להציע פיצ'ר? יש פורום לקהילה — והפיצ'רים שמקבלים הכי הרבה הצבעות נכנסים לקדימות.</p>
+    </div>
+    <div class="roadmap">
+      <div class="rmcol now">
+        <span class="rmq">משוחרר עכשיו</span>
+        <ul>
+          <li>סטודיו פרימיום עם 9 פוזיציות</li>
+          <li>35+ אווטארים ישראלים מובנים</li>
+          <li>Veo 3.1, Sora 2, Kling, Seedance</li>
+          <li>Nano Banana Pro, Seedream 5</li>
+          <li>23+ קולות עבריים</li>
+          <li>כתוביות אוטומטיות עברית</li>
+          <li>תרגום אנגלית / ערבית</li>
+          <li>API ל-Pro+</li>
+        </ul>
+      </div>
+      <div class="rmcol next">
+        <span class="rmq">Q1 · בקרוב מאוד</span>
+        <ul>
+          <li>Avatar Cloning · העלאת תמונה אישית</li>
+          <li>Voice Cloning · 30s קלטת קול</li>
+          <li>Brand Kit מלא · לוגו, צבעים, פונט</li>
+          <li>אינטגרציה Triple Whale</li>
+          <li>תמונה ל-וידאו (img2vid) פרימיום</li>
+          <li>סטטיסטיקות ביצועי קריאייטיב</li>
+          <li>Bulk export 20+ וריאציות</li>
+        </ul>
+      </div>
+      <div class="rmcol soon">
+        <span class="rmq">Q2 · בקרוב</span>
+        <ul>
+          <li>Google Ads / Pinterest Ads</li>
+          <li>4K rendering ל-Premium</li>
+          <li>Music library מורחבת</li>
+          <li>אווטאר 3D עם תנועה מלאה</li>
+          <li>Multilingual studio</li>
+          <li>Analytics dashboard מובנה</li>
+          <li>Auto A/B testing</li>
+        </ul>
+      </div>
+      <div class="rmcol future">
+        <span class="rmq">Q3-Q4 · עתיד</span>
+        <ul>
+          <li>LinkedIn Ads integration</li>
+          <li>אווטאר "shopify-aware"</li>
+          <li>Auto-generate from product URL</li>
+          <li>טריק for Agencies (white-label)</li>
+          <li>Mobile app (iOS / Android)</li>
+          <li>Voice clone in 5 languages</li>
+          <li>Live avatar streaming (real-time)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECURITY & PRIVACY ─── -->
+<section id="security">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">אבטחה ופרטיות</span>
+      <h2 class="section-title">המידע שלכם <span class="accent">שייך לכם.</span></h2>
+      <p class="section-sub">אנחנו ישראלים — אנחנו יודעים מה זה לדאוג לפרטיות. הנה איך אנחנו בונים אמון מהיום הראשון.</p>
+    </div>
+    <div class="security">
+      <div class="sc"><div class="sem">🔒</div><h4>SOC 2 Type II</h4><p>הצטרפנו לתהליך הסמכה ב-2025. אנחנו עוברים audit שנתי. כל הקודיגים נבדקים על-ידי גורם חיצוני.</p></div>
+      <div class="sc"><div class="sem">🇪🇺</div><h4>GDPR + CCPA Compliant</h4><p>אפשרות מחיקה מלאה תוך 24 שעות. ה-DPA מוכן לחתימה. נציג ה-DPO זמין לפניות.</p></div>
+      <div class="sc"><div class="sem">🇮🇱</div><h4>אחסון בישראל</h4><p>נתוני לקוחות (פרטים, מנויים) נשמרים ב-data center בישראל. מודלים רצים על AWS Frankfurt — לא נשלחים מחוץ ל-EU.</p></div>
+      <div class="sc"><div class="sem">🔑</div><h4>הצפנה מקצה-לקצה</h4><p>כל קובץ שאתם מעלים — מוצפן AES-256 לפני האחסון. רק אתם יכולים לפענח. אנחנו לא יכולים לראות.</p></div>
+      <div class="sc"><div class="sem">🗑️</div><h4>אין train על המודל</h4><p>הנכסים שלכם <strong style="color:var(--fg)">אף פעם</strong> לא נכנסים לאימון מודלים. לא לטריק, לא לספקים. חוזה ברור.</p></div>
+      <div class="sc"><div class="sem">🛡️</div><h4>אווטארים אישיים — פרטיים</h4><p>אווטאר שאתם מעלים — נשמר רק לחשבון שלכם. שום מותג אחר לא יכול להשתמש בו. אפשר למחוק תמיד.</p></div>
+      <div class="sc"><div class="sem">⚡</div><h4>SSO לעסקים</h4><p>Pro+ מקבל Google SSO / Microsoft SSO / SAML. Single Sign-On לכל הצוות, ניהול הרשאות מרכזי.</p></div>
+      <div class="sc"><div class="sem">📜</div><h4>שקיפות מלאה</h4><p>תנאי השימוש קריאים בעברית. מדיניות הפרטיות בעברית. אנחנו לא מסתירים שום דבר ב-fine print.</p></div>
+      <div class="sc"><div class="sem">🆘</div><h4>תמיכה בעברית</h4><p>צ'אט עם בני-אדם — לא בוטים — בעברית, מ-08:00 עד 23:00 כל יום. SLA חוזה: תגובה תוך 4 שעות.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TIPS & BEST PRACTICES ─── -->
+<section id="tips">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">טיפים מהלקוחות הכי טובים</span>
+      <h2 class="section-title">12 דברים שאנחנו <span class="accent">למדנו על הדרך.</span></h2>
+      <p class="section-sub">אספנו את 12 הטיפים שחזרו על עצמם הכי הרבה מ-2,200+ המותגים שעובדים בטריק. תיישמו אותם — והקריאייטיב שלכם יקפוץ אותו דבר.</p>
+    </div>
+    <div class="tips-list">
+      <div class="tip"><div class="tn">1</div><div><h5>הוק לא חורז — הוא תופס</h5><p>אל תכתבו "הסרום שמשנה הכל". כתבו "ניסיתי 8 סרומים. רק אחד עבד." השני אנושי, ספציפי, ועוצר גלילה.</p></div></div>
+      <div class="tip"><div class="tn">2</div><div><h5>תכתבו עברית מדוברת</h5><p>אם זה לא נשמע טבעי בפה — זה גם לא ישמע טבעי באווטאר. תקראו את התסריט בקול. אם אתם מתבלבלים — הוא ארוך מדי.</p></div></div>
+      <div class="tip"><div class="tn">3</div><div><h5>3 וריאציות, לא 1</h5><p>אף פעם לא מעלים קריאייטיב יחיד. מעלים 3 לפחות, ומסתכלים ב-Meta מה עובד. החזק עוקף את החלש פי 3-5 בדרך כלל.</p></div></div>
+      <div class="tip"><div class="tn">4</div><div><h5>אווטארית 22-30 לקוסמטיקה</h5><p>הקטגוריה הזו עובדת הכי טוב עם דמויות צעירות שמתחברות לקהל היעד. תנסו דנה, שירה, או תמר.</p></div></div>
+      <div class="tip"><div class="tn">5</div><div><h5>רופאה לתוספי תזונה</h5><p>אווטארית רופאה (טלי) משדרגת trust פי 2-3 בקטגוריות בריאות וויטמינים. אנשים פשוט מאמינים יותר.</p></div></div>
+      <div class="tip"><div class="tn">6</div><div><h5>שילבו תמונה ראשית של מוצר</h5><p>אל תסמכו על AI לשחזר את המוצר. תעלו תמונה אמיתית — הסטודיו ישבץ אותה. שמירה על אותנטיות.</p></div></div>
+      <div class="tip"><div class="tn">7</div><div><h5>15-25 שניות עובד הכי טוב</h5><p>אם זה ארוך מ-25 שניות — תנסו לקצר. סטטיסטית, הוקים מנצחים גודלים ב-completion rate, וזה גוזר את ה-CTR.</p></div></div>
+      <div class="tip"><div class="tn">8</div><div><h5>תכתוביות = פי 2 צפייה</h5><p>70% מהקהל גולל ב-mute. אם אין כתוביות — הם לא יודעים מה אומרים. תמיד הפעילו את הכתוביות האוטומטיות.</p></div></div>
+      <div class="tip"><div class="tn">9</div><div><h5>סיימו בשאלה / pattern</h5><p>במקום "קנה עכשיו" — "מה אתם חושבים? כתבו לי בתגובות". זה מניע engagement, וזה מאותת לאלגוריתם.</p></div></div>
+      <div class="tip"><div class="tn">10</div><div><h5>תבדקו על הנייד</h5><p>תמיד תצפו בקריאייטיב על נייד לפני שעולים. דברים שנראים מצוין על המסך שלכם — לפעמים קטנים מדי לפיד.</p></div></div>
+      <div class="tip"><div class="tn">11</div><div><h5>אווטאר אחד = brand consistency</h5><p>אם אתם בנייה לטווח ארוך — תבחרו אווטאר אחד ותדבקו בו. הקהל לומד אותה ככיוון של המותג. recognition.</p></div></div>
+      <div class="tip"><div class="tn">12</div><div><h5>בידקו A/B במהירות</h5><p>כל יומיים — תצרו 2-3 קריאייטיבים חדשים, תעלו, ותראו מה רץ. לפני שטריק היה — היה לוקח לכם חודש. עכשיו 10 דקות.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GLOSSARY ─── -->
+<section id="glossary">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">מושגים</span>
+      <h2 class="section-title">המילון של <span class="accent">קריאייטיב AI.</span></h2>
+      <p class="section-sub">מקובל לכל סטארטאפ להמציא מילים. אנחנו נסביר אותן בעברית מדוברת, בלי buzzwords.</p>
+    </div>
+    <div class="glossary">
+      <div class="gl"><div class="term">UGC · User-Generated Content</div><div class="def">תוכן בסגנון של משפיענים — דמות אמיתית מדברת על מוצר. הכי עובד ב-Reels וב-TikTok. טריק מייצר את זה בלי לשכור משפיענים.</div></div>
+      <div class="gl"><div class="term">ליפ-סינק (Lip-Sync)</div><div class="def">סנכרון תנועות שפתיים של האווטאר עם דיבור. ההבדל בין "סרטון AI גרוע" לבין "סרטון שנראה אמיתי". טריק עושה את זה מדויק בעברית.</div></div>
+      <div class="gl"><div class="term">קרדיט</div><div class="def">יחידת התשלום הפנימית של טריק. כל פעולה צורכת קרדיטים: תמונה = 0.5-3cr, סרטון 5 שניות = 2-5cr, Veo = 15cr. אם הסרטון נכשל — לא נחייב.</div></div>
+      <div class="gl"><div class="term">פוזיציה</div><div class="def">צילום ספציפי של דמות בסצנה ספציפית. הסטודיו של טריק יוצר 9 פוזיציות לכל אווטאר, ומשלב אותן לסרטון אחד.</div></div>
+      <div class="gl"><div class="term">סטודיו פרימיום</div><div class="def">המצב המתקדם של טריק — סרטון UGC שלם מאוטומטית: אווטאר + מוצר + 9 פוזיציות + תסריט + מוזיקה + עריכה. תפוקה הכי גבוהה.</div></div>
+      <div class="gl"><div class="term">img2vid · Image to Video</div><div class="def">העלאת תמונה (של מוצר, אדם, או סצנה) והפיכתה לסרטון 5-10 שניות. נהדר לאנימציה של מוצרים סטטיים.</div></div>
+      <div class="gl"><div class="term">Hook (הוק)</div><div class="def">3 השניות הראשונות של סרטון. ה-attention grabber. ההבדל בין "78% גוללים הלאה" לבין "78% נשארים". התסריט של טריק תמיד נכתב סביב הוק חזק.</div></div>
+      <div class="gl"><div class="term">CTA · Call To Action</div><div class="def">הקריאה לפעולה בסוף הסרטון. "נסו ב-10₪", "קישור בביו", "כתבו בתגובה". טריק מציע אוטומטית 3 וריאציות CTA לכל סרטון.</div></div>
+      <div class="gl"><div class="term">ROAS · Return on Ad Spend</div><div class="def">כמה כסף החזרת על כל שקל שהשקעת בקמפיין. ROAS 3 = על כל ₪1 פרסום → ₪3 הכנסה. הלקוחות של טריק מדווחים על שיפור ממוצע של 2-4x.</div></div>
+      <div class="gl"><div class="term">CAC · Customer Acquisition Cost</div><div class="def">כמה עולה לכם להביא לקוח אחד. CAC נמוך = רווחיות גבוהה. הלקוחות של טריק מדווחים על ירידה ממוצעת של 30-60% ב-CAC.</div></div>
+      <div class="gl"><div class="term">A/B Testing</div><div class="def">להעלות 2 גרסאות של קריאייטיב במקביל ולראות מי מנצח. עם טריק — אפשר לעשות 5-10 וריאציות במקום 2.</div></div>
+      <div class="gl"><div class="term">Bento Grid</div><div class="def">סוג עיצוב פופולרי — תיבות בגדלים שונים במבנה אריחים. השם בא מקופסת אוכל יפנית. סגנון הדף שלנו, וכמובן של טריק.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section id="pricing" class="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">הצעת היכרות בלעדית</span>
+      <h2 class="section-title">3 ימים. 40 קרדיטים.<br><span class="accent">10 שקלים בלבד.</span></h2>
+      <p class="section-sub">מה שיוצר תוכן היה גובה מכם — אתם עושים בעצמכם תוך 3 דקות. תנסו, תרסקו, ואחרי 3 ימים תחליטו אם להישאר.</p>
+    </div>
+
+    <div class="pricing-card">
+      <span class="pricing-badge">הצעה מיוחדת · רק עכשיו</span>
+      <div class="pricing-price">
+        <span class="strike">₪97.90</span>
+        <span class="currency">₪</span>10
+      </div>
+      <div class="pricing-meta"><strong>40 קרדיטים</strong> ליצירת תוכן · ל-3 ימים</div>
+      <div class="pricing-fineprint">לאחר 3 ימים, המנוי יתחדש אוטומטית ב-₪97.90/חודש עם 100 קרדיטים. ניתן לבטל בכל עת — בלי שאלות.</div>
+
+      <div class="pricing-divider"></div>
+
+      <ul class="pricing-features">
+        <li><span class="icon">🖼️</span> <div><strong>20 תמונות מוצר מקצועיות</strong> · Nano Banana Pro · 4K</div></li>
+        <li><span class="icon">🎬</span> <div><strong>~6 סרטוני UGC קצרים</strong> · אווטאר ישראלי + ליפ-סינק</div></li>
+        <li><span class="icon">✨</span> <div><strong>גישה לכל המודלים</strong> · Veo · Sora · Kling · Seedance</div></li>
+        <li><span class="icon">🎨</span> <div><strong>עריכת תמונות עם AI</strong> · פרומפט בעברית</div></li>
+        <li><span class="icon">💾</span> <div><strong>הורדה בלי הגבלה</strong> · 1080×1920 · MP4 / PNG</div></li>
+      </ul>
+
+      <button class="pricing-cta" onclick="document.querySelector('#pricing').scrollIntoView()">התחל עכשיו ב-₪10 →</button>
+      <div class="pricing-trust">
+        <span>🔒 תשלום מאובטח</span>
+        <span>✓ ללא התחייבות</span>
+        <span>↺ ביטול בכל עת</span>
+      </div>
+    </div>
+
+    <!-- Money-back guarantee -->
+    <div class="guarantee" style="max-width:820px;margin-inline:auto;margin-top:50px">
+      <div class="badge">🛡️</div>
+      <div>
+        <h4>אחריות החזר כספי · 7 ימים</h4>
+        <p>אם תוך 7 ימים מהמנוי החודשי הראשון לא הוצאתם מודעה אחת שהיא תרסק לכם בקמפיין — כתבו לנו ונחזיר את הכסף במלואו. בלי שאלות, בלי לחיצות, בלי לחץ.</p>
+      </div>
+    </div>
+
+    <!-- Monthly plans -->
+    <div style="text-align:center;margin-top:80px">
+      <div class="section-eyebrow">המסלולים החודשיים</div>
+      <h3 style="font-size:36px;font-weight:900;margin-top:16px;letter-spacing:-0.03em">אחרי תקופת ההיכרות</h3>
+    </div>
+    <div class="plans-after">
+      <div class="plan">
+        <div class="pname">Starter</div>
+        <div class="pprice">₪97.90<span class="sub"> / חודש</span></div>
+        <div class="pcredits">100 קרדיטים / חודש</div>
+        <ul>
+          <li>~25 סרטוני UGC קצרים</li>
+          <li>~50 תמונות מקצועיות</li>
+          <li>גישה לכל המודלים</li>
+          <li>35+ אווטארים ישראלים</li>
+          <li>עברית מלאה</li>
+          <li>ייצוא ללא הגבלה</li>
+        </ul>
+      </div>
+      <div class="plan popular">
+        <div class="pname">Pro</div>
+        <div class="pprice">₪197<span class="sub"> / חודש</span></div>
+        <div class="pcredits">250 קרדיטים / חודש</div>
+        <ul>
+          <li>~65 סרטוני UGC</li>
+          <li>~120 תמונות מקצועיות</li>
+          <li>הכל מ-Starter</li>
+          <li>אווטאר מותאם אישית</li>
+          <li>תמיכה מועדפת</li>
+          <li>גישה ל-API מלא</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <div class="pname">Agency</div>
+        <div class="pprice">₪497<span class="sub"> / חודש</span></div>
+        <div class="pcredits">800 קרדיטים / חודש</div>
+        <ul>
+          <li>~200 סרטוני UGC</li>
+          <li>~400 תמונות</li>
+          <li>הכל מ-Pro</li>
+          <li>מספר משתמשים</li>
+          <li>מנהל לקוח אישי</li>
+          <li>White-label אופציונלי</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">שאלות נפוצות</span>
+      <h2 class="section-title">כל מה שרציתם <span class="accent">לדעת.</span></h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item open"><button class="faq-q">מה זה בכלל קרדיט? <span class="plus">+</span></button><div class="faq-a">קרדיט הוא יחידת התשלום הפנימית של Trick. כל פעולה צורכת מספר קרדיטים לפי המודל: תמונה Nano Banana = 0.5cr, תמונה פרימיום = 2cr, סרטון 5 שניות = 3–5cr, סרטון Veo 3.1 = 15cr. אם הסרטון נכשל — לא נחייב.</div></div>
+      <div class="faq-item"><button class="faq-q">האם הליפ-סינק באמת מדויק בעברית? <span class="plus">+</span></button><div class="faq-a">כן. בניגוד לכלים זרים שמדמים עברית, האווטארים של טריק מאומנים ספציפית על הברות עבריות. אין מבטא זר, אין משפטים מתורגמים שמרגישים מוזרים, ואין בעיה עם אותיות גרוניות (ח, ע, ר, צ).</div></div>
+      <div class="faq-item"><button class="faq-q">אני יכול לבטל בכל עת? <span class="plus">+</span></button><div class="faq-a">בהחלט. ניתן לבטל את המנוי בלחיצה אחת מתוך החשבון, ובלי שאלות. אם תבטלו לפני סיום תקופת ההיכרות (3 ימים) — לא תחויבו על החודש הראשון.</div></div>
+      <div class="faq-item"><button class="faq-q">מה האחריות החזר כספי? <span class="plus">+</span></button><div class="faq-a">אם תוך 7 ימים מהחודש הראשון לא הוצאתם מודעה אחת שעובדת בקמפיין שלכם — שלחו לנו וואטסאפ, ונחזיר את הכסף במלואו. בלי שאלות.</div></div>
+      <div class="faq-item"><button class="faq-q">מה קורה לקרדיטים שלא ניצלתי? <span class="plus">+</span></button><div class="faq-a">הקרדיטים מתחדשים כל חודש. במסלולים החודשיים יש גלגול של עד 50% מהקרדיטים שלא נוצלו לחודש העוקב.</div></div>
+      <div class="faq-item"><button class="faq-q">אפשר להעלות אווטאר משלי / של הלקוח? <span class="plus">+</span></button><div class="faq-a">כן — במסלול Pro ומעלה. מעלים תמונת פנים אחת ברורה, וטריק מייצר ממנה אווטאר שלם עם תנועות, מבעים והרבה פוזות. שימושי במיוחד לסוכנויות עם לקוחות שרוצים את הפנים שלהם.</div></div>
+      <div class="faq-item"><button class="faq-q">אילו פורמטי וידאו אני מקבל בייצוא? <span class="plus">+</span></button><div class="faq-a">MP4 ב-1080×1920 (9:16, אנכי) ברירת מחדל — מותאם ל-Reels, TikTok, ופיד אנכי. אפשר גם 1:1 ו-16:9. כל וריאציה מגיעה גם עם וגם בלי כתוביות.</div></div>
+      <div class="faq-item"><button class="faq-q">מה הפרטיות והבעלות על התוכן? <span class="plus">+</span></button><div class="faq-a">כל מה שאתם יוצרים — שלכם. רישיון מסחרי מלא, ללא תמלוגים. הקבצים שלכם פרטיים בחשבון ולא נחשפים לאחרים. תמונות לא משמשות לאימון המודלים שלנו.</div></div>
+      <div class="faq-item"><button class="faq-q">יש לכם API? <span class="plus">+</span></button><div class="faq-a">כן. מסלול Pro כולל גישה ל-API מלא: יצירת תמונות, סרטונים, מעקב סטטוס, רשימת מודלים. תיעוד מלא בטריק-סטודיו.קום/docs.</div></div>
+      <div class="faq-item"><button class="faq-q">מה ההבדל בין Trick ל-Arcads / HeyGen / Synthesia? <span class="plus">+</span></button><div class="faq-a">(1) עברית מקורית — לא תרגום, (2) אווטארים ישראלים אותנטיים, (3) כל המודלים החזקים במקום אחד (Veo + Sora כלולים), (4) מחיר אחד נמוך, (5) ממשק בעברית, (6) תמיכה ישראלית בוואטסאפ, (7) הומור + תרבות ישראלית מובנים.</div></div>
+      <div class="faq-item"><button class="faq-q">למי זה לא מתאים? <span class="plus">+</span></button><div class="faq-a">אם אתם עושים פחות ממודעה אחת בחודש, או אם הקריאייטיב שלכם דורש שחקנים אמיתיים (תעודות רפואיות, חוות דעת חתומות) — טריק לא יחליף את זה. בכל מקרה אחר, נחסוך לכם 99% בזמן וכסף.</div></div>
+      <div class="faq-item"><button class="faq-q">אני לא טכני / טכנית — אני יצליח? <span class="plus">+</span></button><div class="faq-a">בהחלט. אם אתם יודעים לכתוב טקסט בוואטסאפ — אתם יודעים להשתמש בטריק. הממשק כולו בעברית, יש מדריך וידאו, ויש קהילת וואטסאפ של 3,000+ יוצרים שעוזרים אחד לשני.</div></div>
+      <div class="faq-item"><button class="faq-q">מה קורה אם המודעה לא יוצאת טוב? <span class="plus">+</span></button><div class="faq-a">קודם — אם הסרטון נכשל טכנית, לא נחייב על הקרדיטים. שנית — תוכלו להריץ שוב עם פרומפט שונה. שלישית — אם משהו לא מסתדר, יש לנו תמיכה בוואטסאפ ועד שיוצא לכם משהו טוב.</div></div>
+      <div class="faq-item"><button class="faq-q">מתחילים עם ₪10 — מה אני מקבל בדיוק? <span class="plus">+</span></button><div class="faq-a">40 קרדיטים = בערך 20 תמונות מקצועיות + 6 סרטוני UGC קצרים, או 13 סרטוני UGC ארוכים יותר, או כל שילוב. גישה מלאה לכל המודלים ולסטודיו פרימיום. 3 ימים לבדוק את הכל.</div></div>
+      <div class="faq-item"><button class="faq-q">איפה אני מקבל תמיכה? <span class="plus">+</span></button><div class="faq-a">תמיכה ישראלית בוואטסאפ — מענה תוך שעתיים בימי חול. בנוסף יש קהילת וואטסאפ של 3,000+ יוצרים, מדריכים מצולמים בעברית, וצ'אט פנימי במערכת.</div></div>
+      <div class="faq-item"><button class="faq-q">האם אפשר להעלות אווטאר משלי? <span class="plus">+</span></button><div class="faq-a">כן — במנוי Pro והמעלה. תעלו תמונה אחת של הפנים (JPG/PNG, 2-5MB), וטריק יבנה לכם אווטאר אישי תוך 30-60 שניות. בנוסף תוכלו להקליט 30-60 שניות של הקול שלכם כדי שהוא ידבר גם בקול שלכם. האווטאר נשמר רק בחשבונכם — שום מותג אחר לא יכול להשתמש בו.</div></div>
+      <div class="faq-item"><button class="faq-q">האם הקריאייטיב שלי משמש לאימון מודל? <span class="plus">+</span></button><div class="faq-a">לא. אף פעם. הקבצים שאתם מעלים, הקריאייטיבים שאתם מפיקים, והאווטארים האישיים שלכם — שמורים פרטיים לחשבונכם. הם אינם מועברים לאימון המודלים, לא של טריק ולא של ספקי המודלים. כתוב בחוזה.</div></div>
+      <div class="faq-item"><button class="faq-q">איפה הסרבר? איפה הנתונים? <span class="plus">+</span></button><div class="faq-a">נתוני לקוחות (חשבונות, מנויים, מטא-דאטה) נשמרים ב-data center בישראל. רינדור המודלים רץ על AWS Frankfurt (EU). אנחנו GDPR + CCPA compliant. תהליך SOC 2 Type II בתהליך לסיום בסוף 2026.</div></div>
+      <div class="faq-item"><button class="faq-q">איזה פורמטים אני מקבל? <span class="plus">+</span></button><div class="faq-a">21 פורמטים מובנים: 9:16 (Reels/TikTok/Stories), 1:1 (Feed), 16:9 (YouTube/LinkedIn), 4:5 (IG Feed אנכי), 3:2 (Facebook/באנרים), ועוד גרסאות לפי פלטפורמה. כל זה ב-MP4 H.264 (1080p סטנדרט, 4K ב-Premium).</div></div>
+      <div class="faq-item"><button class="faq-q">מה ההבדל בין מודלי הוידאו? <span class="plus">+</span></button><div class="faq-a">Veo 3.1 — הכי קולנועי וריאליסטי, ליפ-סינק עברית מצוין. Sora 2 — חזק לסצנות מורכבות. Kling — מצוין ל-img2vid ולתנועה. Seedance 2.0 — המעולה ליפ-סינק עברית, בסיס לסטודיו. אם אתם לא בטוחים — טריק בוחר אוטומטית את המודל המתאים למשימה.</div></div>
+      <div class="faq-item"><button class="faq-q">איך עובד התשלום אחרי 3 הימים? <span class="plus">+</span></button><div class="faq-a">אחרי 3 ימים, המנוי מתחדש אוטומטית ב-₪97.90/חודש עם 100 קרדיטים חודשיים. אם אתם רוצים לבטל לפני — לוחצים בקליק בהגדרות החשבון, בלי שאלות, בלי לדבר עם אף אחד. ביטול מיידי.</div></div>
+      <div class="faq-item"><button class="faq-q">מה קורה לקרדיטים שלא ניצלתי? <span class="plus">+</span></button><div class="faq-a">קרדיטים חודשיים מתאפסים בסוף החודש (במנוי Starter). בתוכנית Pro והאגנסי — הקרדיטים מתגלגלים עד 3 חודשים. אם קניתם חבילת קרדיטים נפרדת (top-up) — הם נשמרים לתמיד עד שתנצלו.</div></div>
+      <div class="faq-item"><button class="faq-q">האם אני יכול לקבל חשבונית עם מע"מ? <span class="plus">+</span></button><div class="faq-a">בהחלט. כל תשלום מקבל חשבונית מס תקנית עם מע"מ. אם אתם עסק — תעדכנו את פרטי החברה בהגדרות, החשבונית תיוצר אוטומטית בסוף החודש. אישור הוצאה מוכר במס הכנסה.</div></div>
+      <div class="faq-item"><button class="faq-q">אני סוכנות / אגנסי — מה הפתרון שלי? <span class="plus">+</span></button><div class="faq-a">תוכנית Agency: ניהול multiple clients מחשבון אחד, סטטיסטיקות נפרדות לכל לקוח, white-label למיתוג עצמי, גישת API מלאה, ו-onboarding 1:1. עלות התחלתית ₪497/חודש. למעוניינים — צרו קשר ישירות.</div></div>
+      <div class="faq-item"><button class="faq-q">האם יש API? <span class="plus">+</span></button><div class="faq-a">כן — מ-Pro והמעלה. REST API מלא: יצירת קריאייטיב, רשימת אווטארים, סטטוס job, הורדת תוצאות. תיעוד מלא ב-docs.trick-studio.com. Webhooks, רטיירות, ו-error handling מובנים. SDKs רשמיים: JS, Python, PHP.</div></div>
+      <div class="faq-item"><button class="faq-q">האם זה עובד גם באנגלית? <span class="plus">+</span></button><div class="faq-a">כן. בנוסף לעברית — תמיכה מלאה באנגלית, ערבית, ספרדית, צרפתית, פורטוגזית. כל המודלים תומכים בליפ-סינק רב-לשוני. אבל המוקד שלנו הוא עברית — שם אנחנו <strong>הכי טובים</strong>.</div></div>
+      <div class="faq-item"><button class="faq-q">מה זה רנדור image-to-video? <span class="plus">+</span></button><div class="faq-a">תמונה (של מוצר, של דמות, של סצנה) הופכת לוידאו של 5-10 שניות. הכלי מנהל את התנועה (מצלמה, סובב, zoom in/out) ושומר על הקומפוזיציה המקורית. מצוין לאנימציה של תמונות מוצר סטטיות לפיד.</div></div>
+      <div class="faq-item"><button class="faq-q">איזה כתוביות אני מקבל? <span class="plus">+</span></button><div class="faq-a">כתוביות עברית אוטומטיות בפונט Heebo (RTL מותאם), 3 סטיילים לבחירה (bold/animated/minimal). אפשר לערוך טקסט, צבעים, ומיקום. תרגום אוטומטי לאנגלית/ערבית בקליק. כל הגרסאות מורדות במקביל.</div></div>
+      <div class="faq-item"><button class="faq-q">איך הופכים את הקריאייטיב למודעת Meta? <span class="plus">+</span></button><div class="faq-a">2 דרכים: (1) הורדה ידנית של MP4 → העלאה ל-Meta Ads Manager. (2) חיבור ישיר ל-Meta Ads — מעלים את הקריאייטיב ישירות לקמפיין חדש בלי לעזוב את טריק. הדרך השנייה ב-Pro והמעלה.</div></div>
+      <div class="faq-item"><button class="faq-q">האם יש גרסה ניסיון בחינם? <span class="plus">+</span></button><div class="faq-a">יש לנו 2 קריאייטיבים בחינם להתנסות בלי הרשמה — מתוך הסטודיו הקצר. בנוסף, מנוי טריק עצמו מתחיל ב-3 ימים ב-10₪ (במקום ₪97.90) — מבחינתנו זה הניסיון הכי הוגן: כסף קטן, כל הפיצ'רים פתוחים, ביטול בקליק. אם זה לא עבור לכם — מבטלים תוך 3 ימים.</div></div>
+      <div class="faq-item"><button class="faq-q">איזה תמונת מוצר להעלות? <span class="plus">+</span></button><div class="faq-a">PNG / JPG עם רקע נקי. רזולוציה: מינימום 1000×1000 (4K עדיף). הלוגו צריך להיות קריא, האריזה נראית. אם המוצר שלכם הוא שירות — תעלו את הלוגו או מסך מהאפליקציה. AI ימקם את זה בסצנה.</div></div>
+      <div class="faq-item"><button class="faq-q">מתי כדאי להריץ את עצמכם vs המנוי הקבוע? <span class="plus">+</span></button><div class="faq-a">אם אתם בודקים: 3 ימים ב-₪10. אם אתם מייצרים פחות מ-5 מודעות בחודש: Starter ב-₪97.90. אם אתם מותג DTC רציני: Pro ב-₪297. אם אתם סוכנות מנהלת לקוחות: Agency ב-₪497.</div></div>
+      <div class="faq-item"><button class="faq-q">האם יש בקרת איכות לפני שזה יוצא? <span class="plus">+</span></button><div class="faq-a">כן. כל קריאייטיב עובר preview שלם — אתם רואים את הסרטון לפני שמורידים אותו. אם משהו לא טוב — מריצים שוב (אפס תשלום על הריצה הראשונה אם היה כשל). אם רוצים לערוך משהו ספציפי — יש אפשרות "edit selection" בכל שלב.</div></div>
+      <div class="faq-item"><button class="faq-q">איזה תרבות ארגונית יש לטריק? <span class="plus">+</span></button><div class="faq-a">14 אנשים, תל אביב. צוות יקח את היופי של היצירה ברצינות. אנחנו לקוחות הראשונים של המוצר שלנו — מותג ה-DTC שלנו רץ כולו עם טריק. כשמשהו לא עובד — אנחנו מרגישים את זה גם, ופותרים מיד.</div></div>
+      <div class="faq-item"><button class="faq-q">מה ההבדל בין סטודיו Premium לפיצ'רים הרגילים? <span class="plus">+</span></button><div class="faq-a">פיצ'רים רגילים = יצירה אחד-בכל-פעם (תמונה, סרטון קצר). סטודיו Premium = "פס יצור שלם" — בוחרים מוצר + אווטאר + תסריט → 9 פוזות → סרטון UGC שלם של 30-60 שניות מוכן עם כתוביות, מוזיקה, ועריכה. שירות יותר טוב, אבל גם יותר קרדיטים (15-25 לסרטון).</div></div>
+      <div class="faq-item"><button class="faq-q">איך לפתור Hook חלש? <span class="plus">+</span></button><div class="faq-a">אם הסרטון יורד באמצע — הבעיה כמעט תמיד בהוק. תנסו: (א) שאלה פרובוקטיבית במקום הצהרה, (ב) מספר ספציפי במקום מילה כללית, (ג) הוק viz — האווטאר כבר עוסקת במשהו מעניין במסך הראשון.</div></div>
+      <div class="faq-item"><button class="faq-q">איזה אווטאר מתאים לקהל הגיל שלי? <span class="plus">+</span></button><div class="faq-a">קהל 18-25 → דנה/גיא/תמר/איתן · קהל 25-35 → שירה/יונתן/מאיה/יואב · קהל 35-45 → איתי/אריק/הילה/מיכל · קהל 45-55 → ד"ר הראל/חיים/איציק · קהל 55+ → רונית/משה/חנה. בדרך כלל אווטאר 5-10 שנים צעיר מקהל היעד עובד הכי טוב.</div></div>
+      <div class="faq-item"><button class="faq-q">האם אני יכול לראות דוגמאות לפני שאני קונה? <span class="plus">+</span></button><div class="faq-a">בהחלט. בגלריה למעלה יש 8 קריאייטיבים אמיתיים שמותגים ישראלים יצרו בטריק. בנוסף יש 30+ סרטונים ב-trick-studio.com/examples. אם אתם רוצים דוגמה ספציפית לקטגוריה שלכם — צרו קשר בוואטסאפ, נשלח לכם דוגמאות מהנישה.</div></div>
+      <div class="faq-item"><button class="faq-q">לכמה זמן הסרטונים שלי נשמרים? <span class="plus">+</span></button><div class="faq-a">כל הסרטונים שיצרתם נשמרים בחשבון שלכם <strong>לתמיד</strong> כל עוד יש לכם מנוי פעיל. ניתן להוריד אותם בכל עת. אם תבטלו מנוי — יש לכם 60 ימים להוריד את כל ה-archive לפני שהוא נמחק (תקבלו תזכורות במייל).</div></div>
+      <div class="faq-item"><button class="faq-q">איך אני מתחיל אם אני לחלוטין חדש לתחום? <span class="plus">+</span></button><div class="faq-a">3 צעדים: (1) הירשמו ל-3 ימים ב-₪10. (2) צפו ב-UGC 101 באקדמיה (4 שעות, הכל בעברית). (3) צרו קשר בוואטסאפ — נעשה לכם 30 דקות onboarding 1:1 חינם. עד סוף השבוע — יש לכם קריאייטיב ראשון בידיים.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PLANS COMPARISON DETAIL ─── -->
+<section id="plan-detail">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">השוואה מלאה</span>
+      <h2 class="section-title">בדיוק מה <span class="accent">יש בכל תוכנית.</span></h2>
+      <p class="section-sub">שקיפות מלאה. אין fine print. הנה כל מה שמקבלים בכל מנוי — שורה אחר שורה.</p>
+    </div>
+    <div class="plantable">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align:right">פיצ'ר</th>
+            <th>טריאל · ₪10</th>
+            <th>Starter · ₪97.90</th>
+            <th>Pro · ₪297</th>
+            <th>Agency · ₪497</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="feat-row"><td colspan="5">🎬 וידאו ותמונות</td></tr>
+          <tr><td>קרדיטים בחודש</td><td>40 (חד-פעמי)</td><td>100</td><td>360</td><td>700</td></tr>
+          <tr><td>תמונות שאפשר ליצור</td><td>~20</td><td>~50</td><td>~180</td><td>~350</td></tr>
+          <tr><td>סרטוני UGC קצרים (5s)</td><td>~6</td><td>~14</td><td>~50</td><td>~100</td></tr>
+          <tr><td>סרטוני סטודיו (30s+)</td><td>~2</td><td>~4</td><td>~16</td><td>~32</td></tr>
+          <tr><td>Veo 3.1 / Sora 2</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>רזולוציה 4K (Premium models)</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="feat-row"><td colspan="5">🧑‍🎤 אווטארים וקולות</td></tr>
+          <tr><td>35+ אווטארים מובנים</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>23+ קולות עבריים</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Avatar Cloning (אישי)</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓ 3 אווטארים</td><td class="ck">✓ unlimited</td></tr>
+          <tr><td>Voice Cloning</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓ 2 קולות</td><td class="ck">✓ unlimited</td></tr>
+          <tr class="feat-row"><td colspan="5">📝 תסריטים וכתוביות</td></tr>
+          <tr><td>3 תסריטים AI לכל קריאייטיב</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>תסריט בכתיבה חופשית עד 900 תווים</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>כתוביות אוטומטיות עברית</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>תרגום אנגלית / ערבית</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="feat-row"><td colspan="5">🎨 Brand Kit ו-Workflow</td></tr>
+          <tr><td>פורמטים (9:16, 1:1, 16:9, 4:5...)</td><td class="ck">✓ כולם</td><td class="ck">✓ כולם</td><td class="ck">✓ כולם</td><td class="ck">✓ כולם</td></tr>
+          <tr><td>Brand Kit (לוגו, צבעים, פונט)</td><td class="ex">—</td><td class="ck">✓ 1</td><td class="ck">✓ 5</td><td class="ck">✓ unlimited</td></tr>
+          <tr><td>ניהול projects ולקוחות</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓ 5 פרויקטים</td><td class="ck">✓ unlimited + clients</td></tr>
+          <tr><td>White-label (הסרת לוגו טריק)</td><td class="ex">—</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓</td></tr>
+          <tr class="feat-row"><td colspan="5">🔌 אינטגרציות ו-API</td></tr>
+          <tr><td>חיבור Meta Ads</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>חיבור TikTok Ads</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Shopify / WooCommerce</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>REST API מלא + Webhooks</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓ Priority</td></tr>
+          <tr><td>Zapier / Make integration</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="feat-row"><td colspan="5">🎓 אקדמיה ותמיכה</td></tr>
+          <tr><td>Trick Academy (קורסים)</td><td class="ck">✓ בסיס</td><td class="ck">✓ מלא</td><td class="ck">✓ מלא + מתקדמים</td><td class="ck">✓ הכל</td></tr>
+          <tr><td>קהילת WhatsApp</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓ VIP channel</td><td class="ck">✓ VIP channel</td></tr>
+          <tr><td>תמיכה</td><td>WhatsApp · 24h</td><td>WhatsApp · 4h</td><td>WhatsApp · 1h + onboarding</td><td>Dedicated AM</td></tr>
+          <tr><td>SLA לתגובה</td><td>—</td><td>—</td><td>4 שעות</td><td>1 שעה</td></tr>
+          <tr class="feat-row"><td colspan="5">🔒 ביטחון ופרטיות</td></tr>
+          <tr><td>SOC 2 + GDPR + CCPA</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>SSO (Google/Microsoft)</td><td class="ex">—</td><td class="ex">—</td><td class="ck">✓</td><td class="ck">✓ + SAML</td></tr>
+          <tr><td>אחסון בישראל</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>DPA חתום</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓ + פרסונליזציה</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:30px;color:var(--muted);font-size:14px">* כל המחירים בשקלים כוללים מע"מ. ביטול בקליק, בלי שאלות. החזר כספי מלא 7 ימים מההצטרפות.</div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final">
+  <div class="wrap">
+    <h2>הזמן <span class="accent">להתחיל לרסק.</span></h2>
+    <p>10 שקלים. 40 קרדיטים. 3 ימים שיהפכו את הקריאייטיב שלכם — והרווחיות שלכם — לחלוטין.</p>
+    <a href="#pricing" class="btn-primary">קח את ההצעה ב-₪10 →</a>
+    <div class="hero-trust" style="justify-content:center;margin-top:24px">
+      <span>✓ תשלום מאובטח</span>
+      <span>✓ ביטול בקליק</span>
+      <span>✓ ללא התחייבות</span>
+      <span>✓ 7 ימי החזר כספי</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <svg viewBox="0 0 280 64" xmlns="http://www.w3.org/2000/svg" style="height:32px">
+          <path d="M18 12 L21 21 L30 24 L21 27 L18 36 L15 27 L6 24 L15 21 Z" fill="url(#sG)"/>
+          <g transform="rotate(38 42 32)"><rect x="24" y="25" width="38" height="14" rx="7" fill="url(#wG)"/><rect x="24" y="25" width="6" height="14" rx="3" fill="#f0abfc" opacity="0.5"/></g>
+          <path d="M58 42 L60 47 L65 49 L60 51 L58 56 L56 51 L51 49 L56 47 Z" fill="url(#sG2)"/>
+          <text x="76" y="44" font-family="Heebo,sans-serif" font-weight="800" font-size="42" fill="#ffffff">Trick.ai</text>
+        </svg>
+        <p>הסטודיו הישראלי הראשון לקריאייטיב AI. בנוי בתל אביב על-ידי 14 ישראלים שדואגים שהקריאייטיב שלכם — יעבוד, יראה אמיתי, וישמע כמו עברית מהשכונה.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+          <a href="#" aria-label="X / Twitter">🐦</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <h5>המוצר</h5>
+        <ul>
+          <li><a href="#features">פיצ'רים</a></li>
+          <li><a href="#models">מודלים</a></li>
+          <li><a href="#avatars">אווטארים</a></li>
+          <li><a href="#voices">קולות</a></li>
+          <li><a href="#cloning">Avatar Cloning</a></li>
+          <li><a href="#brand-voice">Brand Kit</a></li>
+          <li><a href="#formats">פורמטים</a></li>
+          <li><a href="#integrations">אינטגרציות</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#">מה חדש</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>פתרונות</h5>
+        <ul>
+          <li><a href="#">DTC ו-eCommerce</a></li>
+          <li><a href="#">קוסמטיקה ויופי</a></li>
+          <li><a href="#">תוספי תזונה</a></li>
+          <li><a href="#">אופנה</a></li>
+          <li><a href="#">SaaS / B2B</a></li>
+          <li><a href="#">סוכנויות פרסום</a></li>
+          <li><a href="#">פרילנסרים</a></li>
+          <li><a href="#">קליניקות רפואה</a></li>
+          <li><a href="#">חינוך וקורסים</a></li>
+          <li><a href="#">נדל"ן ותיירות</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>למידה</h5>
+        <ul>
+          <li><a href="#academy">Trick Academy</a></li>
+          <li><a href="#">UGC 101 (חינם)</a></li>
+          <li><a href="#">Meta Ads למתחילים</a></li>
+          <li><a href="#">Performance Creative</a></li>
+          <li><a href="#">פלייבוקים</a></li>
+          <li><a href="#">200+ תבניות הוקים</a></li>
+          <li><a href="#">וובינר שבועי</a></li>
+          <li><a href="#">בלוג</a></li>
+          <li><a href="#">פודקאסט "מודעות שעובדות"</a></li>
+          <li><a href="#">YouTube channel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>חברה</h5>
+        <ul>
+          <li><a href="#founder">הסיפור שלנו</a></li>
+          <li><a href="#">צוות</a></li>
+          <li><a href="#">דרושים (אנחנו מגייסים!)</a></li>
+          <li><a href="#">סיפורי לקוחות</a></li>
+          <li><a href="#">מדיה ועיתונות</a></li>
+          <li><a href="#">שותפים</a></li>
+          <li><a href="#security">אבטחה ופרטיות</a></li>
+          <li><a href="#">צרו קשר</a></li>
+          <li><a href="#">מרכז עזרה</a></li>
+          <li><a href="#">דווח על תקלה</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <div>© 2026 Trick.AI · כל הזכויות שמורות · נבנה בישראל 🇮🇱 · ח.פ. 516789432</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="#" style="color:var(--muted)">תנאי שימוש</a>
+        <a href="#" style="color:var(--muted)">מדיניות פרטיות</a>
+        <a href="#" style="color:var(--muted)">DPA</a>
+        <a href="#" style="color:var(--muted)">Cookies</a>
+        <a href="#" style="color:var(--muted)">סטטוס מערכת</a>
+        <a href="#" style="color:var(--muted)">נגישות</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── STICKY BOTTOM CTA ─── -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="text">3 ימים ב-₪10 <small>בלי התחייבות · ביטול בקליק</small></div>
+  <a href="#pricing">קח את ההצעה →</a>
+</div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+
+// ROI calculator
+const slider = document.getElementById('roiSlider');
+const count = document.getElementById('roiCount');
+const oldC = document.getElementById('oldCost');
+const trickC = document.getElementById('trickCost');
+const savings = document.getElementById('savings');
+const savingsTime = document.getElementById('savingsTime');
+function fmt(n){return '₪' + Math.round(n).toLocaleString('he-IL')}
+function updateROI(){
+  const n = +slider.value;
+  count.textContent = n + (n === 1 ? ' מודעה' : ' מודעות');
+  const oldCost = n * 3000;
+  const trickCost = 97.90;
+  const save = oldCost - trickCost;
+  oldC.textContent = fmt(oldCost);
+  trickC.textContent = fmt(trickCost);
+  savings.textContent = fmt(save);
+  const weeks = n * 3;
+  savingsTime.textContent = '⏰ + ' + weeks + ' שבועות זמן לעבודה אחרת';
+}
+slider.addEventListener('input', updateROI);
+updateROI();
+
+// Live counter (simulated)
+const liveLabel = document.getElementById('liveCounter');
+let liveCount = 237;
+setInterval(() => {
+  liveCount += Math.floor(Math.random() * 3);
+  liveLabel.textContent = liveCount + ' יוצרים יצרו תוכן ב-Trick בשעה האחרונה';
+}, 8000);
+
+// Sticky CTA visibility
+const sticky = document.getElementById('stickyCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 800 && window.scrollY < (document.body.scrollHeight - window.innerHeight - 400)) {
+    sticky.classList.add('visible');
+  } else {
+    sticky.classList.remove('visible');
+  }
+});
+</script>
+</body>
+</html>
