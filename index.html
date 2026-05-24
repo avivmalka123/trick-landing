@@ -662,13 +662,26 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   item.querySelector('.faq-q').addEventListener('click',()=>item.classList.toggle('open'));
 });
 
-/* ─── Video Carousel: play/pause on click + arrows ─── */
+/* ─── Video Carousel: play/pause + unmute on click + pause others ─── */
 const vcTrack = document.getElementById('vcTrack');
+const allVcVideos = Array.from(document.querySelectorAll('.vc-card[data-video] video'));
 document.querySelectorAll('.vc-card[data-video]').forEach(card=>{
   const vid = card.querySelector('video');
   card.addEventListener('click',()=>{
-    if(vid.paused){vid.play();card.classList.remove('paused')}
-    else{vid.pause();card.classList.add('paused')}
+    if(vid.paused){
+      /* pause + mute all other videos */
+      allVcVideos.forEach(v=>{ if(v!==vid){ v.pause(); v.muted=true; }});
+      document.querySelectorAll('.vc-card[data-video]').forEach(c=>{ if(c!==card) c.classList.add('paused'); });
+      /* unmute and play this one */
+      vid.muted = false;
+      vid.volume = 1;
+      vid.currentTime = 0;
+      vid.play();
+      card.classList.remove('paused');
+    } else {
+      vid.pause();
+      card.classList.add('paused');
+    }
   });
 });
 function vcScroll(dir){
